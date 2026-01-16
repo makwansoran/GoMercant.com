@@ -329,45 +329,51 @@ export function PremiumTimelineLanding({
         <div className="relative mb-8">
           <div className="flex animate-marquee">
             {[
-              { name: "CrowdStrike", logo: "https://logo.clearbit.com/crowdstrike.com" },
-              { name: "Microsoft", logo: "https://logo.clearbit.com/microsoft.com" },
-              { name: "Palo Alto Networks", logo: "https://logo.clearbit.com/paloaltonetworks.com" },
-              { name: "Splunk", logo: "https://logo.clearbit.com/splunk.com" },
-              { name: "Fortinet", logo: "https://logo.clearbit.com/fortinet.com" },
-              { name: "Cloudflare", logo: "https://logo.clearbit.com/cloudflare.com" },
-              { name: "Okta", logo: "https://logo.clearbit.com/okta.com" },
-              { name: "Datadog", logo: "https://logo.clearbit.com/datadoghq.com" },
-              { name: "Elastic", logo: "https://logo.clearbit.com/elastic.co" },
-              { name: "Cisco", logo: "https://logo.clearbit.com/cisco.com" },
-              { name: "CrowdStrike", logo: "https://logo.clearbit.com/crowdstrike.com" },
-              { name: "Microsoft", logo: "https://logo.clearbit.com/microsoft.com" },
-              { name: "Palo Alto Networks", logo: "https://logo.clearbit.com/paloaltonetworks.com" },
-              { name: "Splunk", logo: "https://logo.clearbit.com/splunk.com" },
-              { name: "Fortinet", logo: "https://logo.clearbit.com/fortinet.com" },
-              { name: "Cloudflare", logo: "https://logo.clearbit.com/cloudflare.com" },
-              { name: "Okta", logo: "https://logo.clearbit.com/okta.com" },
-              { name: "Datadog", logo: "https://logo.clearbit.com/datadoghq.com" },
-              { name: "Elastic", logo: "https://logo.clearbit.com/elastic.co" },
-              { name: "Cisco", logo: "https://logo.clearbit.com/cisco.com" },
+              { name: "CrowdStrike", domain: "crowdstrike.com" },
+              { name: "Microsoft", domain: "microsoft.com" },
+              { name: "Palo Alto Networks", domain: "paloaltonetworks.com" },
+              { name: "Splunk", domain: "splunk.com" },
+              { name: "Fortinet", domain: "fortinet.com" },
+              { name: "Cloudflare", domain: "cloudflare.com" },
+              { name: "Okta", domain: "okta.com" },
+              { name: "Datadog", domain: "datadoghq.com" },
+              { name: "Elastic", domain: "elastic.co" },
+              { name: "Cisco", domain: "cisco.com" },
+              { name: "CrowdStrike", domain: "crowdstrike.com" },
+              { name: "Microsoft", domain: "microsoft.com" },
+              { name: "Palo Alto Networks", domain: "paloaltonetworks.com" },
+              { name: "Splunk", domain: "splunk.com" },
+              { name: "Fortinet", domain: "fortinet.com" },
+              { name: "Cloudflare", domain: "cloudflare.com" },
+              { name: "Okta", domain: "okta.com" },
+              { name: "Datadog", domain: "datadoghq.com" },
+              { name: "Elastic", domain: "elastic.co" },
+              { name: "Cisco", domain: "cisco.com" },
             ].map((partner, index) => (
               <div
                 key={index}
                 className="flex-shrink-0 mx-6 flex items-center justify-center h-16 px-4 opacity-70 hover:opacity-100 transition-all duration-300"
               >
-                <div className="flex items-center gap-3">
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="h-10 w-auto max-w-[120px] object-contain grayscale hover:grayscale-0 transition-all"
-                    onError={(e) => {
-                      // Fallback to text if logo fails
-                      e.currentTarget.style.display = 'none';
-                      const parent = e.currentTarget.parentElement;
-                      if (parent) {
-                        parent.innerHTML = `<span className="text-sm font-bold text-neutral-800">${partner.name}</span>`;
-                      }
-                    }}
-                  />
+                <div className="flex flex-col items-center gap-2">
+                  <div className="h-12 w-28 bg-white border border-neutral-200 rounded flex items-center justify-center shadow-sm relative overflow-hidden">
+                    <img
+                      src={`https://logo.clearbit.com/${partner.domain}`}
+                      alt={partner.name}
+                      className="h-8 w-auto max-w-[100px] object-contain"
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        target.style.display = 'none';
+                        const parent = target.parentElement;
+                        if (parent && !parent.querySelector('.fallback-text')) {
+                          const fallback = document.createElement('span');
+                          fallback.className = 'fallback-text text-xs font-bold text-neutral-700 text-center px-2';
+                          fallback.textContent = partner.name;
+                          parent.appendChild(fallback);
+                        }
+                      }}
+                    />
+                  </div>
+                  <span className="text-xs font-semibold text-neutral-600 whitespace-nowrap">{partner.name}</span>
                 </div>
               </div>
             ))}
@@ -378,45 +384,51 @@ export function PremiumTimelineLanding({
         <div className="relative">
           <div className="flex animate-marquee-reverse">
             {[
-              { name: "Amazon AWS", logo: "https://logo.clearbit.com/amazonaws.com" },
-              { name: "OpenAI", logo: "https://logo.clearbit.com/openai.com" },
-              { name: "Microsoft", logo: "https://logo.clearbit.com/microsoft.com" },
-              { name: "Google Cloud", logo: "https://logo.clearbit.com/cloud.google.com" },
-              { name: "NVIDIA", logo: "https://logo.clearbit.com/nvidia.com" },
-              { name: "Snowflake", logo: "https://logo.clearbit.com/snowflake.com" },
-              { name: "MongoDB", logo: "https://logo.clearbit.com/mongodb.com" },
-              { name: "HashiCorp", logo: "https://logo.clearbit.com/hashicorp.com" },
-              { name: "GitLab", logo: "https://logo.clearbit.com/gitlab.com" },
-              { name: "Docker", logo: "https://logo.clearbit.com/docker.com" },
-              { name: "Amazon AWS", logo: "https://logo.clearbit.com/amazonaws.com" },
-              { name: "OpenAI", logo: "https://logo.clearbit.com/openai.com" },
-              { name: "Microsoft", logo: "https://logo.clearbit.com/microsoft.com" },
-              { name: "Google Cloud", logo: "https://logo.clearbit.com/cloud.google.com" },
-              { name: "NVIDIA", logo: "https://logo.clearbit.com/nvidia.com" },
-              { name: "Snowflake", logo: "https://logo.clearbit.com/snowflake.com" },
-              { name: "MongoDB", logo: "https://logo.clearbit.com/mongodb.com" },
-              { name: "HashiCorp", logo: "https://logo.clearbit.com/hashicorp.com" },
-              { name: "GitLab", logo: "https://logo.clearbit.com/gitlab.com" },
-              { name: "Docker", logo: "https://logo.clearbit.com/docker.com" },
+              { name: "Amazon AWS", domain: "amazonaws.com" },
+              { name: "OpenAI", domain: "openai.com" },
+              { name: "Microsoft", domain: "microsoft.com" },
+              { name: "Google Cloud", domain: "cloud.google.com" },
+              { name: "NVIDIA", domain: "nvidia.com" },
+              { name: "Snowflake", domain: "snowflake.com" },
+              { name: "MongoDB", domain: "mongodb.com" },
+              { name: "HashiCorp", domain: "hashicorp.com" },
+              { name: "GitLab", domain: "gitlab.com" },
+              { name: "Docker", domain: "docker.com" },
+              { name: "Amazon AWS", domain: "amazonaws.com" },
+              { name: "OpenAI", domain: "openai.com" },
+              { name: "Microsoft", domain: "microsoft.com" },
+              { name: "Google Cloud", domain: "cloud.google.com" },
+              { name: "NVIDIA", domain: "nvidia.com" },
+              { name: "Snowflake", domain: "snowflake.com" },
+              { name: "MongoDB", domain: "mongodb.com" },
+              { name: "HashiCorp", domain: "hashicorp.com" },
+              { name: "GitLab", domain: "gitlab.com" },
+              { name: "Docker", domain: "docker.com" },
             ].map((partner, index) => (
               <div
                 key={index}
                 className="flex-shrink-0 mx-6 flex items-center justify-center h-16 px-4 opacity-70 hover:opacity-100 transition-all duration-300"
               >
-                <div className="flex items-center gap-3">
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="h-10 w-auto max-w-[120px] object-contain grayscale hover:grayscale-0 transition-all"
-                    onError={(e) => {
-                      // Fallback to text if logo fails
-                      e.currentTarget.style.display = 'none';
-                      const parent = e.currentTarget.parentElement;
-                      if (parent) {
-                        parent.innerHTML = `<span className="text-sm font-bold text-neutral-800">${partner.name}</span>`;
-                      }
-                    }}
-                  />
+                <div className="flex flex-col items-center gap-2">
+                  <div className="h-12 w-28 bg-white border border-neutral-200 rounded flex items-center justify-center shadow-sm relative overflow-hidden">
+                    <img
+                      src={`https://logo.clearbit.com/${partner.domain}`}
+                      alt={partner.name}
+                      className="h-8 w-auto max-w-[100px] object-contain"
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        target.style.display = 'none';
+                        const parent = target.parentElement;
+                        if (parent && !parent.querySelector('.fallback-text')) {
+                          const fallback = document.createElement('span');
+                          fallback.className = 'fallback-text text-xs font-bold text-neutral-700 text-center px-2';
+                          fallback.textContent = partner.name;
+                          parent.appendChild(fallback);
+                        }
+                      }}
+                    />
+                  </div>
+                  <span className="text-xs font-semibold text-neutral-600 whitespace-nowrap">{partner.name}</span>
                 </div>
               </div>
             ))}
