@@ -167,7 +167,7 @@ export function PremiumTimelineLanding({
         </div>
       </section>
 
-      {/* Our Services Section - Palantir Style */}
+      {/* Our Services Section */}
       <section className="py-20 md:py-32 px-6 bg-white text-black">
         <div className="mx-auto max-w-6xl">
           {/* Header Statement */}
@@ -178,7 +178,7 @@ export function PremiumTimelineLanding({
             transition={{ duration: 0.6 }}
             className="text-xl md:text-2xl lg:text-3xl text-neutral-600 leading-relaxed max-w-5xl mb-24 md:mb-32"
           >
-            Our software powers real-time, AI-driven decisions in critical government and commercial enterprises in the West, from the factory floors to the front lines.
+            Our services power real-time, AI-driven decisions in critical government and commercial enterprises in the West, from the factory floors to the front lines.
           </motion.p>
 
           {/* Services List */}
@@ -197,12 +197,12 @@ export function PremiumTimelineLanding({
                   Our Services
                 </h2>
                 <p className="text-neutral-500 text-base md:text-lg md:max-w-md md:text-right">
-                  Automate operations, from the factory floor to the front lines
+                  Comprehensive cybersecurity and AI solutions for modern enterprises
                 </p>
               </div>
             </motion.a>
 
-            {/* AIP */}
+            {/* Cyber Surveillance */}
             <motion.a
               href="#"
               initial={{ opacity: 0 }}
@@ -215,16 +215,16 @@ export function PremiumTimelineLanding({
                 <div className="flex items-baseline gap-4">
                   <span className="text-sm text-neutral-400 font-mono">/0.1</span>
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black group-hover:text-neutral-500 transition-colors duration-300">
-                    AIP
+                    Cyber Surveillance
                   </h3>
                 </div>
                 <p className="text-neutral-500 text-base md:text-lg md:max-w-md md:text-right md:pl-4">
-                  Achieve AI-driven combat superiority, from space to mud
+                  We secure your platform with 24/7 surveillance and constant auditing
                 </p>
               </div>
             </motion.a>
 
-            {/* Gotham */}
+            {/* Automation */}
             <motion.a
               href="#"
               initial={{ opacity: 0 }}
@@ -237,16 +237,16 @@ export function PremiumTimelineLanding({
                 <div className="flex items-baseline gap-4">
                   <span className="text-sm text-neutral-400 font-mono">/0.2</span>
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black group-hover:text-neutral-500 transition-colors duration-300">
-                    Gotham
+                    Automation
                   </h3>
                 </div>
                 <p className="text-neutral-500 text-base md:text-lg md:max-w-md md:text-right md:pl-4">
-                  Build and manage Ontology-powered software, with a complete developer platform
+                  Anything a human can do can be automated
                 </p>
               </div>
             </motion.a>
 
-            {/* Foundry */}
+            {/* Intelligence */}
             <motion.a
               href="#"
               initial={{ opacity: 0 }}
@@ -259,53 +259,34 @@ export function PremiumTimelineLanding({
                 <div className="flex items-baseline gap-4">
                   <span className="text-sm text-neutral-400 font-mono">/0.3</span>
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black group-hover:text-neutral-500 transition-colors duration-300">
-                    Foundry
+                    Intelligence
                   </h3>
                 </div>
                 <p className="text-neutral-500 text-base md:text-lg md:max-w-md md:text-right md:pl-4">
-                  The central system for orchestrating decisions across Human+AI teams
+                  Our data systems give your company the newest datasets available so your decision making is at its best
                 </p>
               </div>
             </motion.a>
 
-            {/* Ontology */}
+            {/* Development */}
             <motion.a
               href="#"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="group block border-t border-neutral-200 py-8 md:py-10"
+              className="group block border-t border-neutral-200 border-b py-8 md:py-10"
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                 <div className="flex items-baseline gap-4">
                   <span className="text-sm text-neutral-400 font-mono">/0.4</span>
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black group-hover:text-neutral-500 transition-colors duration-300">
-                    Ontology
+                    Development
                   </h3>
                 </div>
                 <p className="text-neutral-500 text-base md:text-lg md:max-w-md md:text-right md:pl-4">
-                  Autonomously deploy, monitor, and manage software across any environment
+                  We will create anything your company needs
                 </p>
-              </div>
-            </motion.a>
-
-            {/* Apollo */}
-            <motion.a
-              href="#"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.25 }}
-              className="group block border-t border-neutral-200 border-b py-8 md:py-10"
-            >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                <div className="flex items-baseline gap-4">
-                  <span className="text-sm text-neutral-400 font-mono">/0.5</span>
-                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black group-hover:text-neutral-500 transition-colors duration-300">
-                    Apollo
-                  </h3>
-                </div>
               </div>
             </motion.a>
           </div>
