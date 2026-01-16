@@ -27,6 +27,7 @@ const insightCards = [
     title: "Sovereign AI: From managing risk to accelerating growth",
     description: "Sovereign AI isn't just a control play—it's a game-changer for global competitiveness and cultural value. Discover how organizations are moving fast to secure their advantage and shape AI's future, following four bold moves.",
     color: "bg-gradient-to-br from-teal-600 to-teal-900",
+    image: "/images/card3.jpg",
   },
   {
     category: "Research Report",
@@ -83,12 +84,12 @@ export function PremiumTimelineLanding({
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl bg-gradient-to-r from-black via-neutral-800 to-neutral-600 bg-clip-text text-transparent">
-              Global Expertise
+              Turning Complex Systems
               <br />
-              <span className="text-black">On Your Computer</span>
+              <span className="text-black">Into Decisive Advantage</span>
             </h1>
             <p className="mt-6 text-lg text-neutral-600 md:text-xl max-w-2xl mx-auto">
-              The premier marketplace for technical procurement. Post missions, receive world-class deliverables, pay for results.
+              Cybersecurity, AI, and intelligence-driven IT for organizations that cannot afford uncertainty.
             </p>
           </motion.div>
         </div>
