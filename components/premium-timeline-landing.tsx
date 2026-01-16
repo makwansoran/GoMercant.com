@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Code, Box, Database, Palette, Zap, ChevronLeft, ChevronRight, Star, Users, Shield, Rocket, TrendingUp, TrendingDown, Minus } from "lucide-react"
+import { Star, Users, Shield, Rocket, TrendingUp, TrendingDown, Minus } from "lucide-react"
 
 // Stock market style ticker data
 const tickerItems = [
@@ -20,48 +20,6 @@ const tickerItems = [
   { id: "CV-091", title: "Lane Detection", company: "Mobileye", bounty: 3100, change: 9.4, type: "Vision" },
 ]
 
-const featuredMissions = [
-  {
-    title: "LIDAR Point Cloud Processing",
-    company: "Tesla Autonomy",
-    bounty: "$2,500",
-    type: "Code",
-    icon: Code,
-    color: "from-blue-500 to-cyan-500",
-  },
-  {
-    title: "Drone Motor Mount Design",
-    company: "FPV Dynamics",
-    bounty: "$800",
-    type: "CAD",
-    icon: Box,
-    color: "from-orange-500 to-amber-500",
-  },
-  {
-    title: "Synthetic Training Data",
-    company: "Amazon Robotics",
-    bounty: "$1,800",
-    type: "Data",
-    icon: Database,
-    color: "from-green-500 to-emerald-500",
-  },
-  {
-    title: "Robot Dashboard UI",
-    company: "Boston Dynamics",
-    bounty: "$1,200",
-    type: "Design",
-    icon: Palette,
-    color: "from-purple-500 to-pink-500",
-  },
-  {
-    title: "Sensor Fusion Algorithm",
-    company: "Waymo",
-    bounty: "$3,500",
-    type: "Autonomous",
-    icon: Zap,
-    color: "from-red-500 to-orange-500",
-  },
-]
 
 const stats = [
   { value: "500+", label: "Active Missions" },
@@ -118,16 +76,7 @@ export function PremiumTimelineLanding({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  const [currentSlide, setCurrentSlide] = useState(0)
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
-
-  // Auto-advance slideshow
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % featuredMissions.length)
-    }, 4000)
-    return () => clearInterval(timer)
-  }, [])
 
   // Auto-advance testimonials
   useEffect(() => {
@@ -136,9 +85,6 @@ export function PremiumTimelineLanding({
     }, 5000)
     return () => clearInterval(timer)
   }, [])
-
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % featuredMissions.length)
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + featuredMissions.length) % featuredMissions.length)
 
   return (
     <div className={cn("bg-white text-black min-h-screen", className)} {...props}>
@@ -159,7 +105,6 @@ export function PremiumTimelineLanding({
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-sm font-medium text-neutral-600 hover:text-black transition-colors">Features</a>
-            <a href="#missions" className="text-sm font-medium text-neutral-600 hover:text-black transition-colors">Missions</a>
             <a href="#testimonials" className="text-sm font-medium text-neutral-600 hover:text-black transition-colors">Testimonials</a>
             <a
               href="/get-started"
@@ -256,80 +201,6 @@ export function PremiumTimelineLanding({
         </div>
       </section>
 
-      {/* Featured Missions Slideshow */}
-      <section id="missions" className="py-24 px-6 bg-neutral-50">
-        <div className="mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Featured Missions</h2>
-            <p className="text-neutral-600 max-w-2xl mx-auto">
-              Real opportunities from top companies. New missions posted every day.
-            </p>
-          </div>
-
-          {/* Slideshow */}
-          <div className="relative">
-            <div className="overflow-hidden rounded-2xl bg-white shadow-xl">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentSlide}
-                  initial={{ opacity: 0, x: 100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -100 }}
-                  transition={{ duration: 0.5 }}
-                  className="p-8 md:p-12"
-                >
-                  {(() => {
-                    const mission = featuredMissions[currentSlide]
-                    const Icon = mission.icon
-                    return (
-                      <div className="flex flex-col md:flex-row items-center gap-8">
-                        <div className={`w-24 h-24 rounded-2xl bg-gradient-to-br ${mission.color} flex items-center justify-center flex-shrink-0`}>
-                          <Icon className="w-12 h-12 text-white" />
-                        </div>
-                        <div className="flex-1 text-center md:text-left">
-                          <div className="text-sm font-medium text-neutral-500 mb-2">{mission.type}</div>
-                          <h3 className="text-2xl md:text-3xl font-bold text-black mb-2">{mission.title}</h3>
-                          <p className="text-neutral-600 mb-4">Posted by {mission.company}</p>
-                          <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full font-bold text-lg">
-                            {mission.bounty} Bounty
-                          </div>
-                        </div>
-                      </div>
-                    )
-                  })()}
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {/* Navigation Arrows */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-neutral-50 transition-colors"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center hover:bg-neutral-50 transition-colors"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-
-            {/* Dots */}
-            <div className="flex justify-center gap-2 mt-6">
-              {featuredMissions.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentSlide ? 'w-8 bg-black' : 'bg-neutral-300 hover:bg-neutral-400'
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Features Section */}
       <section id="features" className="py-24 px-6 bg-white">
