@@ -184,120 +184,176 @@ export function PremiumTimelineLanding({
           {/* Services List */}
           <div className="space-y-0">
             {/* Our Services - Main */}
-            <motion.a
-              href="#"
+            <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="group block border-t border-neutral-200 py-8 md:py-10"
+              className="group block border-t border-neutral-200 py-6 md:py-8 hover:py-10 md:hover:py-14 transition-all duration-500 ease-out cursor-pointer"
             >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+              <div className="flex flex-col gap-4">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black group-hover:text-neutral-500 transition-colors duration-300">
                   Our Services
                 </h2>
-                <p className="text-neutral-500 text-base md:text-lg md:max-w-md md:text-right">
-                  Comprehensive cybersecurity and AI solutions for modern enterprises
-                </p>
+                <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500 ease-out opacity-0 group-hover:opacity-100">
+                  <p className="text-neutral-500 text-base md:text-lg max-w-2xl pt-2">
+                    Comprehensive cybersecurity and AI solutions for modern enterprises. We deliver end-to-end security, automation, intelligence, and development services tailored to your organization&apos;s needs.
+                  </p>
+                </div>
               </div>
-            </motion.a>
+            </motion.div>
 
             {/* Cyber Surveillance */}
-            <motion.a
-              href="#"
+            <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.05 }}
-              className="group block border-t border-neutral-200 py-8 md:py-10"
+              className="group block border-t border-neutral-200 py-6 md:py-8 hover:py-10 md:hover:py-14 transition-all duration-500 ease-out cursor-pointer"
             >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+              <div className="flex flex-col gap-4">
                 <div className="flex items-baseline gap-4">
                   <span className="text-sm text-neutral-400 font-mono">/0.1</span>
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black group-hover:text-neutral-500 transition-colors duration-300">
                     Cyber Surveillance
                   </h3>
                 </div>
-                <p className="text-neutral-500 text-base md:text-lg md:max-w-md md:text-right md:pl-4">
-                  We secure your platform with 24/7 surveillance and constant auditing
-                </p>
+                <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500 ease-out opacity-0 group-hover:opacity-100">
+                  <p className="text-neutral-500 text-base md:text-lg max-w-2xl pt-2 pl-12">
+                    We secure your platform with 24/7 surveillance and constant auditing. Our advanced threat detection systems monitor your infrastructure around the clock, identifying vulnerabilities before they become breaches.
+                  </p>
+                </div>
               </div>
-            </motion.a>
+            </motion.div>
 
             {/* Automation */}
-            <motion.a
-              href="#"
+            <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="group block border-t border-neutral-200 py-8 md:py-10"
+              className="group block border-t border-neutral-200 py-6 md:py-8 hover:py-10 md:hover:py-14 transition-all duration-500 ease-out cursor-pointer"
             >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+              <div className="flex flex-col gap-4">
                 <div className="flex items-baseline gap-4">
                   <span className="text-sm text-neutral-400 font-mono">/0.2</span>
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black group-hover:text-neutral-500 transition-colors duration-300">
                     Automation
                   </h3>
                 </div>
-                <p className="text-neutral-500 text-base md:text-lg md:max-w-md md:text-right md:pl-4">
-                  Anything a human can do can be automated
-                </p>
+                <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500 ease-out opacity-0 group-hover:opacity-100">
+                  <p className="text-neutral-500 text-base md:text-lg max-w-2xl pt-2 pl-12">
+                    Anything a human can do can be automated. We build intelligent workflows that eliminate repetitive tasks, reduce human error, and dramatically increase operational efficiency across your organization.
+                  </p>
+                </div>
               </div>
-            </motion.a>
+            </motion.div>
 
             {/* Intelligence */}
-            <motion.a
-              href="#"
+            <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="group block border-t border-neutral-200 py-8 md:py-10"
+              className="group block border-t border-neutral-200 py-6 md:py-8 hover:py-10 md:hover:py-14 transition-all duration-500 ease-out cursor-pointer"
             >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+              <div className="flex flex-col gap-4">
                 <div className="flex items-baseline gap-4">
                   <span className="text-sm text-neutral-400 font-mono">/0.3</span>
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black group-hover:text-neutral-500 transition-colors duration-300">
                     Intelligence
                   </h3>
                 </div>
-                <p className="text-neutral-500 text-base md:text-lg md:max-w-md md:text-right md:pl-4">
-                  Our data systems give your company the newest datasets available so your decision making is at its best
-                </p>
+                <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500 ease-out opacity-0 group-hover:opacity-100">
+                  <p className="text-neutral-500 text-base md:text-lg max-w-2xl pt-2 pl-12">
+                    Our data systems give your company the newest datasets available so your decision making is at its best. Real-time analytics and AI-powered insights keep you ahead of the competition.
+                  </p>
+                </div>
               </div>
-            </motion.a>
+            </motion.div>
 
             {/* Development */}
-            <motion.a
-              href="#"
+            <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="group block border-t border-neutral-200 border-b py-8 md:py-10"
+              className="group block border-t border-neutral-200 border-b py-6 md:py-8 hover:py-10 md:hover:py-14 transition-all duration-500 ease-out cursor-pointer"
             >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+              <div className="flex flex-col gap-4">
                 <div className="flex items-baseline gap-4">
                   <span className="text-sm text-neutral-400 font-mono">/0.4</span>
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black group-hover:text-neutral-500 transition-colors duration-300">
                     Development
                   </h3>
                 </div>
-                <p className="text-neutral-500 text-base md:text-lg md:max-w-md md:text-right md:pl-4">
-                  We will create anything your company needs
-                </p>
+                <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500 ease-out opacity-0 group-hover:opacity-100">
+                  <p className="text-neutral-500 text-base md:text-lg max-w-2xl pt-2 pl-12">
+                    We will create anything your company needs. From custom software solutions to enterprise platforms, our development team brings your vision to life with cutting-edge technology.
+                  </p>
+                </div>
               </div>
-            </motion.a>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-neutral-100 bg-white">
-        <div className="mx-auto max-w-6xl text-center">
-          <div className="text-sm text-neutral-500">
-            © {new Date().getFullYear()} GoMercant. All rights reserved.
+      <footer className="bg-black text-white py-16 md:py-24 px-6">
+        <div className="mx-auto max-w-6xl">
+          {/* Footer Top */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            {/* Brand */}
+            <div className="md:col-span-2">
+              <div className="flex items-center gap-2 mb-6">
+                <Image 
+                  src="/favicon.png" 
+                  alt="GoMercant Logo" 
+                  width={40} 
+                  height={40}
+                  className="object-contain brightness-0 invert"
+                />
+                <span className="text-2xl font-bold tracking-tight">
+                  GoMercant
+                </span>
+              </div>
+              <p className="text-neutral-400 text-base max-w-md leading-relaxed">
+                Cybersecurity and AI consulting for critical systems. We protect and empower enterprises with cutting-edge technology solutions.
+              </p>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">Services</h4>
+              <ul className="space-y-3">
+                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Cyber Surveillance</a></li>
+                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Automation</a></li>
+                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Intelligence</a></li>
+                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Development</a></li>
+              </ul>
+            </div>
+
+            {/* Company */}
+            <div>
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">Company</h4>
+              <ul className="space-y-3">
+                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">About Us</a></li>
+                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Careers</a></li>
+                <li><a href="/contact" className="text-neutral-300 hover:text-white transition-colors">Contact</a></li>
+                <li><a href="/login" className="text-neutral-300 hover:text-white transition-colors">Client Login</a></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Footer Bottom */}
+          <div className="pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-sm text-neutral-500">
+              © {new Date().getFullYear()} GoMercant. All rights reserved.
+            </div>
+            <div className="flex items-center gap-6">
+              <a href="#" className="text-sm text-neutral-500 hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="text-sm text-neutral-500 hover:text-white transition-colors">Terms of Service</a>
+            </div>
           </div>
         </div>
       </footer>
