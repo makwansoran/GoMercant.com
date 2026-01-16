@@ -312,8 +312,112 @@ export function PremiumTimelineLanding({
         </div>
       </section>
 
+      {/* Partner Resources Section */}
+      <section className="py-20 md:py-28 px-6 bg-white overflow-hidden">
+        <div className="mx-auto max-w-6xl mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
+            <span className="inline-block text-sm font-semibold uppercase tracking-wider text-orange-500 mb-4">
+              Trusted Technology Stack
+            </span>
+            <h2 className="text-3xl md:text-4xl font-medium text-black">
+              Our Partner Resources
+            </h2>
+          </motion.div>
+        </div>
+
+        {/* Logo Marquee - Row 1 */}
+        <div className="relative mb-8">
+          <div className="flex animate-marquee">
+            {[
+              { name: "CrowdStrike", domain: "crowdstrike.com" },
+              { name: "Palo Alto Networks", domain: "paloaltonetworks.com" },
+              { name: "Splunk", domain: "splunk.com" },
+              { name: "Fortinet", domain: "fortinet.com" },
+              { name: "SentinelOne", domain: "sentinelone.com" },
+              { name: "Cloudflare", domain: "cloudflare.com" },
+              { name: "Okta", domain: "okta.com" },
+              { name: "Zscaler", domain: "zscaler.com" },
+              { name: "Datadog", domain: "datadoghq.com" },
+              { name: "Elastic", domain: "elastic.co" },
+              { name: "CrowdStrike", domain: "crowdstrike.com" },
+              { name: "Palo Alto Networks", domain: "paloaltonetworks.com" },
+              { name: "Splunk", domain: "splunk.com" },
+              { name: "Fortinet", domain: "fortinet.com" },
+              { name: "SentinelOne", domain: "sentinelone.com" },
+              { name: "Cloudflare", domain: "cloudflare.com" },
+              { name: "Okta", domain: "okta.com" },
+              { name: "Zscaler", domain: "zscaler.com" },
+              { name: "Datadog", domain: "datadoghq.com" },
+              { name: "Elastic", domain: "elastic.co" },
+            ].map((partner, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 mx-8 flex items-center justify-center h-16 w-40 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
+              >
+                <img
+                  src={`https://logo.clearbit.com/${partner.domain}`}
+                  alt={partner.name}
+                  className="max-h-10 max-w-full object-contain"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none'
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Logo Marquee - Row 2 (Reverse Direction) */}
+        <div className="relative">
+          <div className="flex animate-marquee-reverse">
+            {[
+              { name: "Microsoft", domain: "microsoft.com" },
+              { name: "Google Cloud", domain: "cloud.google.com" },
+              { name: "AWS", domain: "aws.amazon.com" },
+              { name: "NVIDIA", domain: "nvidia.com" },
+              { name: "OpenAI", domain: "openai.com" },
+              { name: "Anthropic", domain: "anthropic.com" },
+              { name: "Snowflake", domain: "snowflake.com" },
+              { name: "MongoDB", domain: "mongodb.com" },
+              { name: "HashiCorp", domain: "hashicorp.com" },
+              { name: "GitLab", domain: "gitlab.com" },
+              { name: "Microsoft", domain: "microsoft.com" },
+              { name: "Google Cloud", domain: "cloud.google.com" },
+              { name: "AWS", domain: "aws.amazon.com" },
+              { name: "NVIDIA", domain: "nvidia.com" },
+              { name: "OpenAI", domain: "openai.com" },
+              { name: "Anthropic", domain: "anthropic.com" },
+              { name: "Snowflake", domain: "snowflake.com" },
+              { name: "MongoDB", domain: "mongodb.com" },
+              { name: "HashiCorp", domain: "hashicorp.com" },
+              { name: "GitLab", domain: "gitlab.com" },
+            ].map((partner, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 mx-8 flex items-center justify-center h-16 w-40 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
+              >
+                <img
+                  src={`https://logo.clearbit.com/${partner.domain}`}
+                  alt={partner.name}
+                  className="max-h-10 max-w-full object-contain"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none'
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* News Section */}
-      <section className="py-24 md:py-32 px-6 bg-white">
+      <section className="py-24 md:py-32 px-6 bg-neutral-50">
         <div className="mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
