@@ -364,8 +364,10 @@ export function PremiumTimelineLanding({
                         // Fallback to PNG version
                         const target = e.currentTarget;
                         const pngUrl = partner.logoUrl.replace('.svg', '.png');
-                        target.src = pngUrl;
-                        target.onError = () => {
+                        if (target.src !== pngUrl) {
+                          target.src = pngUrl;
+                        } else {
+                          // If PNG also fails, show fallback text
                           target.style.display = 'none';
                           const parent = target.parentElement;
                           if (parent && !parent.querySelector('.fallback-text')) {
@@ -374,7 +376,7 @@ export function PremiumTimelineLanding({
                             fallback.textContent = partner.name;
                             parent.appendChild(fallback);
                           }
-                        };
+                        }
                       }}
                     />
                   </div>
@@ -424,8 +426,10 @@ export function PremiumTimelineLanding({
                         // Fallback to PNG version
                         const target = e.currentTarget;
                         const pngUrl = partner.logoUrl.replace('.svg', '.png');
-                        target.src = pngUrl;
-                        target.onError = () => {
+                        if (target.src !== pngUrl) {
+                          target.src = pngUrl;
+                        } else {
+                          // If PNG also fails, show fallback text
                           target.style.display = 'none';
                           const parent = target.parentElement;
                           if (parent && !parent.querySelector('.fallback-text')) {
@@ -434,7 +438,7 @@ export function PremiumTimelineLanding({
                             fallback.textContent = partner.name;
                             parent.appendChild(fallback);
                           }
-                        };
+                        }
                       }}
                     />
                   </div>
