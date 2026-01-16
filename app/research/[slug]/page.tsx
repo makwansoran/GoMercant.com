@@ -136,6 +136,41 @@ const researchReports: Record<string, {
       }
     ],
   },
+  "grid-under-siege": {
+    title: "Grid Under Siege: Critical Infrastructure and Power Grid Vulnerabilities",
+    category: "Research Report",
+    image: "/images/card5.webp",
+    sections: [
+      {
+        heading: "Abstract",
+        content: "In 2026, the convergence of legacy industrial control systems (ICS), accelerated digitalization, and sophisticated nation-state actors has transformed power grids into prime targets for cyber warfare. This report analyzes the systemic vulnerabilities in electrical infrastructure, from SCADA systems to smart grid endpoints, and examines how adversaries are exploiting the IT/OT convergence to achieve kinetic effects through digital means. We propose a defense-in-depth framework for protecting critical energy infrastructure against the evolving threat landscape."
+      },
+      {
+        heading: "1. The Anatomy of Grid Vulnerability: Legacy Meets Modernity",
+        content: "Power grids were designed in an era when \"air gaps\" provided security through isolation. The 2026 reality is fundamentally different.\n\n**The OT/IT Convergence Crisis:** As utilities have connected Operational Technology (OT) systems—substations, generation plants, and distribution networks—to corporate IT networks for efficiency gains, they have inadvertently created attack pathways from the internet directly to physical infrastructure.\n\n**Protocol Insecurity by Design:** Industrial protocols like Modbus, DNP3, and IEC 61850 were engineered for reliability, not security. Many lack authentication entirely. An attacker who gains network access can issue commands indistinguishable from legitimate operator instructions.\n\n**The 30-Year Lifecycle Problem:** Unlike IT systems refreshed every 3-5 years, grid components operate for decades. This means 2026 grids contain equipment designed in the 1990s, running unpatched operating systems and communicating over protocols with known vulnerabilities."
+      },
+      {
+        heading: "2. Attack Vectors: From Phishing to Physical Destruction",
+        content: "The threat to power grids spans the full spectrum from opportunistic criminals to state-sponsored actors with destructive intent.\n\n**Supply Chain Infiltration:** Adversaries are compromising grid equipment before installation. Firmware backdoors in transformers, protection relays, and smart meters provide persistent access that survives security audits. The 2026 discovery of compromised Chinese-manufactured inverters in European solar installations demonstrated this risk at scale.\n\n**The Aurora Vulnerability:** First demonstrated in 2007, the \"Aurora\" attack—rapidly opening and closing circuit breakers to damage generators—remains viable against many substations. Modern variants use precise timing to cause cascading failures across interconnected grids.\n\n**Ransomware Evolution:** Criminal groups have moved beyond data encryption to \"OT ransomware\" that threatens to physically damage equipment or cause blackouts unless payment is received. The 2025 Colonial Pipeline successor attacks showed that energy infrastructure is now a primary extortion target."
+      },
+      {
+        heading: "3. Case Studies: Lessons from Grid Attacks",
+        content: "Historical incidents provide critical intelligence for defense planning.\n\n**Ukraine 2015-2016:** The first confirmed cyberattacks causing power outages demonstrated that well-resourced adversaries could achieve physical effects through cyber means. Attackers used spear-phishing to gain access, then pivoted through corporate networks to reach SCADA systems.\n\n**The 2024 Nordic Grid Probing:** Coordinated reconnaissance activity across Scandinavian power infrastructure revealed pre-positioned access in multiple utilities. Attackers had mapped network topologies and identified critical control points without triggering alerts.\n\n**Solar Inverter Exploitation (2025):** A vulnerability in widely-deployed residential solar inverters allowed attackers to simultaneously disconnect thousands of units, causing grid frequency instability. This demonstrated how distributed energy resources create new attack surfaces."
+      },
+      {
+        heading: "4. The Smart Grid Paradox: Efficiency vs. Attack Surface",
+        content: "Modernization initiatives, while necessary for renewable integration and efficiency, dramatically expand the threat landscape.\n\n**Smart Meter Vulnerabilities:** With millions of endpoints, Advanced Metering Infrastructure (AMI) creates an unprecedented attack surface. Compromised meters can be used for demand manipulation attacks that destabilize grid frequency.\n\n**Distributed Energy Resources (DER):** Solar panels, battery storage, and electric vehicle chargers create bidirectional power flows and millions of potential entry points. Each internet-connected inverter is a potential gateway to grid control systems.\n\n**Cloud Dependencies:** Grid operators increasingly rely on cloud services for analytics, forecasting, and even real-time control. A compromise of these platforms could affect multiple utilities simultaneously."
+      },
+      {
+        heading: "5. Defensive Framework for Critical Infrastructure",
+        content: "Protecting power grids requires a paradigm shift from perimeter defense to assumed breach and resilience.\n\n**Network Segmentation and Zero Trust:** OT networks must be strictly segmented from IT environments, with all cross-boundary traffic inspected and authenticated. Zero Trust principles must extend to the control plane—no command should be trusted simply because it originates from an \"internal\" source.\n\n**Continuous OT Monitoring:** Passive monitoring solutions that understand industrial protocols can detect anomalous commands without impacting operational safety. Behavioral baselines enable identification of reconnaissance and lateral movement.\n\n**Incident Response Planning:** Utilities must develop and exercise response plans that account for cyber-physical scenarios. This includes manual override procedures, isolation protocols, and coordination with national cyber defense agencies.\n\n**Supply Chain Verification:** Critical components must undergo rigorous security testing before deployment. Firmware integrity verification, hardware inspection, and vendor security assessments are essential for new installations."
+      },
+      {
+        heading: "Conclusion",
+        content: "Power grid security in 2026 is a matter of national security. The asymmetry between the cost of attack and the cost of defense favors adversaries, while the consequences of successful attacks—blackouts affecting millions, economic disruption, and potential loss of life—demand urgent action. Organizations responsible for critical infrastructure must invest in security capabilities proportionate to the threat they face. The grid that powers modern society cannot be defended with yesterday's security models."
+      }
+    ],
+  },
 }
 
 export default function ResearchPage() {

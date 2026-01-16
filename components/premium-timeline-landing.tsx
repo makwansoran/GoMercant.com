@@ -31,6 +31,12 @@ const insightCards = [
     image: "/images/card4.jpg",
     slug: "shadow-ai",
   },
+  {
+    category: "Research Report",
+    title: "Grid Under Siege: Critical Infrastructure and Power Grid Vulnerabilities",
+    image: "/images/card5.webp",
+    slug: "grid-under-siege",
+  },
 ]
 
 export function PremiumTimelineLanding({
@@ -94,7 +100,7 @@ export function PremiumTimelineLanding({
       {/* Insight Cards Section */}
       <section className="py-16 px-6 bg-neutral-50">
         <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
             {insightCards.map((card, index) => (
               <Link key={index} href={`/research/${card.slug}`}>
                 <motion.div
