@@ -23,13 +23,13 @@ export function PremiumTimelineLanding({
           <div className="flex items-center gap-2">
             <Image 
               src="/favicon.png" 
-              alt="GoMercant Logo" 
+              alt="SPECTR Logo" 
               width={32} 
               height={32}
               className="object-contain"
             />
             <span className="text-2xl font-bold tracking-tight text-black">
-              GoMercant
+              SPECTR
             </span>
           </div>
           <div className="hidden md:flex items-center gap-8">

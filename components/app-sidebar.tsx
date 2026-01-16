@@ -103,7 +103,7 @@ export function AppSidebar({ activeView = 'messages', onNavigate, ...props }: Ap
             >
               <Image
                 src="/favicon.png"
-                alt="GoMercant Logo"
+                alt="SPECTR Logo"
                 width={32}
                 height={32}
                 className="object-contain"

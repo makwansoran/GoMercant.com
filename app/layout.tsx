@@ -16,7 +16,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'GoMercant - Technical Procurement Marketplace',
+  title: 'SPECTR - Technical Procurement Marketplace',
   description: 'Post technical missions and get the best work from our community. No hiring, just results.',
   icons: {
     icon: '/favicon.png',

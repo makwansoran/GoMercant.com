@@ -27,13 +27,13 @@ export function LandingForm({
                 <div className="flex items-center gap-3">
                   <Image 
                     src="/favicon.png" 
-                    alt="GoMercant Logo" 
+                    alt="SPECTR Logo" 
                     width={40} 
                     height={40}
                     className="object-contain"
                   />
                   <h1 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-gray-900 to-gray-700 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent">
-                    GoMercant
+                    SPECTR
                   </h1>
                 </div>
               </div>
@@ -97,7 +97,7 @@ export function LandingForm({
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-blue-500/10 to-pink-500/10" />
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center p-8">
-                <h2 className="text-2xl font-bold mb-4">Welcome to GoMercant</h2>
+                <h2 className="text-2xl font-bold mb-4">Welcome to SPECTR</h2>
                 <p className="text-muted-foreground">Connect with top talent and get your projects done</p>
               </div>
             </div>

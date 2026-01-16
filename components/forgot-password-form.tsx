@@ -65,12 +65,12 @@ export function ForgotPasswordForm({
                 <div className="flex items-center gap-2 mb-4">
                   <Image 
                     src="/favicon.png" 
-                    alt="GoMercant Logo" 
+                    alt="SPECTR Logo" 
                     width={32} 
                     height={32}
                     className="object-contain"
                   />
-                  <span className="text-xl font-semibold">GoMercant</span>
+                  <span className="text-xl font-semibold">SPECTR</span>
                 </div>
                 <h1 className="text-2xl font-bold">Forgot password?</h1>
                 <p className="text-balance text-muted-foreground">

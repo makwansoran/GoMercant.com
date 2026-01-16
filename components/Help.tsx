@@ -60,8 +60,8 @@ interface GuideItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "What is GoMercant?",
-    answer: "GoMercant is a professional platform that connects businesses with skilled professionals through missions. Businesses can post tasks and projects, while professionals can browse, accept, and complete missions to earn rewards and build their reputation.",
+    question: "What is SPECTR?",
+    answer: "SPECTR is a professional platform that connects businesses with skilled professionals through missions. Businesses can post tasks and projects, while professionals can browse, accept, and complete missions to earn rewards and build their reputation.",
     category: "general"
   },
   {
@@ -105,7 +105,7 @@ const faqData: FAQItem[] = [
     category: "general"
   },
   {
-    question: "Is my data secure on GoMercant?",
+    question: "Is my data secure on SPECTR?",
     answer: "Yes, we use industry-standard encryption for all data transmission and storage. Your personal information is never shared without consent, and we comply with GDPR and other privacy regulations.",
     category: "security"
   },
@@ -115,7 +115,7 @@ const faqData: FAQItem[] = [
     category: "account"
   },
   {
-    question: "What are the fees for using GoMercant?",
+    question: "What are the fees for using SPECTR?",
     answer: "We charge a small service fee on completed missions. The exact percentage varies based on your account tier and mission value. Premium members enjoy reduced fees and additional features.",
     category: "payments"
   }
@@ -124,7 +124,7 @@ const faqData: FAQItem[] = [
 const guides: GuideItem[] = [
   {
     title: "Getting Started",
-    description: "Learn the basics of using GoMercant",
+    description: "Learn the basics of using SPECTR",
     icon: Rocket,
     color: "from-blue-500 to-cyan-500",
     steps: [
@@ -300,7 +300,7 @@ export const Help: React.FC = () => {
                 How can we help?
               </h1>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Find answers, learn best practices, and get the most out of GoMercant.
+                Find answers, learn best practices, and get the most out of SPECTR.
               </p>
             </div>
 
@@ -342,7 +342,7 @@ export const Help: React.FC = () => {
         <motion.div variants={itemVariants}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { icon: Rocket, label: 'Getting Started', description: 'New to GoMercant?', color: 'from-blue-500 to-cyan-500', view: 'guide-0' },
+              { icon: Rocket, label: 'Getting Started', description: 'New to SPECTR?', color: 'from-blue-500 to-cyan-500', view: 'guide-0' },
               { icon: Target, label: 'Create Mission', description: 'Post a new task', color: 'from-green-500 to-emerald-500', view: 'create' },
               { icon: Headphones, label: 'Contact Support', description: 'Get personal help', color: 'from-purple-500 to-violet-500', view: 'support' },
               { icon: Bell, label: "What's New", description: 'Latest updates', color: 'from-orange-500 to-amber-500', view: 'news' },
@@ -759,7 +759,7 @@ export const Help: React.FC = () => {
                 </div>
                 <div>
                   <CardTitle className="text-lg">Keyboard Shortcuts</CardTitle>
-                  <CardDescription>Navigate GoMercant like a pro</CardDescription>
+                  <CardDescription>Navigate SPECTR like a pro</CardDescription>
                 </div>
               </div>
             </CardHeader>
@@ -811,7 +811,7 @@ export const Help: React.FC = () => {
             </a>
           </div>
           <p className="text-sm text-muted-foreground">
-            GoMercant v1.0.0 • Made with <Heart className="h-3 w-3 inline text-red-500 fill-red-500" /> for professionals worldwide
+            SPECTR v1.0.0 • Made with <Heart className="h-3 w-3 inline text-red-500 fill-red-500" /> for professionals worldwide
           </p>
         </motion.div>
       </motion.div>

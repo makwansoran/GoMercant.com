@@ -1,4 +1,4 @@
-# GoMercant - Technical Procurement Marketplace
+# SPECTR - Technical Procurement Marketplace
 
 A modern, iOS-native style technical procurement marketplace platform built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
 
