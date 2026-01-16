@@ -34,6 +34,7 @@ const insightCards = [
     title: "Top Banking Trends for 2026",
     description: "GoMercant's Banking Trends 2026 reveals how agentic AI, smart money and shifting competition will reshape customer experience and growth.",
     color: "bg-gradient-to-br from-indigo-600 to-indigo-900",
+    image: "/images/card4.jpg",
   },
 ]
 
@@ -84,12 +85,12 @@ export function PremiumTimelineLanding({
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl bg-gradient-to-r from-black via-neutral-800 to-neutral-600 bg-clip-text text-transparent">
-              Turning Complex Systems
+              Security. Control.
               <br />
-              <span className="text-black">Into Decisive Advantage</span>
+              <span className="text-black">Intelligence.</span>
             </h1>
             <p className="mt-6 text-lg text-neutral-600 md:text-xl max-w-2xl mx-auto">
-              Cybersecurity, AI, and intelligence-driven IT for organizations that cannot afford uncertainty.
+              Cybersecurity and AI consulting for critical systems.
             </p>
           </motion.div>
         </div>
