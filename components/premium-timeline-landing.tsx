@@ -299,13 +299,8 @@ export function PremiumTimelineLanding({
               <span className="text-neutral-500">We can do anything.&rdquo;</span>
             </blockquote>
             <div className="flex flex-col items-center gap-2">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white text-xl font-bold">
-                MI
-              </div>
-              <div className="mt-4">
-                <p className="text-lg font-semibold text-black">Makwan Ismail</p>
-                <p className="text-neutral-500">Founder & CEO, GoMercant</p>
-              </div>
+              <p className="text-lg font-semibold text-black">Makwan Ismail</p>
+              <p className="text-neutral-500">Founder & CEO, GoMercant</p>
             </div>
           </motion.div>
         </div>
@@ -397,21 +392,6 @@ export function PremiumTimelineLanding({
             </motion.article>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-12 text-center"
-          >
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 text-black font-semibold hover:text-orange-500 transition-colors"
-            >
-              View all news
-              <ChevronRight className="w-5 h-5" />
-            </a>
-          </motion.div>
         </div>
       </section>
 
@@ -437,13 +417,13 @@ export function PremiumTimelineLanding({
               <p className="text-neutral-400 text-lg leading-relaxed mb-8 max-w-lg">
                 We&apos;re building the future of cybersecurity and AI. Join a team of exceptional individuals who believe that nothing is impossible.
               </p>
-              <a
-                href="#"
+              <Link
+                href="/careers"
                 className="inline-flex items-center justify-center rounded-full bg-orange-500 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-orange-600 hover:scale-105"
               >
                 View Open Positions
                 <ChevronRight className="w-5 h-5 ml-2" />
-              </a>
+              </Link>
             </motion.div>
 
             {/* Right - Job Listings Preview */}
@@ -455,7 +435,7 @@ export function PremiumTimelineLanding({
               className="space-y-4"
             >
               {/* Job Card 1 */}
-              <div className="group p-6 border border-neutral-800 rounded-xl hover:border-orange-500/50 hover:bg-neutral-900/50 transition-all cursor-pointer">
+              <Link href="/careers" className="group block p-6 border border-neutral-800 rounded-xl hover:border-orange-500/50 hover:bg-neutral-900/50 transition-all">
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="text-xl font-semibold text-white group-hover:text-orange-500 transition-colors">
                     Senior Security Engineer
@@ -469,10 +449,10 @@ export function PremiumTimelineLanding({
                   <span className="px-3 py-1 bg-neutral-800 rounded-full text-xs text-neutral-300">Full-time</span>
                   <span className="px-3 py-1 bg-neutral-800 rounded-full text-xs text-neutral-300">Remote</span>
                 </div>
-              </div>
+              </Link>
 
               {/* Job Card 2 */}
-              <div className="group p-6 border border-neutral-800 rounded-xl hover:border-orange-500/50 hover:bg-neutral-900/50 transition-all cursor-pointer">
+              <Link href="/careers" className="group block p-6 border border-neutral-800 rounded-xl hover:border-orange-500/50 hover:bg-neutral-900/50 transition-all">
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="text-xl font-semibold text-white group-hover:text-orange-500 transition-colors">
                     AI/ML Engineer
@@ -486,10 +466,10 @@ export function PremiumTimelineLanding({
                   <span className="px-3 py-1 bg-neutral-800 rounded-full text-xs text-neutral-300">Full-time</span>
                   <span className="px-3 py-1 bg-neutral-800 rounded-full text-xs text-neutral-300">Hybrid</span>
                 </div>
-              </div>
+              </Link>
 
               {/* Job Card 3 */}
-              <div className="group p-6 border border-neutral-800 rounded-xl hover:border-orange-500/50 hover:bg-neutral-900/50 transition-all cursor-pointer">
+              <Link href="/careers" className="group block p-6 border border-neutral-800 rounded-xl hover:border-orange-500/50 hover:bg-neutral-900/50 transition-all">
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="text-xl font-semibold text-white group-hover:text-orange-500 transition-colors">
                     Full-Stack Developer
@@ -503,7 +483,7 @@ export function PremiumTimelineLanding({
                   <span className="px-3 py-1 bg-neutral-800 rounded-full text-xs text-neutral-300">Full-time</span>
                   <span className="px-3 py-1 bg-neutral-800 rounded-full text-xs text-neutral-300">On-site</span>
                 </div>
-              </div>
+              </Link>
             </motion.div>
           </div>
         </div>
