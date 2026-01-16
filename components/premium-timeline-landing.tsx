@@ -329,59 +329,33 @@ export function PremiumTimelineLanding({
         <div className="relative mb-8">
           <div className="flex animate-marquee">
             {[
-              { name: "CrowdStrike", logoUrl: "https://logo.svgcdn.com/logos/crowdstrike.svg" },
-              { name: "Microsoft", logoUrl: "https://logo.svgcdn.com/logos/microsoft.svg" },
-              { name: "Palo Alto Networks", logoUrl: "https://logo.svgcdn.com/logos/paloaltonetworks.svg" },
-              { name: "Splunk", logoUrl: "https://logo.svgcdn.com/logos/splunk.svg" },
-              { name: "Fortinet", logoUrl: "https://logo.svgcdn.com/logos/fortinet.svg" },
-              { name: "Cloudflare", logoUrl: "https://logo.svgcdn.com/logos/cloudflare.svg" },
-              { name: "Okta", logoUrl: "https://logo.svgcdn.com/logos/okta.svg" },
-              { name: "Datadog", logoUrl: "https://logo.svgcdn.com/logos/datadog.svg" },
-              { name: "Elastic", logoUrl: "https://logo.svgcdn.com/logos/elastic.svg" },
-              { name: "Cisco", logoUrl: "https://logo.svgcdn.com/logos/cisco.svg" },
-              { name: "CrowdStrike", logoUrl: "https://logo.svgcdn.com/logos/crowdstrike.svg" },
-              { name: "Microsoft", logoUrl: "https://logo.svgcdn.com/logos/microsoft.svg" },
-              { name: "Palo Alto Networks", logoUrl: "https://logo.svgcdn.com/logos/paloaltonetworks.svg" },
-              { name: "Splunk", logoUrl: "https://logo.svgcdn.com/logos/splunk.svg" },
-              { name: "Fortinet", logoUrl: "https://logo.svgcdn.com/logos/fortinet.svg" },
-              { name: "Cloudflare", logoUrl: "https://logo.svgcdn.com/logos/cloudflare.svg" },
-              { name: "Okta", logoUrl: "https://logo.svgcdn.com/logos/okta.svg" },
-              { name: "Datadog", logoUrl: "https://logo.svgcdn.com/logos/datadog.svg" },
-              { name: "Elastic", logoUrl: "https://logo.svgcdn.com/logos/elastic.svg" },
-              { name: "Cisco", logoUrl: "https://logo.svgcdn.com/logos/cisco.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/microsoft.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/splunk.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/cloudflare.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/okta.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/datadog.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/microsoft.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/splunk.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/cloudflare.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/okta.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/datadog.svg" },
             ].map((partner, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 mx-6 flex items-center justify-center h-16 px-4 opacity-70 hover:opacity-100 transition-all duration-300"
+                className="flex-shrink-0 mx-8 flex items-center justify-center h-16 opacity-70 hover:opacity-100 transition-all duration-300"
               >
-                <div className="flex flex-col items-center gap-2">
-                  <div className="h-12 w-32 bg-white border border-neutral-200 rounded flex items-center justify-center shadow-sm relative overflow-hidden">
-                    <img
-                      src={partner.logoUrl}
-                      alt={partner.name}
-                      className="h-8 w-auto max-w-[120px] object-contain grayscale hover:grayscale-0 transition-all"
-                      onError={(e) => {
-                        // Fallback to PNG version
-                        const target = e.currentTarget;
-                        const pngUrl = partner.logoUrl.replace('.svg', '.png');
-                        if (target.src !== pngUrl) {
-                          target.src = pngUrl;
-                        } else {
-                          // If PNG also fails, show fallback text
-                          target.style.display = 'none';
-                          const parent = target.parentElement;
-                          if (parent && !parent.querySelector('.fallback-text')) {
-                            const fallback = document.createElement('span');
-                            fallback.className = 'fallback-text text-xs font-bold text-neutral-700 text-center px-2';
-                            fallback.textContent = partner.name;
-                            parent.appendChild(fallback);
-                          }
-                        }
-                      }}
-                    />
-                  </div>
-                  <span className="text-xs font-semibold text-neutral-600 whitespace-nowrap">{partner.name}</span>
-                </div>
+                <img
+                  src={partner.logoUrl}
+                  alt=""
+                  className="h-12 w-auto max-w-[140px] object-contain grayscale hover:grayscale-0 transition-all"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    const pngUrl = partner.logoUrl.replace('.svg', '.png');
+                    if (target.src !== pngUrl) {
+                      target.src = pngUrl;
+                    }
+                  }}
+                />
               </div>
             ))}
           </div>
@@ -391,59 +365,41 @@ export function PremiumTimelineLanding({
         <div className="relative">
           <div className="flex animate-marquee-reverse">
             {[
-              { name: "Amazon AWS", logoUrl: "https://logo.svgcdn.com/logos/aws.svg" },
-              { name: "OpenAI", logoUrl: "https://logo.svgcdn.com/logos/openai.svg" },
-              { name: "Microsoft", logoUrl: "https://logo.svgcdn.com/logos/microsoft.svg" },
-              { name: "Google Cloud", logoUrl: "https://logo.svgcdn.com/logos/googlecloud.svg" },
-              { name: "NVIDIA", logoUrl: "https://logo.svgcdn.com/logos/nvidia.svg" },
-              { name: "Snowflake", logoUrl: "https://logo.svgcdn.com/logos/snowflake.svg" },
-              { name: "MongoDB", logoUrl: "https://logo.svgcdn.com/logos/mongodb.svg" },
-              { name: "HashiCorp", logoUrl: "https://logo.svgcdn.com/logos/hashicorp.svg" },
-              { name: "GitLab", logoUrl: "https://logo.svgcdn.com/logos/gitlab.svg" },
-              { name: "Docker", logoUrl: "https://logo.svgcdn.com/logos/docker.svg" },
-              { name: "Amazon AWS", logoUrl: "https://logo.svgcdn.com/logos/aws.svg" },
-              { name: "OpenAI", logoUrl: "https://logo.svgcdn.com/logos/openai.svg" },
-              { name: "Microsoft", logoUrl: "https://logo.svgcdn.com/logos/microsoft.svg" },
-              { name: "Google Cloud", logoUrl: "https://logo.svgcdn.com/logos/googlecloud.svg" },
-              { name: "NVIDIA", logoUrl: "https://logo.svgcdn.com/logos/nvidia.svg" },
-              { name: "Snowflake", logoUrl: "https://logo.svgcdn.com/logos/snowflake.svg" },
-              { name: "MongoDB", logoUrl: "https://logo.svgcdn.com/logos/mongodb.svg" },
-              { name: "HashiCorp", logoUrl: "https://logo.svgcdn.com/logos/hashicorp.svg" },
-              { name: "GitLab", logoUrl: "https://logo.svgcdn.com/logos/gitlab.svg" },
-              { name: "Docker", logoUrl: "https://logo.svgcdn.com/logos/docker.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/aws.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/openai.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/microsoft.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/nvidia.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/snowflake.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/mongodb.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/hashicorp.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/gitlab.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/docker.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/aws.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/openai.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/microsoft.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/nvidia.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/snowflake.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/mongodb.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/hashicorp.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/gitlab.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/docker.svg" },
             ].map((partner, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 mx-6 flex items-center justify-center h-16 px-4 opacity-70 hover:opacity-100 transition-all duration-300"
+                className="flex-shrink-0 mx-8 flex items-center justify-center h-16 opacity-70 hover:opacity-100 transition-all duration-300"
               >
-                <div className="flex flex-col items-center gap-2">
-                  <div className="h-12 w-32 bg-white border border-neutral-200 rounded flex items-center justify-center shadow-sm relative overflow-hidden">
-                    <img
-                      src={partner.logoUrl}
-                      alt={partner.name}
-                      className="h-8 w-auto max-w-[120px] object-contain grayscale hover:grayscale-0 transition-all"
-                      onError={(e) => {
-                        // Fallback to PNG version
-                        const target = e.currentTarget;
-                        const pngUrl = partner.logoUrl.replace('.svg', '.png');
-                        if (target.src !== pngUrl) {
-                          target.src = pngUrl;
-                        } else {
-                          // If PNG also fails, show fallback text
-                          target.style.display = 'none';
-                          const parent = target.parentElement;
-                          if (parent && !parent.querySelector('.fallback-text')) {
-                            const fallback = document.createElement('span');
-                            fallback.className = 'fallback-text text-xs font-bold text-neutral-700 text-center px-2';
-                            fallback.textContent = partner.name;
-                            parent.appendChild(fallback);
-                          }
-                        }
-                      }}
-                    />
-                  </div>
-                  <span className="text-xs font-semibold text-neutral-600 whitespace-nowrap">{partner.name}</span>
-                </div>
+                <img
+                  src={partner.logoUrl}
+                  alt=""
+                  className="h-12 w-auto max-w-[140px] object-contain grayscale hover:grayscale-0 transition-all"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    const pngUrl = partner.logoUrl.replace('.svg', '.png');
+                    if (target.src !== pngUrl) {
+                      target.src = pngUrl;
+                    }
+                  }}
+                />
               </div>
             ))}
           </div>
