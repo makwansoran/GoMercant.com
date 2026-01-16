@@ -558,7 +558,7 @@ export function PremiumTimelineLanding({
           {/* Footer Bottom */}
           <div className="pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-neutral-500">
-              © {new Date().getFullYear()} GoMercant. All rights reserved.
+              © {new Date().getFullYear()} GoMercant.com By SPECTR AS · Org nr 936961967
             </div>
             <div className="flex items-center gap-6">
               <a href="#" className="text-sm text-neutral-500 hover:text-white transition-colors">Privacy Policy</a>
