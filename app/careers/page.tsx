@@ -8,6 +8,7 @@ import { ArrowLeft, MapPin, Clock, Users, Zap, Shield, Brain } from "lucide-reac
 const jobListings = [
   {
     id: 1,
+    slug: "senior-security-engineer",
     title: "Senior Security Engineer",
     department: "Security",
     location: "Oslo",
@@ -23,6 +24,7 @@ const jobListings = [
   },
   {
     id: 2,
+    slug: "ai-ml-engineer",
     title: "AI/ML Engineer",
     department: "Engineering",
     location: "Oslo",
@@ -38,6 +40,7 @@ const jobListings = [
   },
   {
     id: 3,
+    slug: "full-stack-developer",
     title: "Full-Stack Developer",
     department: "Engineering",
     location: "Oslo",
@@ -53,6 +56,7 @@ const jobListings = [
   },
   {
     id: 4,
+    slug: "threat-intelligence-analyst",
     title: "Threat Intelligence Analyst",
     department: "Security",
     location: "Oslo",
@@ -68,6 +72,7 @@ const jobListings = [
   },
   {
     id: 5,
+    slug: "devsecops-engineer",
     title: "DevSecOps Engineer",
     department: "Engineering",
     location: "Oslo",
@@ -83,6 +88,7 @@ const jobListings = [
   },
   {
     id: 6,
+    slug: "security-consultant",
     title: "Security Consultant",
     department: "Consulting",
     location: "Oslo",
@@ -247,53 +253,54 @@ export default function CareersPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="group p-8 border border-neutral-800 rounded-xl hover:border-orange-500/50 hover:bg-neutral-900/30 transition-all"
               >
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
-                  <div className="flex-1">
-                    <div className="flex flex-wrap items-center gap-3 mb-3">
-                      <span className="px-3 py-1 bg-orange-500/20 text-orange-500 rounded-full text-xs font-medium">
-                        {job.department}
-                      </span>
-                      <div className="flex items-center gap-1 text-neutral-500 text-sm">
-                        <MapPin className="w-4 h-4" />
-                        {job.location}
+                <Link
+                  href={`/careers/${job.slug}`}
+                  className="group block p-8 border border-neutral-800 rounded-xl hover:border-orange-500/50 hover:bg-neutral-900/30 transition-all"
+                >
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                    <div className="flex-1">
+                      <div className="flex flex-wrap items-center gap-3 mb-3">
+                        <span className="px-3 py-1 bg-orange-500/20 text-orange-500 rounded-full text-xs font-medium">
+                          {job.department}
+                        </span>
+                        <div className="flex items-center gap-1 text-neutral-500 text-sm">
+                          <MapPin className="w-4 h-4" />
+                          {job.location}
+                        </div>
+                        <div className="flex items-center gap-1 text-neutral-500 text-sm">
+                          <Clock className="w-4 h-4" />
+                          {job.type}
+                        </div>
+                        <span className="px-3 py-1 bg-neutral-800 rounded-full text-xs text-neutral-300">
+                          {job.mode}
+                        </span>
                       </div>
-                      <div className="flex items-center gap-1 text-neutral-500 text-sm">
-                        <Clock className="w-4 h-4" />
-                        {job.type}
+                      <h3 className="text-2xl font-semibold text-white group-hover:text-orange-500 transition-colors mb-3">
+                        {job.title}
+                      </h3>
+                      <p className="text-neutral-400 mb-6 leading-relaxed">
+                        {job.description}
+                      </p>
+                      <div>
+                        <h4 className="text-sm font-semibold text-white mb-3">Requirements:</h4>
+                        <ul className="space-y-2">
+                          {job.requirements.map((req, reqIndex) => (
+                            <li key={reqIndex} className="flex items-start gap-2 text-neutral-400 text-sm">
+                              <span className="text-orange-500 mt-1">•</span>
+                              {req}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                      <span className="px-3 py-1 bg-neutral-800 rounded-full text-xs text-neutral-300">
-                        {job.mode}
+                    </div>
+                    <div className="lg:ml-8 flex-shrink-0">
+                      <span className="inline-flex items-center justify-center rounded-full bg-white text-black px-6 py-3 text-sm font-semibold group-hover:bg-orange-500 group-hover:text-white transition-all">
+                        View Details
                       </span>
                     </div>
-                    <h3 className="text-2xl font-semibold text-white group-hover:text-orange-500 transition-colors mb-3">
-                      {job.title}
-                    </h3>
-                    <p className="text-neutral-400 mb-6 leading-relaxed">
-                      {job.description}
-                    </p>
-                    <div>
-                      <h4 className="text-sm font-semibold text-white mb-3">Requirements:</h4>
-                      <ul className="space-y-2">
-                        {job.requirements.map((req, reqIndex) => (
-                          <li key={reqIndex} className="flex items-start gap-2 text-neutral-400 text-sm">
-                            <span className="text-orange-500 mt-1">•</span>
-                            {req}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
                   </div>
-                  <div className="lg:ml-8">
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center justify-center rounded-full bg-white text-black px-6 py-3 text-sm font-semibold transition-all hover:bg-orange-500 hover:text-white hover:scale-105"
-                    >
-                      Apply Now
-                    </Link>
-                  </div>
-                </div>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -313,14 +320,14 @@ export default function CareersPage() {
               Don&apos;t see a perfect fit?
             </h2>
             <p className="text-neutral-400 text-lg mb-8 max-w-2xl mx-auto">
-              We&apos;re always looking for exceptional talent. Send us your resume and let us know how you can contribute to our mission.
+              We&apos;re always looking for exceptional talent. Send your CV and cover letter to <span className="text-orange-500">msi@gomercant.com</span> and let us know how you can contribute to our mission.
             </p>
-            <Link
-              href="/contact"
+            <a
+              href="mailto:msi@gomercant.com?subject=General Application - GoMercant"
               className="inline-flex items-center justify-center rounded-full bg-orange-500 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-orange-600 hover:scale-105"
             >
-              Get in Touch
-            </Link>
+              Send Application
+            </a>
           </motion.div>
         </div>
       </section>
