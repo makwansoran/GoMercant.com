@@ -3,6 +3,36 @@
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { ChevronRight } from "lucide-react"
+
+const insightCards = [
+  {
+    category: "Research Report",
+    title: "Pulse of Change: What's top of mind for today's leaders",
+    description: "After two years of rapid AI acceleration, global executives enter 2026 with unmistakable confidence. But beneath the optimism, data shows a series of gaps standing in the way of scale and value.",
+    color: "bg-gradient-to-br from-purple-600 to-purple-900",
+  },
+  {
+    category: "Event",
+    title: "World Economic Forum Annual Meeting 2026",
+    date: "January 19-23, 2026",
+    location: "Davos, Switzerland",
+    description: "In Davos, we'll deliver practical insights, dissect common challenges, and reveal how the most adaptive enterprises are actively redefining reinvention and accelerating growth within their industries.",
+    color: "bg-gradient-to-br from-blue-600 to-blue-900",
+  },
+  {
+    category: "Research Report",
+    title: "Sovereign AI: From managing risk to accelerating growth",
+    description: "Sovereign AI isn't just a control play—it's a game-changer for global competitiveness and cultural value. Discover how organizations are moving fast to secure their advantage and shape AI's future, following four bold moves.",
+    color: "bg-gradient-to-br from-teal-600 to-teal-900",
+  },
+  {
+    category: "Research Report",
+    title: "Top Banking Trends for 2026",
+    description: "GoMercant's Banking Trends 2026 reveals how agentic AI, smart money and shifting competition will reshape customer experience and growth.",
+    color: "bg-gradient-to-br from-indigo-600 to-indigo-900",
+  },
+]
 
 export function PremiumTimelineLanding({
   className,
@@ -43,7 +73,7 @@ export function PremiumTimelineLanding({
       </nav>
 
       {/* Hero Section */}
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-white to-neutral-50 px-6 pt-16">
+      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-gradient-to-b from-white to-neutral-50 px-6 pt-16">
         <div className="relative z-10 mx-auto max-w-5xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -62,8 +92,67 @@ export function PremiumTimelineLanding({
         </div>
       </section>
 
+      {/* Insight Cards Section */}
+      <section className="py-16 px-6 bg-neutral-50">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {insightCards.map((card, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={cn(
+                  "group relative rounded-xl p-6 min-h-[380px] flex flex-col justify-between cursor-pointer overflow-hidden transition-transform hover:scale-[1.02]",
+                  card.color
+                )}
+              >
+                {/* Background overlay for hover effect */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
+                
+                <div className="relative z-10">
+                  {/* Category Label */}
+                  <span className="inline-block text-xs font-semibold text-white/80 uppercase tracking-wider mb-4">
+                    {card.category}
+                  </span>
+                  
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-white leading-tight mb-3">
+                    {card.title}
+                  </h3>
+                  
+                  {/* Event date/location if applicable */}
+                  {card.date && (
+                    <div className="mb-3">
+                      <p className="text-sm font-semibold text-white/90">{card.date}</p>
+                      {card.location && (
+                        <p className="text-sm text-white/70">{card.location}</p>
+                      )}
+                    </div>
+                  )}
+                  
+                  {/* Description */}
+                  <p className="text-sm text-white/80 leading-relaxed line-clamp-4">
+                    {card.description}
+                  </p>
+                </div>
+                
+                {/* Expand Button */}
+                <div className="relative z-10 mt-4">
+                  <button className="inline-flex items-center gap-1 text-sm font-semibold text-white group-hover:gap-2 transition-all">
+                    Expand
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer className="py-8 px-6 border-t border-neutral-100">
+      <footer className="py-8 px-6 border-t border-neutral-100 bg-white">
         <div className="mx-auto max-w-6xl text-center">
           <div className="text-sm text-neutral-500">
             © {new Date().getFullYear()} GoMercant. All rights reserved.

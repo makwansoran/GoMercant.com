@@ -217,7 +217,7 @@ export default function ContactPage() {
       <footer className="py-8 px-6 border-t border-neutral-100">
         <div className="mx-auto max-w-6xl text-center">
           <div className="text-sm text-neutral-500">
-            © {new Date().getFullYear()} SPECTR. All rights reserved.
+            © {new Date().getFullYear()} GoMercant. All rights reserved.
           </div>
         </div>
       </footer>
