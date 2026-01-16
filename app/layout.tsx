@@ -16,8 +16,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'SPECTR - Technical Procurement Marketplace',
-  description: 'Post technical missions and get the best work from our community. No hiring, just results.',
+  title: 'SPECTR',
+  description: 'Global expertise on your computer.',
   icons: {
     icon: '/favicon.png',
   },
