@@ -6,15 +6,15 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: 'logo.svgcdn.com',
+      },
+      {
+        protocol: 'https',
         hostname: 'logo.clearbit.com',
       },
       {
         protocol: 'https',
         hostname: 'cdn.simpleicons.org',
-      },
-      {
-        protocol: 'https',
-        hostname: 'logo.clearbit.com',
       },
     ],
   },
