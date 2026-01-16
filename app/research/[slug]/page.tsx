@@ -47,7 +47,32 @@ const researchReports: Record<string, {
     title: "The Autonomous Shield: Security Automation for Modern Enterprises",
     category: "Research Report",
     image: "/images/card2.jpg",
-    sections: [],
+    sections: [
+      {
+        heading: "Abstract",
+        content: "As of 2026, the global cybersecurity workforce deficit has reached a critical inflection point, with human-centric Security Operations Centers (SOCs) proving insufficient against the velocity of machine-speed threats. This report examines the transition from traditional Security Orchestration, Automation, and Response (SOAR)—which relies on static, human-defined playbooks—to Agentic AI SOC Platforms. We analyze how autonomous reasoning and \"hyper-automation\" enable lean security teams to achieve a sub-minute Mean Time to Respond (MTTR), effectively neutralizing the talent gap through algorithmic scaling."
+      },
+      {
+        heading: "1. The Architectural Evolution: From Playbooks to Agents",
+        content: "The defining shift in 2026 is the obsolescence of the \"static playbook.\" Traditional SOAR required security engineers to manually map out every logical branch of an investigation.\n\n**The Playbook Maintenance Tax:** High-growth SMBs previously spent up to 30% of their security budget simply maintaining and updating brittle automation scripts that broke whenever a vendor updated an API.\n\n**Agentic Reasoning Models:** Modern platforms (e.g., Prophet Security, Tines, and Torq) now utilize Large Action Models (LAMs). These agents do not follow a fixed path; instead, they are given an objective (e.g., \"Investigate this lateral movement alert\") and autonomously determine which telemetry sources (EDR, CloudTrail, Okta logs) to query. This allows for Zero-Shot Task Execution, where the system handles novel threats without prior configuration."
+      },
+      {
+        heading: "2. Solving the Talent Scarcity via \"Forensic Augmentation\"",
+        content: "The \"Cyber Talent Gap\" is often a \"Data Synthesis Gap.\" Human analysts spend 70% of their time on low-level data normalization rather than high-level strategic defense.\n\n**Automated Contextual Enrichment:** Automation engines in 2026 perform real-time \"War Room\" assembly. By the time a human analyst is notified, the \"Autonomous Shield\" has already correlated the IP with global threat intelligence, pulled the user's last six months of behavioral data, and isolated the affected container.\n\n**The \"Intelligent Apprentice\" Model:** AI now acts as an onboarding accelerator. Junior analysts use natural language to query complex datasets (e.g., \"Show me all cross-region S3 bucket access by this service account in the last hour\"), effectively elevating a Tier 1 analyst to Tier 3 capability within weeks rather than years."
+      },
+      {
+        heading: "3. Hyper-automation and the \"Glass Box\" Requirement",
+        content: "A primary barrier to full automation has been the \"Black Box\" fear—the risk of an automated system accidentally shutting down a production server during a false positive.\n\n**Decision Provenance:** 2026 frameworks (aligned with ISO/IEC 42001) utilize Stateful Orchestration. Every action taken by the autonomous agent is recorded in a replayable \"Decision Log.\" This provides the \"Glass Box\" transparency required for auditability.\n\n**Human-in-the-Loop (HITL) Thresholds:** Strategic automation now uses Risk-Based Gating. Low-risk actions (e.g., blocking an external IP on the firewall) are fully autonomous, while high-impact actions (e.g., revoking a C-suite executive's global access) trigger a \"One-Click Approval\" notification to a human supervisor, maintaining accountability without sacrificing speed."
+      },
+      {
+        heading: "4. Strategic Implementation for the Oslo SMB Sector",
+        content: "For companies with 50-250 employees, building an in-house 24/7 SOC is financially unviable. The 2026 strategy for this sector is Managed Autonomous Defense.\n\n**Vendor Consolidation:** Organizations are moving away from \"best-of-breed\" tool sprawl toward Unified Security Platforms that offer native automation.\n\n**Compliance Automation:** With the full enforcement of NIS2 and DORA, automation is no longer just for defense; it is for survival. Automated agents now generate real-time compliance artifacts, turning a 6-month audit process into a continuous, machine-generated stream of evidence."
+      },
+      {
+        heading: "Conclusion",
+        content: "The \"Autonomous Shield\" represents the only viable path forward for the modern enterprise. By shifting the burden of \"Investigation and Triage\" to agentic AI, organizations can finally decouple their security posture from their headcount. In 2026, the hallmark of a resilient company is not the size of its security team, but the sophistication and autonomy of its automated response fabric."
+      }
+    ],
   },
   "predictive-intelligence": {
     title: "Predictive Intelligence: AI-Driven OSINT and Proactive Defense",
