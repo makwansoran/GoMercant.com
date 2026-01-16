@@ -325,8 +325,8 @@ export function PremiumTimelineLanding({
           </motion.div>
         </div>
 
-        {/* Logo Marquee - Row 1 (Cybersecurity) */}
-        <div className="relative mb-8">
+        {/* Logo Marquee - Single Line */}
+        <div className="relative">
           <div className="flex animate-marquee">
             {[
               { logoUrl: "https://logo.svgcdn.com/logos/microsoft.svg" },
@@ -334,49 +334,21 @@ export function PremiumTimelineLanding({
               { logoUrl: "https://logo.svgcdn.com/logos/cloudflare.svg" },
               { logoUrl: "https://logo.svgcdn.com/logos/okta.svg" },
               { logoUrl: "https://logo.svgcdn.com/logos/datadog.svg" },
-              { logoUrl: "https://logo.svgcdn.com/logos/microsoft.svg" },
-              { logoUrl: "https://logo.svgcdn.com/logos/splunk.svg" },
-              { logoUrl: "https://logo.svgcdn.com/logos/cloudflare.svg" },
-              { logoUrl: "https://logo.svgcdn.com/logos/okta.svg" },
-              { logoUrl: "https://logo.svgcdn.com/logos/datadog.svg" },
-            ].map((partner, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 mx-8 flex items-center justify-center h-16 opacity-70 hover:opacity-100 transition-all duration-300"
-              >
-                <img
-                  src={partner.logoUrl}
-                  alt=""
-                  className="h-12 w-auto max-w-[140px] object-contain grayscale hover:grayscale-0 transition-all"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    const pngUrl = partner.logoUrl.replace('.svg', '.png');
-                    if (target.src !== pngUrl) {
-                      target.src = pngUrl;
-                    }
-                  }}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Logo Marquee - Row 2 (AI & Cloud - Reverse Direction) */}
-        <div className="relative">
-          <div className="flex animate-marquee-reverse">
-            {[
               { logoUrl: "https://logo.svgcdn.com/logos/aws.svg" },
               { logoUrl: "https://logo.svgcdn.com/logos/openai.svg" },
-              { logoUrl: "https://logo.svgcdn.com/logos/microsoft.svg" },
               { logoUrl: "https://logo.svgcdn.com/logos/nvidia.svg" },
               { logoUrl: "https://logo.svgcdn.com/logos/snowflake.svg" },
               { logoUrl: "https://logo.svgcdn.com/logos/mongodb.svg" },
               { logoUrl: "https://logo.svgcdn.com/logos/hashicorp.svg" },
               { logoUrl: "https://logo.svgcdn.com/logos/gitlab.svg" },
               { logoUrl: "https://logo.svgcdn.com/logos/docker.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/microsoft.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/splunk.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/cloudflare.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/okta.svg" },
+              { logoUrl: "https://logo.svgcdn.com/logos/datadog.svg" },
               { logoUrl: "https://logo.svgcdn.com/logos/aws.svg" },
               { logoUrl: "https://logo.svgcdn.com/logos/openai.svg" },
-              { logoUrl: "https://logo.svgcdn.com/logos/microsoft.svg" },
               { logoUrl: "https://logo.svgcdn.com/logos/nvidia.svg" },
               { logoUrl: "https://logo.svgcdn.com/logos/snowflake.svg" },
               { logoUrl: "https://logo.svgcdn.com/logos/mongodb.svg" },
