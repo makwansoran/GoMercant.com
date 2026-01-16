@@ -298,8 +298,239 @@ export function PremiumTimelineLanding({
         </div>
       </section>
 
+      {/* CEO Message Section */}
+      <section className="py-24 md:py-32 px-6 bg-neutral-50">
+        <div className="mx-auto max-w-5xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <div className="mb-8">
+              <span className="inline-block text-sm font-semibold uppercase tracking-wider text-orange-500 mb-4">
+                Message from our CEO
+              </span>
+            </div>
+            <blockquote className="text-4xl md:text-5xl lg:text-6xl font-medium text-black leading-tight mb-12">
+              &ldquo;Forbidding is forbidden to us.
+              <br />
+              <span className="text-neutral-500">We can do anything.&rdquo;</span>
+            </blockquote>
+            <div className="flex flex-col items-center gap-2">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white text-xl font-bold">
+                MI
+              </div>
+              <div className="mt-4">
+                <p className="text-lg font-semibold text-black">Makwan Ismail</p>
+                <p className="text-neutral-500">Founder & CEO, GoMercant</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* News Section */}
+      <section className="py-24 md:py-32 px-6 bg-white">
+        <div className="mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16"
+          >
+            <span className="inline-block text-sm font-semibold uppercase tracking-wider text-orange-500 mb-4">
+              Latest Updates
+            </span>
+            <h2 className="text-4xl md:text-5xl font-medium text-black">
+              News & Insights
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* News Item 1 */}
+            <motion.article
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="group cursor-pointer"
+            >
+              <div className="aspect-[16/10] bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl mb-6 overflow-hidden">
+                <div className="w-full h-full flex items-center justify-center text-white/20 text-6xl font-bold">
+                  01
+                </div>
+              </div>
+              <span className="text-sm text-orange-500 font-medium">January 2026</span>
+              <h3 className="text-xl font-semibold text-black mt-2 mb-3 group-hover:text-neutral-600 transition-colors">
+                GoMercant Launches New AI-Powered Threat Detection Platform
+              </h3>
+              <p className="text-neutral-500 text-base leading-relaxed">
+                Our latest cybersecurity solution leverages advanced machine learning to identify and neutralize threats in real-time.
+              </p>
+            </motion.article>
+
+            {/* News Item 2 */}
+            <motion.article
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="group cursor-pointer"
+            >
+              <div className="aspect-[16/10] bg-gradient-to-br from-black to-neutral-800 rounded-xl mb-6 overflow-hidden">
+                <div className="w-full h-full flex items-center justify-center text-white/20 text-6xl font-bold">
+                  02
+                </div>
+              </div>
+              <span className="text-sm text-orange-500 font-medium">December 2025</span>
+              <h3 className="text-xl font-semibold text-black mt-2 mb-3 group-hover:text-neutral-600 transition-colors">
+                Partnership with Nordic Defense Alliance Announced
+              </h3>
+              <p className="text-neutral-500 text-base leading-relaxed">
+                GoMercant selected as primary cybersecurity partner for critical infrastructure protection across Scandinavia.
+              </p>
+            </motion.article>
+
+            {/* News Item 3 */}
+            <motion.article
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="group cursor-pointer"
+            >
+              <div className="aspect-[16/10] bg-gradient-to-br from-neutral-700 to-neutral-900 rounded-xl mb-6 overflow-hidden">
+                <div className="w-full h-full flex items-center justify-center text-white/20 text-6xl font-bold">
+                  03
+                </div>
+              </div>
+              <span className="text-sm text-orange-500 font-medium">November 2025</span>
+              <h3 className="text-xl font-semibold text-black mt-2 mb-3 group-hover:text-neutral-600 transition-colors">
+                Expanding Operations: New Oslo Headquarters
+              </h3>
+              <p className="text-neutral-500 text-base leading-relaxed">
+                Our growing team moves into a state-of-the-art facility to better serve our expanding client base.
+              </p>
+            </motion.article>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-12 text-center"
+          >
+            <a
+              href="#"
+              className="inline-flex items-center gap-2 text-black font-semibold hover:text-orange-500 transition-colors"
+            >
+              View all news
+              <ChevronRight className="w-5 h-5" />
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Careers Section */}
+      <section className="py-24 md:py-32 px-6 bg-black text-white">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <span className="inline-block text-sm font-semibold uppercase tracking-wider text-orange-500 mb-4">
+                Join Our Team
+              </span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6">
+                Careers at
+                <br />
+                <span className="text-orange-500">GoMercant</span>
+              </h2>
+              <p className="text-neutral-400 text-lg leading-relaxed mb-8 max-w-lg">
+                We&apos;re building the future of cybersecurity and AI. Join a team of exceptional individuals who believe that nothing is impossible.
+              </p>
+              <a
+                href="#"
+                className="inline-flex items-center justify-center rounded-full bg-orange-500 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-orange-600 hover:scale-105"
+              >
+                View Open Positions
+                <ChevronRight className="w-5 h-5 ml-2" />
+              </a>
+            </motion.div>
+
+            {/* Right - Job Listings Preview */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="space-y-4"
+            >
+              {/* Job Card 1 */}
+              <div className="group p-6 border border-neutral-800 rounded-xl hover:border-orange-500/50 hover:bg-neutral-900/50 transition-all cursor-pointer">
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="text-xl font-semibold text-white group-hover:text-orange-500 transition-colors">
+                    Senior Security Engineer
+                  </h3>
+                  <span className="text-sm text-neutral-500">Oslo</span>
+                </div>
+                <p className="text-neutral-400 text-sm mb-4">
+                  Lead our security infrastructure and protect critical systems for enterprise clients.
+                </p>
+                <div className="flex gap-2">
+                  <span className="px-3 py-1 bg-neutral-800 rounded-full text-xs text-neutral-300">Full-time</span>
+                  <span className="px-3 py-1 bg-neutral-800 rounded-full text-xs text-neutral-300">Remote</span>
+                </div>
+              </div>
+
+              {/* Job Card 2 */}
+              <div className="group p-6 border border-neutral-800 rounded-xl hover:border-orange-500/50 hover:bg-neutral-900/50 transition-all cursor-pointer">
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="text-xl font-semibold text-white group-hover:text-orange-500 transition-colors">
+                    AI/ML Engineer
+                  </h3>
+                  <span className="text-sm text-neutral-500">Oslo</span>
+                </div>
+                <p className="text-neutral-400 text-sm mb-4">
+                  Build intelligent systems that power next-generation automation and analytics.
+                </p>
+                <div className="flex gap-2">
+                  <span className="px-3 py-1 bg-neutral-800 rounded-full text-xs text-neutral-300">Full-time</span>
+                  <span className="px-3 py-1 bg-neutral-800 rounded-full text-xs text-neutral-300">Hybrid</span>
+                </div>
+              </div>
+
+              {/* Job Card 3 */}
+              <div className="group p-6 border border-neutral-800 rounded-xl hover:border-orange-500/50 hover:bg-neutral-900/50 transition-all cursor-pointer">
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="text-xl font-semibold text-white group-hover:text-orange-500 transition-colors">
+                    Full-Stack Developer
+                  </h3>
+                  <span className="text-sm text-neutral-500">Oslo</span>
+                </div>
+                <p className="text-neutral-400 text-sm mb-4">
+                  Create powerful applications that transform how enterprises operate and secure their data.
+                </p>
+                <div className="flex gap-2">
+                  <span className="px-3 py-1 bg-neutral-800 rounded-full text-xs text-neutral-300">Full-time</span>
+                  <span className="px-3 py-1 bg-neutral-800 rounded-full text-xs text-neutral-300">On-site</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer className="bg-black text-white py-16 md:py-24 px-6">
+      <footer className="bg-black text-white py-16 md:py-24 px-6 border-t border-neutral-800">
         <div className="mx-auto max-w-6xl">
           {/* Footer Top */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
@@ -358,7 +589,7 @@ export function PremiumTimelineLanding({
                 </li>
                 <li className="text-neutral-300">
                   <span className="block text-white font-medium">Phone</span>
-                  <a href="tel:+4712345678" className="hover:text-white transition-colors">+47 123 45 678</a>
+                  <a href="tel:+4746503934" className="hover:text-white transition-colors">+47 465 03 934</a>
                 </li>
               </ul>
             </div>
