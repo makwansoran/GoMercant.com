@@ -2,7 +2,9 @@
 
 import { cn } from "@/lib/utils"
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { ChevronDown, Globe } from "lucide-react"
 
 const stats = [
   { value: "500+", label: "Active Missions" },
@@ -11,10 +13,20 @@ const stats = [
   { value: "98%", label: "Success Rate" },
 ]
 
+const languages = [
+  { code: "en", name: "English", flag: "🇬🇧" },
+  { code: "no", name: "Norsk", flag: "🇳🇴" },
+  { code: "sv", name: "Svenska", flag: "🇸🇪" },
+  { code: "da", name: "Dansk", flag: "🇩🇰" },
+]
+
 export function PremiumTimelineLanding({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+  const [isLangOpen, setIsLangOpen] = useState(false)
+  const [selectedLang, setSelectedLang] = useState(languages[0])
+
   return (
     <div className={cn("bg-white text-black min-h-screen", className)} {...props}>
       {/* Fixed Nav */}
@@ -33,6 +45,51 @@ export function PremiumTimelineLanding({
             </span>
           </div>
           <div className="hidden md:flex items-center gap-4">
+            {/* Language Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setIsLangOpen(!isLangOpen)}
+                className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700 transition-all hover:bg-neutral-50 hover:border-neutral-300"
+              >
+                <Globe className="w-4 h-4 text-neutral-500" />
+                <span>{selectedLang.flag}</span>
+                <span>{selectedLang.code.toUpperCase()}</span>
+                <ChevronDown className={cn("w-4 h-4 text-neutral-400 transition-transform", isLangOpen && "rotate-180")} />
+              </button>
+              
+              <AnimatePresence>
+                {isLangOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute right-0 mt-2 w-44 rounded-xl border border-neutral-200 bg-white shadow-lg overflow-hidden"
+                  >
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => {
+                          setSelectedLang(lang)
+                          setIsLangOpen(false)
+                        }}
+                        className={cn(
+                          "w-full flex items-center gap-3 px-4 py-3 text-sm transition-colors hover:bg-neutral-50",
+                          selectedLang.code === lang.code ? "bg-orange-50 text-orange-600" : "text-neutral-700"
+                        )}
+                      >
+                        <span className="text-lg">{lang.flag}</span>
+                        <span className="font-medium">{lang.name}</span>
+                        {selectedLang.code === lang.code && (
+                          <span className="ml-auto text-orange-500">✓</span>
+                        )}
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             <a
               href="/get-started"
               className="inline-flex items-center justify-center rounded-full bg-black px-6 py-2 text-sm font-semibold text-white transition-all hover:bg-neutral-800 hover:scale-105"
