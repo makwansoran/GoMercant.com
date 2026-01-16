@@ -16,18 +16,18 @@ export function PremiumTimelineLanding({
           <div className="flex items-center gap-2">
             <Image 
               src="/favicon.png" 
-              alt="SPECTR Logo" 
+              alt="GoMercant Logo" 
               width={32} 
               height={32}
               className="object-contain"
             />
             <span className="text-2xl font-bold tracking-tight text-black">
-              SPECTR
+              GoMercant
             </span>
           </div>
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="/get-started"
+              href="/login"
               className="inline-flex items-center justify-center rounded-full bg-black px-6 py-2 text-sm font-semibold text-white transition-all hover:bg-neutral-800 hover:scale-105"
             >
               Client Login
@@ -66,7 +66,7 @@ export function PremiumTimelineLanding({
       <footer className="py-8 px-6 border-t border-neutral-100">
         <div className="mx-auto max-w-6xl text-center">
           <div className="text-sm text-neutral-500">
-            © {new Date().getFullYear()} SPECTR. All rights reserved.
+            © {new Date().getFullYear()} GoMercant. All rights reserved.
           </div>
         </div>
       </footer>

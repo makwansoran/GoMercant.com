@@ -16,7 +16,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'SPECTR',
+  title: 'GoMercant',
   description: 'Global expertise on your computer.',
   icons: {
     icon: '/favicon.png',
