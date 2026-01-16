@@ -379,7 +379,7 @@ export function OrganizationManage({ organizationId }: OrganizationManageProps) 
             <Building2 className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
             <h2 className="text-2xl font-bold mb-2">Organization not found</h2>
             <p className="text-muted-foreground mb-6">
-              This organization doesn't exist or you don't have access to it.
+              This organization doesn&apos;t exist or you don&apos;t have access to it.
             </p>
             <Button onClick={() => router.push('/business')} className="bg-orange-500 hover:bg-orange-600">
               <ArrowLeft className="h-4 w-4 mr-2" />
