@@ -10,7 +10,8 @@ const insightCards = [
     category: "Research Report",
     title: "Pulse of Change: What's top of mind for today's leaders",
     description: "After two years of rapid AI acceleration, global executives enter 2026 with unmistakable confidence. But beneath the optimism, data shows a series of gaps standing in the way of scale and value.",
-    color: "bg-gradient-to-br from-purple-600 to-purple-900",
+    color: "bg-gradient-to-br from-orange-600 to-orange-900",
+    image: "/images/card1.jpg",
   },
   {
     category: "Event",
@@ -105,9 +106,21 @@ export function PremiumTimelineLanding({
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className={cn(
                   "group relative rounded-xl p-6 min-h-[380px] flex flex-col justify-between cursor-pointer overflow-hidden transition-transform hover:scale-[1.02]",
-                  card.color
+                  !card.image && card.color
                 )}
               >
+                {/* Background Image */}
+                {card.image && (
+                  <div className="absolute inset-0">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+                  </div>
+                )}
                 {/* Background overlay for hover effect */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
                 
