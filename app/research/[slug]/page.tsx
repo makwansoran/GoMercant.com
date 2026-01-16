@@ -109,7 +109,32 @@ const researchReports: Record<string, {
     title: "Shadow AI: Securing the Automated Intelligence Loop",
     category: "Research Report",
     image: "/images/card4.jpg",
-    sections: [],
+    sections: [
+      {
+        heading: "Abstract",
+        content: "By 2026, the proliferation of decentralized AI adoption—often referred to as \"Shadow AI\"—has surpassed the scale of the \"Shadow IT\" wave of the 2010s. Employees and departments are increasingly deploying autonomous agents, unvetted Large Language Models (LLMs), and automated workflows without central IT oversight. This report investigates the systemic risks of Insecure Intelligence Loops, where sensitive corporate data is fed into external, non-compliant models, and analyzes the shift toward Automated AI Governance (AAG). We propose a framework for securing the \"Intelligence Lifecycle\" to prevent data exfiltration through adversarial prompt injection and model poisoning."
+      },
+      {
+        heading: "1. The Emergence of the \"Intelligence Leak\"",
+        content: "Traditional Data Loss Prevention (DLP) tools are designed to identify patterns like credit card numbers or Social Security codes. However, they are fundamentally unsuited for the Semantic Leakage inherent in AI usage.\n\n**Contextual Data Exfiltration:** Employees often input high-value \"unstructured data\"—such as internal strategy documents, meeting transcripts, or unreleased source code—into public AI agents to summarize or refactor. This data is then assimilated into the provider's training set or stored in insecure \"chat history\" logs.\n\n**The API Proliferation:** In 2026, many SMBs use \"wrapper\" apps that connect internal databases to external AI via APIs. Each connection represents an unmonitored \"Intelligence Loop\" where data flows out of the secure perimeter in natural language, making it invisible to standard network firewalls."
+      },
+      {
+        heading: "2. Adversarial Prompt Injection and Agentic Hijacking",
+        content: "The most critical technical threat in the Shadow AI era is Indirect Prompt Injection.\n\n**The Trojanized Input:** If an automated AI agent is tasked with \"researching a competitor's website\" or \"summarizing an incoming email,\" an attacker can hide malicious instructions within that external content (e.g., in invisible text or metadata).\n\n**Autonomous Escalation:** Once the agent processes the malicious prompt, it can be instructed to perform actions with the user's permissions, such as \"forward all internal contacts to an external server\" or \"delete cloud backups.\" This effectively turns a productivity tool into an Automated Insider Threat."
+      },
+      {
+        heading: "3. Model Poisoning and Algorithmic Sabotage",
+        content: "For companies utilizing \"Local LLMs\" or fine-tuning their own models, the risk shifts to the integrity of the training data.\n\n**Data Poisoning:** Adversaries can inject subtly corrupted data into public datasets that they know a target company uses for fine-tuning. This can create \"backdoors\" in the model—for example, a coding assistant that intentionally suggests insecure cryptographic libraries only when a specific project name is mentioned.\n\n**Output Hallucination as a Service:** Attackers are now targeting the \"inference phase.\" By subtly manipulating the input to a corporate AI, they can force the model to provide incorrect financial advice or flawed technical specs, leading to Operational Sabotage without ever \"hacking\" a traditional server."
+      },
+      {
+        heading: "4. Implementing Automated AI Governance (AAG)",
+        content: "To regain control, organizations must implement a Security Fabric for Intelligence.\n\n**AI Access Brokers (AIAB):** Similar to a CASB (Cloud Access Security Broker), an AIAB sits between the user and the LLM. It performs real-time Semantic Redaction, stripping sensitive PII (Personally Identifiable Information) and corporate IP from prompts before they reach the external model.\n\n**Agentic Sandboxing:** In 2026, high-security environments require all autonomous agents to run in \"Ephemeral Sandboxes.\" This limits the agent's ability to communicate with the broader network unless a specific, human-verified \"Intent Token\" is granted for each transaction.\n\n**Automated Policy Enforcement:** Rather than banning AI, companies are using AI-to-monitor-AI. An oversight model continuously audits the logs of other internal agents, flagging \"out-of-character\" requests or attempts to access restricted data silos."
+      },
+      {
+        heading: "Conclusion",
+        content: "Shadow AI is the \"Zero-Day of the Workplace.\" The speed of AI adoption has outpaced the development of traditional security controls. In 2026, securing the \"Automated Intelligence Loop\" is not about restriction, but about Visibility and Intent Verification. Organizations that fail to govern their AI usage risk not just data loss, but the complete loss of control over their automated decision-making processes."
+      }
+    ],
   },
 }
 
