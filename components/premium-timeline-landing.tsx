@@ -533,7 +533,7 @@ export function PremiumTimelineLanding({
               </p>
             </motion.article>
 
-            {/* News Item 3 */}
+            {/* News Item 3 - Defence and Cyber Security */}
             <motion.article
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -541,17 +541,26 @@ export function PremiumTimelineLanding({
               transition={{ duration: 0.5, delay: 0.2 }}
               className="group cursor-pointer"
             >
-              <div className="aspect-[16/10] bg-gradient-to-br from-neutral-700 to-neutral-900 rounded-xl mb-6 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center text-white/20 text-6xl font-bold">
-                  03
+              <div className="aspect-[16/10] rounded-xl mb-6 overflow-hidden relative">
+                <Image
+                  src="/images/defence.jpg"
+                  alt="Defence and Cyber Security"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4">
+                  <span className="px-3 py-1 bg-orange-500 text-white text-xs font-semibold rounded-full">
+                    Defence
+                  </span>
                 </div>
               </div>
-              <span className="text-sm text-orange-500 font-medium">November 2025</span>
+              <span className="text-sm text-orange-500 font-medium">January 2026</span>
               <h3 className="text-xl font-semibold text-black mt-2 mb-3 group-hover:text-neutral-600 transition-colors">
-                Expanding Operations: New Oslo Headquarters
+                Modern Defence: Integrating Physical and Cyber Security Operations
               </h3>
               <p className="text-neutral-500 text-base leading-relaxed">
-                Our growing team moves into a state-of-the-art facility to better serve our expanding client base.
+                As defence operations evolve, the convergence of physical and cyber security becomes critical. Protecting military infrastructure requires unified defence strategies that secure both tactical operations and digital command systems.
               </p>
             </motion.article>
           </div>
