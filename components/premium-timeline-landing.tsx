@@ -8,32 +8,22 @@ import { ChevronRight } from "lucide-react"
 const insightCards = [
   {
     category: "Research Report",
-    title: "Pulse of Change: What's top of mind for today's leaders",
-    description: "After two years of rapid AI acceleration, global executives enter 2026 with unmistakable confidence. But beneath the optimism, data shows a series of gaps standing in the way of scale and value.",
-    color: "bg-gradient-to-br from-orange-600 to-orange-900",
+    title: "Automated Adversaries: The 2026 AI-Powered Threat Landscape",
     image: "/images/card1.jpg",
   },
   {
-    category: "Event",
-    title: "World Economic Forum Annual Meeting 2026",
-    date: "January 19-23, 2026",
-    location: "Davos, Switzerland",
-    description: "In Davos, we'll deliver practical insights, dissect common challenges, and reveal how the most adaptive enterprises are actively redefining reinvention and accelerating growth within their industries.",
-    color: "bg-gradient-to-br from-blue-600 to-blue-900",
+    category: "Research Report",
+    title: "The Autonomous Shield: Security Automation for Modern Enterprises",
     image: "/images/card2.jpg",
   },
   {
     category: "Research Report",
-    title: "Sovereign AI: From managing risk to accelerating growth",
-    description: "Sovereign AI isn't just a control play—it's a game-changer for global competitiveness and cultural value. Discover how organizations are moving fast to secure their advantage and shape AI's future, following four bold moves.",
-    color: "bg-gradient-to-br from-teal-600 to-teal-900",
+    title: "Predictive Intelligence: AI-Driven OSINT and Proactive Defense",
     image: "/images/card3.jpg",
   },
   {
     category: "Research Report",
-    title: "Top Banking Trends for 2026",
-    description: "GoMercant's Banking Trends 2026 reveals how agentic AI, smart money and shifting competition will reshape customer experience and growth.",
-    color: "bg-gradient-to-br from-indigo-600 to-indigo-900",
+    title: "Shadow AI: Securing the Automated Intelligence Loop",
     image: "/images/card4.jpg",
   },
 ]
@@ -107,10 +97,7 @@ export function PremiumTimelineLanding({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={cn(
-                  "group relative rounded-xl p-6 min-h-[380px] flex flex-col justify-between cursor-pointer overflow-hidden transition-transform hover:scale-[1.02]",
-                  !card.image && card.color
-                )}
+                className="group relative rounded-xl p-6 min-h-[380px] flex flex-col justify-between cursor-pointer overflow-hidden transition-transform hover:scale-[1.02]"
               >
                 {/* Background Image */}
                 {card.image && (
@@ -134,24 +121,9 @@ export function PremiumTimelineLanding({
                   </span>
                   
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-white leading-tight mb-3">
+                  <h3 className="text-xl font-bold text-white leading-tight">
                     {card.title}
                   </h3>
-                  
-                  {/* Event date/location if applicable */}
-                  {card.date && (
-                    <div className="mb-3">
-                      <p className="text-sm font-semibold text-white/90">{card.date}</p>
-                      {card.location && (
-                        <p className="text-sm text-white/70">{card.location}</p>
-                      )}
-                    </div>
-                  )}
-                  
-                  {/* Description */}
-                  <p className="text-sm text-white/80 leading-relaxed line-clamp-4">
-                    {card.description}
-                  </p>
                 </div>
                 
                 {/* Expand Button */}
