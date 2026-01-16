@@ -378,7 +378,7 @@ export const Help: React.FC = () => {
               <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center">
                 <Gift className="h-4 w-4 text-white" />
               </div>
-              <h2 className="text-xl font-semibold">What's New</h2>
+              <h2 className="text-xl font-semibold">What&apos;s New</h2>
             </div>
             <Button variant="ghost" size="sm" className="gap-1">
               View all <ArrowRight className="h-4 w-4" />

@@ -730,7 +730,7 @@ export const AccountSettings: React.FC = () => {
                           onChange={(e) => setEduForm({ ...eduForm, current: e.target.checked, endDate: '' })}
                           className="rounded"
                         />
-                        <Label htmlFor="currentEdu">I'm currently studying here</Label>
+                        <Label htmlFor="currentEdu">I&apos;m currently studying here</Label>
                       </div>
                       <div className="flex gap-2">
                         <Button onClick={addEducation}>Add</Button>

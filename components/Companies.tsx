@@ -703,7 +703,7 @@ export const Companies: React.FC = () => {
                   </div>
                   <h2 className="text-xl font-semibold mb-2">Welcome to the Feed!</h2>
                   <p className="text-muted-foreground max-w-md mx-auto">
-                    This is where you'll see announcements and opinions. Be the first to share something!
+                    This is where you&apos;ll see announcements and opinions. Be the first to share something!
                   </p>
                 </div>
               ) : (

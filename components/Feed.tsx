@@ -156,7 +156,7 @@ export const Feed: React.FC<FeedProps> = ({ onNavigate }) => {
               </div>
               <h3 className="text-xl font-bold mb-2">Welcome to the Feed!</h3>
               <p className="text-muted-foreground max-w-sm">
-                This is where you'll see announcements and opinions. Be the first to share something!
+                This is where you&apos;ll see announcements and opinions. Be the first to share something!
               </p>
             </div>
           ) : (
