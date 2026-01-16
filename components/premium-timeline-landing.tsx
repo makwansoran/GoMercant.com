@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils"
 import Image from "next/image"
+import Link from "next/link"
 import { motion } from "framer-motion"
 import { ChevronRight } from "lucide-react"
 
@@ -10,21 +11,25 @@ const insightCards = [
     category: "Research Report",
     title: "Automated Adversaries: The 2026 AI-Powered Threat Landscape",
     image: "/images/card1.jpg",
+    slug: "automated-adversaries",
   },
   {
     category: "Research Report",
     title: "The Autonomous Shield: Security Automation for Modern Enterprises",
     image: "/images/card2.jpg",
+    slug: "autonomous-shield",
   },
   {
     category: "Research Report",
     title: "Predictive Intelligence: AI-Driven OSINT and Proactive Defense",
     image: "/images/card3.jpg",
+    slug: "predictive-intelligence",
   },
   {
     category: "Research Report",
     title: "Shadow AI: Securing the Automated Intelligence Loop",
     image: "/images/card4.jpg",
+    slug: "shadow-ai",
   },
 ]
 
@@ -91,49 +96,52 @@ export function PremiumTimelineLanding({
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {insightCards.map((card, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative rounded-xl p-6 min-h-[380px] flex flex-col justify-between cursor-pointer overflow-hidden transition-transform hover:scale-[1.02]"
-              >
-                {/* Background Image */}
-                {card.image && (
-                  <div className="absolute inset-0">
-                    <Image
-                      src={card.image}
-                      alt={card.title}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
-                  </div>
-                )}
-                {/* Background overlay for hover effect */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
-                
-                <div className="relative z-10">
-                  {/* Category Label */}
-                  <span className="inline-block text-xs font-semibold text-white/80 uppercase tracking-wider mb-4">
-                    {card.category}
-                  </span>
+              <Link key={index} href={`/research/${card.slug}`}>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="group relative rounded-xl p-6 min-h-[380px] flex flex-col justify-between cursor-pointer overflow-hidden"
+                >
+                  {/* Background Image */}
+                  {card.image && (
+                    <div className="absolute inset-0">
+                      <Image
+                        src={card.image}
+                        alt={card.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+                    </div>
+                  )}
+                  {/* Background overlay for hover effect */}
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
                   
-                  {/* Title */}
-                  <h3 className="text-xl font-bold text-white leading-tight">
-                    {card.title}
-                  </h3>
-                </div>
-                
-                {/* Expand Button */}
-                <div className="relative z-10 mt-4">
-                  <button className="inline-flex items-center gap-1 text-sm font-semibold text-white group-hover:gap-2 transition-all">
-                    Expand
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </motion.div>
+                  <div className="relative z-10">
+                    {/* Category Label */}
+                    <span className="inline-block text-xs font-semibold text-white/80 uppercase tracking-wider mb-4">
+                      {card.category}
+                    </span>
+                    
+                    {/* Title */}
+                    <h3 className="text-xl font-bold text-white leading-tight">
+                      {card.title}
+                    </h3>
+                  </div>
+                  
+                  {/* Expand Button */}
+                  <div className="relative z-10 mt-4">
+                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-white group-hover:gap-2 transition-all duration-300">
+                      Expand
+                      <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>
