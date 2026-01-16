@@ -58,7 +58,7 @@ export function SignupForm({
     // If verification is required, show code input
     if (result.requiresVerification) {
       setSuccess(result.message || 'Verification code sent!')
-      setVerificationEmail(email)
+      setVerificationEmail(result.email || email)
       setShowCodeInput(true)
       return
     }
