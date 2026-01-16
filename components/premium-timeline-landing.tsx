@@ -20,6 +20,7 @@ const insightCards = [
     location: "Davos, Switzerland",
     description: "In Davos, we'll deliver practical insights, dissect common challenges, and reveal how the most adaptive enterprises are actively redefining reinvention and accelerating growth within their industries.",
     color: "bg-gradient-to-br from-blue-600 to-blue-900",
+    image: "/images/card2.jpg",
   },
   {
     category: "Research Report",
