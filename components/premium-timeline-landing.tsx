@@ -4,7 +4,21 @@ import { cn } from "@/lib/utils"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Code, Box, Database, Palette, Zap, ChevronLeft, ChevronRight, Star, Users, Shield, Rocket } from "lucide-react"
+import { Code, Box, Database, Palette, Zap, ChevronLeft, ChevronRight, Star, Users, Shield, Rocket, TrendingUp, TrendingDown, Minus } from "lucide-react"
+
+// Stock market style ticker data
+const tickerItems = [
+  { id: "LIDAR-001", title: "LIDAR Processing", company: "Tesla", bounty: 2500, change: 12.5, type: "Code" },
+  { id: "CAD-042", title: "Motor Mount Design", company: "FPV Dynamics", bounty: 800, change: -3.2, type: "CAD" },
+  { id: "DATA-089", title: "Training Dataset", company: "Amazon", bounty: 1800, change: 8.7, type: "Data" },
+  { id: "UI-023", title: "Dashboard UI", company: "Boston Dynamics", bounty: 1200, change: 0, type: "Design" },
+  { id: "AUTO-156", title: "Sensor Fusion", company: "Waymo", bounty: 3500, change: 15.3, type: "Auto" },
+  { id: "ML-078", title: "Object Detection", company: "NVIDIA", bounty: 2800, change: -1.8, type: "ML" },
+  { id: "ROB-034", title: "Gripper Design", company: "Fanuc", bounty: 950, change: 5.2, type: "Robotics" },
+  { id: "SIM-012", title: "Physics Engine", company: "Unity", bounty: 2200, change: 22.1, type: "Sim" },
+  { id: "EMB-067", title: "Firmware Update", company: "Arduino", bounty: 600, change: -7.5, type: "Embedded" },
+  { id: "CV-091", title: "Lane Detection", company: "Mobileye", bounty: 3100, change: 9.4, type: "Vision" },
+]
 
 const featuredMissions = [
   {
@@ -157,8 +171,37 @@ export function PremiumTimelineLanding({
         </div>
       </nav>
 
+      {/* Stock Market Style Ticker */}
+      <div className="fixed top-16 left-0 right-0 z-40 bg-black text-white overflow-hidden">
+        <div className="flex animate-ticker">
+          {[...tickerItems, ...tickerItems].map((item, index) => (
+            <div
+              key={`${item.id}-${index}`}
+              className="flex items-center gap-3 px-6 py-2 border-r border-neutral-800 whitespace-nowrap min-w-fit"
+            >
+              <span className="font-mono text-xs text-neutral-500">{item.id}</span>
+              <span className="font-semibold text-sm">{item.company}</span>
+              <span className="text-orange-400 font-bold">${item.bounty.toLocaleString()}</span>
+              <span className={`flex items-center gap-1 text-xs font-medium ${
+                item.change > 0 ? 'text-green-400' : item.change < 0 ? 'text-red-400' : 'text-neutral-400'
+              }`}>
+                {item.change > 0 ? (
+                  <TrendingUp className="w-3 h-3" />
+                ) : item.change < 0 ? (
+                  <TrendingDown className="w-3 h-3" />
+                ) : (
+                  <Minus className="w-3 h-3" />
+                )}
+                {item.change > 0 ? '+' : ''}{item.change}%
+              </span>
+              <span className="text-[10px] px-1.5 py-0.5 rounded bg-neutral-800 text-neutral-400">{item.type}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Hero Section */}
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-white to-neutral-50 px-6 pt-16">
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-white to-neutral-50 px-6 pt-28">
         <div className="relative z-10 mx-auto max-w-5xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
