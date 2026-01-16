@@ -167,6 +167,151 @@ export function PremiumTimelineLanding({
         </div>
       </section>
 
+      {/* Our Software Section - Palantir Style */}
+      <section className="py-20 md:py-32 px-6 bg-black text-white">
+        <div className="mx-auto max-w-6xl">
+          {/* Header Statement */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-xl md:text-2xl lg:text-3xl text-neutral-400 leading-relaxed max-w-5xl mb-24 md:mb-32"
+          >
+            Our software powers real-time, AI-driven decisions in critical government and commercial enterprises in the West, from the factory floors to the front lines.
+          </motion.p>
+
+          {/* Software List */}
+          <div className="space-y-0">
+            {/* Our Software - Main */}
+            <motion.a
+              href="#"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="group block border-t border-neutral-800 py-8 md:py-10"
+            >
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white group-hover:text-neutral-400 transition-colors duration-300">
+                  Our Software
+                </h2>
+                <p className="text-neutral-500 text-base md:text-lg md:max-w-md md:text-right">
+                  Automate operations, from the factory floor to the front lines
+                </p>
+              </div>
+            </motion.a>
+
+            {/* AIP */}
+            <motion.a
+              href="#"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.05 }}
+              className="group block border-t border-neutral-800 py-8 md:py-10"
+            >
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div className="flex items-baseline gap-4">
+                  <span className="text-sm text-neutral-600 font-mono">/0.1</span>
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white group-hover:text-neutral-400 transition-colors duration-300">
+                    AIP
+                  </h3>
+                </div>
+                <p className="text-neutral-500 text-base md:text-lg md:max-w-md md:text-right md:pl-4">
+                  Achieve AI-driven combat superiority, from space to mud
+                </p>
+              </div>
+            </motion.a>
+
+            {/* Gotham */}
+            <motion.a
+              href="#"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="group block border-t border-neutral-800 py-8 md:py-10"
+            >
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div className="flex items-baseline gap-4">
+                  <span className="text-sm text-neutral-600 font-mono">/0.2</span>
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white group-hover:text-neutral-400 transition-colors duration-300">
+                    Gotham
+                  </h3>
+                </div>
+                <p className="text-neutral-500 text-base md:text-lg md:max-w-md md:text-right md:pl-4">
+                  Build and manage Ontology-powered software, with a complete developer platform
+                </p>
+              </div>
+            </motion.a>
+
+            {/* Foundry */}
+            <motion.a
+              href="#"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="group block border-t border-neutral-800 py-8 md:py-10"
+            >
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div className="flex items-baseline gap-4">
+                  <span className="text-sm text-neutral-600 font-mono">/0.3</span>
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white group-hover:text-neutral-400 transition-colors duration-300">
+                    Foundry
+                  </h3>
+                </div>
+                <p className="text-neutral-500 text-base md:text-lg md:max-w-md md:text-right md:pl-4">
+                  The central system for orchestrating decisions across Human+AI teams
+                </p>
+              </div>
+            </motion.a>
+
+            {/* Ontology */}
+            <motion.a
+              href="#"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="group block border-t border-neutral-800 py-8 md:py-10"
+            >
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div className="flex items-baseline gap-4">
+                  <span className="text-sm text-neutral-600 font-mono">/0.4</span>
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white group-hover:text-neutral-400 transition-colors duration-300">
+                    Ontology
+                  </h3>
+                </div>
+                <p className="text-neutral-500 text-base md:text-lg md:max-w-md md:text-right md:pl-4">
+                  Autonomously deploy, monitor, and manage software across any environment
+                </p>
+              </div>
+            </motion.a>
+
+            {/* Apollo */}
+            <motion.a
+              href="#"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="group block border-t border-neutral-800 border-b py-8 md:py-10"
+            >
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div className="flex items-baseline gap-4">
+                  <span className="text-sm text-neutral-600 font-mono">/0.5</span>
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white group-hover:text-neutral-400 transition-colors duration-300">
+                    Apollo
+                  </h3>
+                </div>
+              </div>
+            </motion.a>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-neutral-100 bg-white">
         <div className="mx-auto max-w-6xl text-center">
