@@ -31,12 +31,6 @@ const insightCards = [
     image: "/images/card4.jpg",
     slug: "shadow-ai",
   },
-  {
-    category: "Research Report",
-    title: "Grid Under Siege: Critical Infrastructure and Power Grid Vulnerabilities",
-    image: "/images/card5.webp",
-    slug: "grid-under-siege",
-  },
 ]
 
 export function PremiumTimelineLanding({
@@ -100,7 +94,7 @@ export function PremiumTimelineLanding({
       {/* Insight Cards Section */}
       <section className="py-16 px-6 bg-neutral-50">
         <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {insightCards.map((card, index) => (
               <Link key={index} href={`/research/${card.slug}`}>
                 <motion.div
@@ -435,27 +429,38 @@ export function PremiumTimelineLanding({
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* News Item 1 */}
-            <motion.article
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="group cursor-pointer"
-            >
-              <div className="aspect-[16/10] bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl mb-6 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center text-white/20 text-6xl font-bold">
-                  01
+            {/* News Item 1 - Grid Under Siege Research */}
+            <Link href="/research/grid-under-siege">
+              <motion.article
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="group cursor-pointer"
+              >
+                <div className="aspect-[16/10] rounded-xl mb-6 overflow-hidden relative">
+                  <Image
+                    src="/images/card5.webp"
+                    alt="Grid Under Siege"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-4">
+                    <span className="px-3 py-1 bg-orange-500 text-white text-xs font-semibold rounded-full">
+                      Research Report
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <span className="text-sm text-orange-500 font-medium">January 2026</span>
-              <h3 className="text-xl font-semibold text-black mt-2 mb-3 group-hover:text-neutral-600 transition-colors">
-                GoMercant Launches New AI-Powered Threat Detection Platform
-              </h3>
-              <p className="text-neutral-500 text-base leading-relaxed">
-                Our latest cybersecurity solution leverages advanced machine learning to identify and neutralize threats in real-time.
-              </p>
-            </motion.article>
+                <span className="text-sm text-orange-500 font-medium">January 2026</span>
+                <h3 className="text-xl font-semibold text-black mt-2 mb-3 group-hover:text-neutral-600 transition-colors">
+                  Grid Under Siege: Critical Infrastructure and Power Grid Vulnerabilities
+                </h3>
+                <p className="text-neutral-500 text-base leading-relaxed">
+                  Analyzing systemic vulnerabilities in electrical infrastructure and how adversaries exploit IT/OT convergence for kinetic effects.
+                </p>
+              </motion.article>
+            </Link>
 
             {/* News Item 2 */}
             <motion.article
