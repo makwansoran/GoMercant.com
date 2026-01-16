@@ -329,26 +329,26 @@ export function PremiumTimelineLanding({
         <div className="relative mb-8">
           <div className="flex animate-marquee">
             {[
-              { name: "CrowdStrike", icon: "crowdstrike" },
-              { name: "Palo Alto Networks", icon: "paloaltonetworks" },
-              { name: "Splunk", icon: "splunk" },
-              { name: "Fortinet", icon: "fortinet" },
-              { name: "Cloudflare", icon: "cloudflare" },
-              { name: "Okta", icon: "okta" },
-              { name: "Datadog", icon: "datadog" },
-              { name: "Elastic", icon: "elastic" },
-              { name: "Cisco", icon: "cisco" },
-              { name: "VMware", icon: "vmware" },
-              { name: "CrowdStrike", icon: "crowdstrike" },
-              { name: "Palo Alto Networks", icon: "paloaltonetworks" },
-              { name: "Splunk", icon: "splunk" },
-              { name: "Fortinet", icon: "fortinet" },
-              { name: "Cloudflare", icon: "cloudflare" },
-              { name: "Okta", icon: "okta" },
-              { name: "Datadog", icon: "datadog" },
-              { name: "Elastic", icon: "elastic" },
-              { name: "Cisco", icon: "cisco" },
-              { name: "VMware", icon: "vmware" },
+              { name: "CrowdStrike", logo: "https://logo.clearbit.com/crowdstrike.com" },
+              { name: "Microsoft", logo: "https://logo.clearbit.com/microsoft.com" },
+              { name: "Palo Alto Networks", logo: "https://logo.clearbit.com/paloaltonetworks.com" },
+              { name: "Splunk", logo: "https://logo.clearbit.com/splunk.com" },
+              { name: "Fortinet", logo: "https://logo.clearbit.com/fortinet.com" },
+              { name: "Cloudflare", logo: "https://logo.clearbit.com/cloudflare.com" },
+              { name: "Okta", logo: "https://logo.clearbit.com/okta.com" },
+              { name: "Datadog", logo: "https://logo.clearbit.com/datadoghq.com" },
+              { name: "Elastic", logo: "https://logo.clearbit.com/elastic.co" },
+              { name: "Cisco", logo: "https://logo.clearbit.com/cisco.com" },
+              { name: "CrowdStrike", logo: "https://logo.clearbit.com/crowdstrike.com" },
+              { name: "Microsoft", logo: "https://logo.clearbit.com/microsoft.com" },
+              { name: "Palo Alto Networks", logo: "https://logo.clearbit.com/paloaltonetworks.com" },
+              { name: "Splunk", logo: "https://logo.clearbit.com/splunk.com" },
+              { name: "Fortinet", logo: "https://logo.clearbit.com/fortinet.com" },
+              { name: "Cloudflare", logo: "https://logo.clearbit.com/cloudflare.com" },
+              { name: "Okta", logo: "https://logo.clearbit.com/okta.com" },
+              { name: "Datadog", logo: "https://logo.clearbit.com/datadoghq.com" },
+              { name: "Elastic", logo: "https://logo.clearbit.com/elastic.co" },
+              { name: "Cisco", logo: "https://logo.clearbit.com/cisco.com" },
             ].map((partner, index) => (
               <div
                 key={index}
@@ -356,11 +356,18 @@ export function PremiumTimelineLanding({
               >
                 <div className="flex items-center gap-3">
                   <img
-                    src={`https://cdn.simpleicons.org/${partner.icon}/000000`}
+                    src={partner.logo}
                     alt={partner.name}
-                    className="h-8 w-8 object-contain"
+                    className="h-10 w-auto max-w-[120px] object-contain grayscale hover:grayscale-0 transition-all"
+                    onError={(e) => {
+                      // Fallback to text if logo fails
+                      e.currentTarget.style.display = 'none';
+                      const parent = e.currentTarget.parentElement;
+                      if (parent) {
+                        parent.innerHTML = `<span className="text-sm font-bold text-neutral-800">${partner.name}</span>`;
+                      }
+                    }}
                   />
-                  <span className="text-sm font-medium text-neutral-600 whitespace-nowrap">{partner.name}</span>
                 </div>
               </div>
             ))}
@@ -371,26 +378,26 @@ export function PremiumTimelineLanding({
         <div className="relative">
           <div className="flex animate-marquee-reverse">
             {[
-              { name: "Microsoft", icon: "microsoft" },
-              { name: "Google Cloud", icon: "googlecloud" },
-              { name: "Amazon AWS", icon: "amazonwebservices" },
-              { name: "NVIDIA", icon: "nvidia" },
-              { name: "OpenAI", icon: "openai" },
-              { name: "Snowflake", icon: "snowflake" },
-              { name: "MongoDB", icon: "mongodb" },
-              { name: "HashiCorp", icon: "hashicorp" },
-              { name: "GitLab", icon: "gitlab" },
-              { name: "Docker", icon: "docker" },
-              { name: "Microsoft", icon: "microsoft" },
-              { name: "Google Cloud", icon: "googlecloud" },
-              { name: "Amazon AWS", icon: "amazonwebservices" },
-              { name: "NVIDIA", icon: "nvidia" },
-              { name: "OpenAI", icon: "openai" },
-              { name: "Snowflake", icon: "snowflake" },
-              { name: "MongoDB", icon: "mongodb" },
-              { name: "HashiCorp", icon: "hashicorp" },
-              { name: "GitLab", icon: "gitlab" },
-              { name: "Docker", icon: "docker" },
+              { name: "Amazon AWS", logo: "https://logo.clearbit.com/amazonaws.com" },
+              { name: "OpenAI", logo: "https://logo.clearbit.com/openai.com" },
+              { name: "Microsoft", logo: "https://logo.clearbit.com/microsoft.com" },
+              { name: "Google Cloud", logo: "https://logo.clearbit.com/cloud.google.com" },
+              { name: "NVIDIA", logo: "https://logo.clearbit.com/nvidia.com" },
+              { name: "Snowflake", logo: "https://logo.clearbit.com/snowflake.com" },
+              { name: "MongoDB", logo: "https://logo.clearbit.com/mongodb.com" },
+              { name: "HashiCorp", logo: "https://logo.clearbit.com/hashicorp.com" },
+              { name: "GitLab", logo: "https://logo.clearbit.com/gitlab.com" },
+              { name: "Docker", logo: "https://logo.clearbit.com/docker.com" },
+              { name: "Amazon AWS", logo: "https://logo.clearbit.com/amazonaws.com" },
+              { name: "OpenAI", logo: "https://logo.clearbit.com/openai.com" },
+              { name: "Microsoft", logo: "https://logo.clearbit.com/microsoft.com" },
+              { name: "Google Cloud", logo: "https://logo.clearbit.com/cloud.google.com" },
+              { name: "NVIDIA", logo: "https://logo.clearbit.com/nvidia.com" },
+              { name: "Snowflake", logo: "https://logo.clearbit.com/snowflake.com" },
+              { name: "MongoDB", logo: "https://logo.clearbit.com/mongodb.com" },
+              { name: "HashiCorp", logo: "https://logo.clearbit.com/hashicorp.com" },
+              { name: "GitLab", logo: "https://logo.clearbit.com/gitlab.com" },
+              { name: "Docker", logo: "https://logo.clearbit.com/docker.com" },
             ].map((partner, index) => (
               <div
                 key={index}
@@ -398,11 +405,18 @@ export function PremiumTimelineLanding({
               >
                 <div className="flex items-center gap-3">
                   <img
-                    src={`https://cdn.simpleicons.org/${partner.icon}/000000`}
+                    src={partner.logo}
                     alt={partner.name}
-                    className="h-8 w-8 object-contain"
+                    className="h-10 w-auto max-w-[120px] object-contain grayscale hover:grayscale-0 transition-all"
+                    onError={(e) => {
+                      // Fallback to text if logo fails
+                      e.currentTarget.style.display = 'none';
+                      const parent = e.currentTarget.parentElement;
+                      if (parent) {
+                        parent.innerHTML = `<span className="text-sm font-bold text-neutral-800">${partner.name}</span>`;
+                      }
+                    }}
                   />
-                  <span className="text-sm font-medium text-neutral-600 whitespace-nowrap">{partner.name}</span>
                 </div>
               </div>
             ))}
