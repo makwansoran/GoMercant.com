@@ -302,9 +302,9 @@ export function PremiumTimelineLanding({
       <footer className="bg-black text-white py-16 md:py-24 px-6">
         <div className="mx-auto max-w-6xl">
           {/* Footer Top */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
             {/* Brand */}
-            <div className="md:col-span-2">
+            <div className="lg:col-span-2">
               <div className="flex items-center gap-2 mb-6">
                 <Image 
                   src="/favicon.png" 
@@ -341,6 +341,25 @@ export function PremiumTimelineLanding({
                 <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Careers</a></li>
                 <li><a href="/contact" className="text-neutral-300 hover:text-white transition-colors">Contact</a></li>
                 <li><a href="/login" className="text-neutral-300 hover:text-white transition-colors">Client Login</a></li>
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">Contact</h4>
+              <ul className="space-y-3">
+                <li className="text-neutral-300">
+                  <span className="block text-white font-medium">Address</span>
+                  Oslo, Norway
+                </li>
+                <li className="text-neutral-300">
+                  <span className="block text-white font-medium">Email</span>
+                  <a href="mailto:Contact@gomercant.com" className="hover:text-white transition-colors">Contact@gomercant.com</a>
+                </li>
+                <li className="text-neutral-300">
+                  <span className="block text-white font-medium">Phone</span>
+                  <a href="tel:+4712345678" className="hover:text-white transition-colors">+47 123 45 678</a>
+                </li>
               </ul>
             </div>
           </div>
