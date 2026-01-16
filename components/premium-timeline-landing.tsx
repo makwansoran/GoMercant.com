@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Star, Users, Shield, Rocket } from "lucide-react"
+import { Star } from "lucide-react"
 
 
 const stats = [
@@ -141,35 +141,33 @@ export function PremiumTimelineLanding({
       {/* Features Section - Accenture Style Cards */}
       <section id="features" className="py-24 px-6 bg-neutral-100">
         <div className="mx-auto max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Why GoMercant?</h2>
-            <p className="text-neutral-600 max-w-2xl mx-auto">
-              The smartest way to get technical work done. No hiring, no overhead, just results.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-1">
             {/* Card 1 - Fast Turnaround */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0 }}
               viewport={{ once: true }}
-              className="group relative bg-gradient-to-br from-violet-600 to-purple-700 rounded-xl p-6 min-h-[280px] flex flex-col justify-between cursor-pointer overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
+              className="group relative bg-black min-h-[380px] flex flex-col cursor-pointer overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 text-white/80 text-xs font-medium mb-4">
-                  <Rocket className="w-4 h-4" />
-                  <span>Speed</span>
+              {/* Abstract gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-violet-900 via-purple-800 to-fuchsia-900">
+                <div className="absolute inset-0 opacity-30">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-pink-500/40 to-transparent rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
+                  <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-violet-500/40 to-transparent rounded-full blur-2xl transform -translate-x-1/4 translate-y-1/4" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">Fast Turnaround</h3>
-                <p className="text-white/80 text-sm leading-relaxed">
-                  Get quality deliverables in days, not months. Our global talent pool works around the clock.
-                </p>
               </div>
-              <div className="relative z-10 mt-4">
-                <span className="text-white/60 text-xs group-hover:text-white transition-colors">Learn more →</span>
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
+              
+              <div className="relative z-10 p-6 flex flex-col h-full">
+                <span className="text-white/70 text-xs font-medium tracking-wider uppercase mb-4">Speed</span>
+                <h3 className="text-2xl font-bold text-white mb-4 leading-tight">Fast Turnaround</h3>
+                <p className="text-white/70 text-sm leading-relaxed flex-1">
+                  Get quality deliverables in days, not months. Our global talent pool works around the clock to meet your deadlines.
+                </p>
+                <div className="mt-6 pt-4 border-t border-white/10">
+                  <span className="text-white text-sm font-medium group-hover:underline">Expand</span>
+                </div>
               </div>
             </motion.div>
 
@@ -179,21 +177,26 @@ export function PremiumTimelineLanding({
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
-              className="group relative bg-gradient-to-br from-emerald-600 to-teal-700 rounded-xl p-6 min-h-[280px] flex flex-col justify-between cursor-pointer overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
+              className="group relative bg-black min-h-[380px] flex flex-col cursor-pointer overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 text-white/80 text-xs font-medium mb-4">
-                  <Shield className="w-4 h-4" />
-                  <span>Quality</span>
+              {/* Abstract gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 via-teal-800 to-cyan-900">
+                <div className="absolute inset-0 opacity-30">
+                  <div className="absolute top-1/2 left-0 w-72 h-72 bg-gradient-to-r from-emerald-400/40 to-transparent rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2" />
+                  <div className="absolute bottom-0 right-0 w-56 h-56 bg-gradient-to-tl from-teal-400/30 to-transparent rounded-full blur-2xl transform translate-x-1/4 translate-y-1/4" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">Quality Guaranteed</h3>
-                <p className="text-white/80 text-sm leading-relaxed">
-                  Every submission is reviewed. Pay only when you&apos;re satisfied with the results.
-                </p>
               </div>
-              <div className="relative z-10 mt-4">
-                <span className="text-white/60 text-xs group-hover:text-white transition-colors">Learn more →</span>
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
+              
+              <div className="relative z-10 p-6 flex flex-col h-full">
+                <span className="text-white/70 text-xs font-medium tracking-wider uppercase mb-4">Quality</span>
+                <h3 className="text-2xl font-bold text-white mb-4 leading-tight">Quality Guaranteed</h3>
+                <p className="text-white/70 text-sm leading-relaxed flex-1">
+                  Every submission is reviewed by experts. Pay only when you&apos;re satisfied with the results. No risk, all reward.
+                </p>
+                <div className="mt-6 pt-4 border-t border-white/10">
+                  <span className="text-white text-sm font-medium group-hover:underline">Expand</span>
+                </div>
               </div>
             </motion.div>
 
@@ -203,21 +206,26 @@ export function PremiumTimelineLanding({
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="group relative bg-gradient-to-br from-orange-500 to-amber-600 rounded-xl p-6 min-h-[280px] flex flex-col justify-between cursor-pointer overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
+              className="group relative bg-black min-h-[380px] flex flex-col cursor-pointer overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 text-white/80 text-xs font-medium mb-4">
-                  <Users className="w-4 h-4" />
-                  <span>Talent</span>
+              {/* Abstract gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-900 via-amber-800 to-yellow-900">
+                <div className="absolute inset-0 opacity-30">
+                  <div className="absolute top-0 left-1/2 w-80 h-80 bg-gradient-to-b from-orange-400/50 to-transparent rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2" />
+                  <div className="absolute bottom-1/4 right-0 w-48 h-48 bg-gradient-to-l from-amber-500/40 to-transparent rounded-full blur-2xl" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">Top Talent</h3>
-                <p className="text-white/80 text-sm leading-relaxed">
-                  Access engineers from Tesla, Google, NASA, and top universities worldwide.
-                </p>
               </div>
-              <div className="relative z-10 mt-4">
-                <span className="text-white/60 text-xs group-hover:text-white transition-colors">Learn more →</span>
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
+              
+              <div className="relative z-10 p-6 flex flex-col h-full">
+                <span className="text-white/70 text-xs font-medium tracking-wider uppercase mb-4">Talent</span>
+                <h3 className="text-2xl font-bold text-white mb-4 leading-tight">Top Talent</h3>
+                <p className="text-white/70 text-sm leading-relaxed flex-1">
+                  Access engineers from Tesla, Google, NASA, and top universities worldwide. The best minds, ready to work.
+                </p>
+                <div className="mt-6 pt-4 border-t border-white/10">
+                  <span className="text-white text-sm font-medium group-hover:underline">Expand</span>
+                </div>
               </div>
             </motion.div>
 
@@ -227,21 +235,26 @@ export function PremiumTimelineLanding({
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               viewport={{ once: true }}
-              className="group relative bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl p-6 min-h-[280px] flex flex-col justify-between cursor-pointer overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
+              className="group relative bg-black min-h-[380px] flex flex-col cursor-pointer overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative z-10">
-                <div className="inline-flex items-center gap-2 text-white/80 text-xs font-medium mb-4">
-                  <Star className="w-4 h-4" />
-                  <span>Trust</span>
+              {/* Abstract gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-indigo-800 to-violet-900">
+                <div className="absolute inset-0 opacity-30">
+                  <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-gradient-to-t from-blue-400/40 to-transparent rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
+                  <div className="absolute top-1/4 right-0 w-64 h-64 bg-gradient-to-bl from-indigo-500/30 to-transparent rounded-full blur-2xl transform translate-x-1/4" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">Reputation System</h3>
-                <p className="text-white/80 text-sm leading-relaxed">
-                  Transparent ratings and reviews help you find the perfect match for your project.
-                </p>
               </div>
-              <div className="relative z-10 mt-4">
-                <span className="text-white/60 text-xs group-hover:text-white transition-colors">Learn more →</span>
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
+              
+              <div className="relative z-10 p-6 flex flex-col h-full">
+                <span className="text-white/70 text-xs font-medium tracking-wider uppercase mb-4">Trust</span>
+                <h3 className="text-2xl font-bold text-white mb-4 leading-tight">Reputation System</h3>
+                <p className="text-white/70 text-sm leading-relaxed flex-1">
+                  Transparent ratings and reviews help you find the perfect match for your project. Build trust, deliver results.
+                </p>
+                <div className="mt-6 pt-4 border-t border-white/10">
+                  <span className="text-white text-sm font-medium group-hover:underline">Expand</span>
+                </div>
               </div>
             </motion.div>
           </div>
