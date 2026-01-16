@@ -32,12 +32,18 @@ export function PremiumTimelineLanding({
               SPECTR
             </span>
           </div>
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-4">
             <a
               href="/get-started"
               className="inline-flex items-center justify-center rounded-full bg-black px-6 py-2 text-sm font-semibold text-white transition-all hover:bg-neutral-800 hover:scale-105"
             >
-              Get Started
+              Client Login
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center rounded-full bg-orange-500 px-6 py-2 text-sm font-semibold text-white transition-all hover:bg-orange-600 hover:scale-105"
+            >
+              Contact Us
             </a>
           </div>
         </div>
@@ -66,14 +72,6 @@ export function PremiumTimelineLanding({
             <p className="mt-6 text-lg text-neutral-600 md:text-xl max-w-2xl mx-auto">
               The premier marketplace for technical procurement. Post missions, receive world-class deliverables, pay for results.
             </p>
-            <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-              <a
-                href="/get-started"
-                className="inline-flex items-center justify-center rounded-full bg-orange-500 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-orange-600 hover:scale-105 shadow-lg shadow-orange-500/30"
-              >
-                Browse Opportunities
-              </a>
-            </div>
           </motion.div>
           
           {/* Stats */}
