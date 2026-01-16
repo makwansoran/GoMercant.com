@@ -320,90 +320,90 @@ export function PremiumTimelineLanding({
               Trusted Technology Stack
             </span>
             <h2 className="text-3xl md:text-4xl font-medium text-black">
-              Our Partner Resources
+              Partner Resources
             </h2>
           </motion.div>
         </div>
 
-        {/* Logo Marquee - Row 1 */}
+        {/* Logo Marquee - Row 1 (Cybersecurity) */}
         <div className="relative mb-8">
           <div className="flex animate-marquee">
             {[
-              { name: "CrowdStrike", domain: "crowdstrike.com" },
-              { name: "Palo Alto Networks", domain: "paloaltonetworks.com" },
-              { name: "Splunk", domain: "splunk.com" },
-              { name: "Fortinet", domain: "fortinet.com" },
-              { name: "SentinelOne", domain: "sentinelone.com" },
-              { name: "Cloudflare", domain: "cloudflare.com" },
-              { name: "Okta", domain: "okta.com" },
-              { name: "Zscaler", domain: "zscaler.com" },
-              { name: "Datadog", domain: "datadoghq.com" },
-              { name: "Elastic", domain: "elastic.co" },
-              { name: "CrowdStrike", domain: "crowdstrike.com" },
-              { name: "Palo Alto Networks", domain: "paloaltonetworks.com" },
-              { name: "Splunk", domain: "splunk.com" },
-              { name: "Fortinet", domain: "fortinet.com" },
-              { name: "SentinelOne", domain: "sentinelone.com" },
-              { name: "Cloudflare", domain: "cloudflare.com" },
-              { name: "Okta", domain: "okta.com" },
-              { name: "Zscaler", domain: "zscaler.com" },
-              { name: "Datadog", domain: "datadoghq.com" },
-              { name: "Elastic", domain: "elastic.co" },
+              { name: "CrowdStrike", icon: "crowdstrike" },
+              { name: "Palo Alto Networks", icon: "paloaltonetworks" },
+              { name: "Splunk", icon: "splunk" },
+              { name: "Fortinet", icon: "fortinet" },
+              { name: "Cloudflare", icon: "cloudflare" },
+              { name: "Okta", icon: "okta" },
+              { name: "Datadog", icon: "datadog" },
+              { name: "Elastic", icon: "elastic" },
+              { name: "Cisco", icon: "cisco" },
+              { name: "VMware", icon: "vmware" },
+              { name: "CrowdStrike", icon: "crowdstrike" },
+              { name: "Palo Alto Networks", icon: "paloaltonetworks" },
+              { name: "Splunk", icon: "splunk" },
+              { name: "Fortinet", icon: "fortinet" },
+              { name: "Cloudflare", icon: "cloudflare" },
+              { name: "Okta", icon: "okta" },
+              { name: "Datadog", icon: "datadog" },
+              { name: "Elastic", icon: "elastic" },
+              { name: "Cisco", icon: "cisco" },
+              { name: "VMware", icon: "vmware" },
             ].map((partner, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 mx-8 flex items-center justify-center h-16 w-40 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
+                className="flex-shrink-0 mx-6 flex items-center justify-center h-16 px-4 opacity-70 hover:opacity-100 transition-all duration-300"
               >
-                <img
-                  src={`https://logo.clearbit.com/${partner.domain}`}
-                  alt={partner.name}
-                  className="max-h-10 max-w-full object-contain"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none'
-                  }}
-                />
+                <div className="flex items-center gap-3">
+                  <img
+                    src={`https://cdn.simpleicons.org/${partner.icon}/000000`}
+                    alt={partner.name}
+                    className="h-8 w-8 object-contain"
+                  />
+                  <span className="text-sm font-medium text-neutral-600 whitespace-nowrap">{partner.name}</span>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Logo Marquee - Row 2 (Reverse Direction) */}
+        {/* Logo Marquee - Row 2 (AI & Cloud - Reverse Direction) */}
         <div className="relative">
           <div className="flex animate-marquee-reverse">
             {[
-              { name: "Microsoft", domain: "microsoft.com" },
-              { name: "Google Cloud", domain: "cloud.google.com" },
-              { name: "AWS", domain: "aws.amazon.com" },
-              { name: "NVIDIA", domain: "nvidia.com" },
-              { name: "OpenAI", domain: "openai.com" },
-              { name: "Anthropic", domain: "anthropic.com" },
-              { name: "Snowflake", domain: "snowflake.com" },
-              { name: "MongoDB", domain: "mongodb.com" },
-              { name: "HashiCorp", domain: "hashicorp.com" },
-              { name: "GitLab", domain: "gitlab.com" },
-              { name: "Microsoft", domain: "microsoft.com" },
-              { name: "Google Cloud", domain: "cloud.google.com" },
-              { name: "AWS", domain: "aws.amazon.com" },
-              { name: "NVIDIA", domain: "nvidia.com" },
-              { name: "OpenAI", domain: "openai.com" },
-              { name: "Anthropic", domain: "anthropic.com" },
-              { name: "Snowflake", domain: "snowflake.com" },
-              { name: "MongoDB", domain: "mongodb.com" },
-              { name: "HashiCorp", domain: "hashicorp.com" },
-              { name: "GitLab", domain: "gitlab.com" },
+              { name: "Microsoft", icon: "microsoft" },
+              { name: "Google Cloud", icon: "googlecloud" },
+              { name: "Amazon AWS", icon: "amazonwebservices" },
+              { name: "NVIDIA", icon: "nvidia" },
+              { name: "OpenAI", icon: "openai" },
+              { name: "Snowflake", icon: "snowflake" },
+              { name: "MongoDB", icon: "mongodb" },
+              { name: "HashiCorp", icon: "hashicorp" },
+              { name: "GitLab", icon: "gitlab" },
+              { name: "Docker", icon: "docker" },
+              { name: "Microsoft", icon: "microsoft" },
+              { name: "Google Cloud", icon: "googlecloud" },
+              { name: "Amazon AWS", icon: "amazonwebservices" },
+              { name: "NVIDIA", icon: "nvidia" },
+              { name: "OpenAI", icon: "openai" },
+              { name: "Snowflake", icon: "snowflake" },
+              { name: "MongoDB", icon: "mongodb" },
+              { name: "HashiCorp", icon: "hashicorp" },
+              { name: "GitLab", icon: "gitlab" },
+              { name: "Docker", icon: "docker" },
             ].map((partner, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 mx-8 flex items-center justify-center h-16 w-40 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300"
+                className="flex-shrink-0 mx-6 flex items-center justify-center h-16 px-4 opacity-70 hover:opacity-100 transition-all duration-300"
               >
-                <img
-                  src={`https://logo.clearbit.com/${partner.domain}`}
-                  alt={partner.name}
-                  className="max-h-10 max-w-full object-contain"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none'
-                  }}
-                />
+                <div className="flex items-center gap-3">
+                  <img
+                    src={`https://cdn.simpleicons.org/${partner.icon}/000000`}
+                    alt={partner.name}
+                    className="h-8 w-8 object-contain"
+                  />
+                  <span className="text-sm font-medium text-neutral-600 whitespace-nowrap">{partner.name}</span>
+                </div>
               </div>
             ))}
           </div>
