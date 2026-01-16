@@ -53,7 +53,7 @@ export interface Education {
   current: boolean
 }
 
-export async function signup(name: string, email: string, password: string): Promise<{ user: User; message?: string; requiresVerification?: boolean; email?: string } | { error: string; requiresVerification?: boolean }> {
+export async function signup(name: string, email: string, password: string): Promise<{ user: User; message?: string; requiresVerification?: boolean } | { error: string; requiresVerification?: boolean }> {
   try {
     const response = await fetch('/api/auth/signup', {
       method: 'POST',
