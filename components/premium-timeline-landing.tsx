@@ -4,21 +4,7 @@ import { cn } from "@/lib/utils"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Star, Users, Shield, Rocket, TrendingUp, TrendingDown, Minus } from "lucide-react"
-
-// Stock market style ticker data
-const tickerItems = [
-  { id: "LIDAR-001", title: "LIDAR Processing", company: "Tesla", bounty: 2500, change: 12.5, type: "Code" },
-  { id: "CAD-042", title: "Motor Mount Design", company: "FPV Dynamics", bounty: 800, change: -3.2, type: "CAD" },
-  { id: "DATA-089", title: "Training Dataset", company: "Amazon", bounty: 1800, change: 8.7, type: "Data" },
-  { id: "UI-023", title: "Dashboard UI", company: "Boston Dynamics", bounty: 1200, change: 0, type: "Design" },
-  { id: "AUTO-156", title: "Sensor Fusion", company: "Waymo", bounty: 3500, change: 15.3, type: "Auto" },
-  { id: "ML-078", title: "Object Detection", company: "NVIDIA", bounty: 2800, change: -1.8, type: "ML" },
-  { id: "ROB-034", title: "Gripper Design", company: "Fanuc", bounty: 950, change: 5.2, type: "Robotics" },
-  { id: "SIM-012", title: "Physics Engine", company: "Unity", bounty: 2200, change: 22.1, type: "Sim" },
-  { id: "EMB-067", title: "Firmware Update", company: "Arduino", bounty: 600, change: -7.5, type: "Embedded" },
-  { id: "CV-091", title: "Lane Detection", company: "Mobileye", bounty: 3100, change: 9.4, type: "Vision" },
-]
+import { Star, Users, Shield, Rocket } from "lucide-react"
 
 
 const stats = [
@@ -28,28 +14,6 @@ const stats = [
   { value: "98%", label: "Success Rate" },
 ]
 
-const features = [
-  {
-    icon: Rocket,
-    title: "Fast Turnaround",
-    description: "Get quality deliverables in days, not months. Our global talent pool works around the clock.",
-  },
-  {
-    icon: Shield,
-    title: "Quality Guaranteed",
-    description: "Every submission is reviewed. Pay only when you're satisfied with the results.",
-  },
-  {
-    icon: Users,
-    title: "Top Talent",
-    description: "Access engineers from Tesla, Google, NASA, and top universities worldwide.",
-  },
-  {
-    icon: Star,
-    title: "Reputation System",
-    description: "Transparent ratings and reviews help you find the perfect match for your project.",
-  },
-]
 
 const testimonials = [
   {
@@ -116,37 +80,9 @@ export function PremiumTimelineLanding({
         </div>
       </nav>
 
-      {/* Stock Market Style Ticker */}
-      <div className="fixed top-16 left-0 right-0 z-40 bg-black text-white overflow-hidden">
-        <div className="flex animate-ticker">
-          {[...tickerItems, ...tickerItems].map((item, index) => (
-            <div
-              key={`${item.id}-${index}`}
-              className="flex items-center gap-3 px-6 py-2 border-r border-neutral-800 whitespace-nowrap min-w-fit"
-            >
-              <span className="font-mono text-xs text-neutral-500">{item.id}</span>
-              <span className="font-semibold text-sm">{item.company}</span>
-              <span className="text-orange-400 font-bold">${item.bounty.toLocaleString()}</span>
-              <span className={`flex items-center gap-1 text-xs font-medium ${
-                item.change > 0 ? 'text-green-400' : item.change < 0 ? 'text-red-400' : 'text-neutral-400'
-              }`}>
-                {item.change > 0 ? (
-                  <TrendingUp className="w-3 h-3" />
-                ) : item.change < 0 ? (
-                  <TrendingDown className="w-3 h-3" />
-                ) : (
-                  <Minus className="w-3 h-3" />
-                )}
-                {item.change > 0 ? '+' : ''}{item.change}%
-              </span>
-              <span className="text-[10px] px-1.5 py-0.5 rounded bg-neutral-800 text-neutral-400">{item.type}</span>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* Hero Section */}
-      <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-white to-neutral-50 px-6 pt-28">
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-white to-neutral-50 px-6 pt-16">
         <div className="relative z-10 mx-auto max-w-5xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -202,9 +138,9 @@ export function PremiumTimelineLanding({
       </section>
 
 
-      {/* Features Section */}
-      <section id="features" className="py-24 px-6 bg-white">
-        <div className="mx-auto max-w-6xl">
+      {/* Features Section - Accenture Style Cards */}
+      <section id="features" className="py-24 px-6 bg-neutral-100">
+        <div className="mx-auto max-w-7xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">Why GoMercant?</h2>
             <p className="text-neutral-600 max-w-2xl mx-auto">
@@ -212,26 +148,102 @@ export function PremiumTimelineLanding({
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => {
-              const Icon = feature.icon
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center p-6 rounded-2xl bg-neutral-50 hover:bg-neutral-100 transition-colors"
-                >
-                  <div className="w-14 h-14 rounded-xl bg-black flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-7 h-7 text-white" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-black mb-2">{feature.title}</h3>
-                  <p className="text-sm text-neutral-600">{feature.description}</p>
-                </motion.div>
-              )
-            })}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {/* Card 1 - Fast Turnaround */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0 }}
+              viewport={{ once: true }}
+              className="group relative bg-gradient-to-br from-violet-600 to-purple-700 rounded-xl p-6 min-h-[280px] flex flex-col justify-between cursor-pointer overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-2 text-white/80 text-xs font-medium mb-4">
+                  <Rocket className="w-4 h-4" />
+                  <span>Speed</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Fast Turnaround</h3>
+                <p className="text-white/80 text-sm leading-relaxed">
+                  Get quality deliverables in days, not months. Our global talent pool works around the clock.
+                </p>
+              </div>
+              <div className="relative z-10 mt-4">
+                <span className="text-white/60 text-xs group-hover:text-white transition-colors">Learn more →</span>
+              </div>
+            </motion.div>
+
+            {/* Card 2 - Quality Guaranteed */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="group relative bg-gradient-to-br from-emerald-600 to-teal-700 rounded-xl p-6 min-h-[280px] flex flex-col justify-between cursor-pointer overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-2 text-white/80 text-xs font-medium mb-4">
+                  <Shield className="w-4 h-4" />
+                  <span>Quality</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Quality Guaranteed</h3>
+                <p className="text-white/80 text-sm leading-relaxed">
+                  Every submission is reviewed. Pay only when you&apos;re satisfied with the results.
+                </p>
+              </div>
+              <div className="relative z-10 mt-4">
+                <span className="text-white/60 text-xs group-hover:text-white transition-colors">Learn more →</span>
+              </div>
+            </motion.div>
+
+            {/* Card 3 - Top Talent */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="group relative bg-gradient-to-br from-orange-500 to-amber-600 rounded-xl p-6 min-h-[280px] flex flex-col justify-between cursor-pointer overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-2 text-white/80 text-xs font-medium mb-4">
+                  <Users className="w-4 h-4" />
+                  <span>Talent</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Top Talent</h3>
+                <p className="text-white/80 text-sm leading-relaxed">
+                  Access engineers from Tesla, Google, NASA, and top universities worldwide.
+                </p>
+              </div>
+              <div className="relative z-10 mt-4">
+                <span className="text-white/60 text-xs group-hover:text-white transition-colors">Learn more →</span>
+              </div>
+            </motion.div>
+
+            {/* Card 4 - Reputation System */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="group relative bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl p-6 min-h-[280px] flex flex-col justify-between cursor-pointer overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="relative z-10">
+                <div className="inline-flex items-center gap-2 text-white/80 text-xs font-medium mb-4">
+                  <Star className="w-4 h-4" />
+                  <span>Trust</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Reputation System</h3>
+                <p className="text-white/80 text-sm leading-relaxed">
+                  Transparent ratings and reviews help you find the perfect match for your project.
+                </p>
+              </div>
+              <div className="relative z-10 mt-4">
+                <span className="text-white/60 text-xs group-hover:text-white transition-colors">Learn more →</span>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
