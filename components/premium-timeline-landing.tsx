@@ -462,7 +462,7 @@ export function PremiumTimelineLanding({
               </motion.article>
             </Link>
 
-            {/* News Item 2 */}
+            {/* News Item 2 - Script Kiddies with AI */}
             <motion.article
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -470,17 +470,26 @@ export function PremiumTimelineLanding({
               transition={{ duration: 0.5, delay: 0.1 }}
               className="group cursor-pointer"
             >
-              <div className="aspect-[16/10] bg-gradient-to-br from-black to-neutral-800 rounded-xl mb-6 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center text-white/20 text-6xl font-bold">
-                  02
+              <div className="aspect-[16/10] rounded-xl mb-6 overflow-hidden relative">
+                <Image
+                  src="/images/hacker.jpg"
+                  alt="AI-Powered Script Kiddies"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4">
+                  <span className="px-3 py-1 bg-red-500 text-white text-xs font-semibold rounded-full">
+                    Threat Alert
+                  </span>
                 </div>
               </div>
-              <span className="text-sm text-orange-500 font-medium">December 2025</span>
+              <span className="text-sm text-orange-500 font-medium">January 2026</span>
               <h3 className="text-xl font-semibold text-black mt-2 mb-3 group-hover:text-neutral-600 transition-colors">
-                Partnership with Nordic Defense Alliance Announced
+                The Rise of AI-Armed Script Kiddies: A New Era of Cyber Threats
               </h3>
               <p className="text-neutral-500 text-base leading-relaxed">
-                GoMercant selected as primary cybersecurity partner for critical infrastructure protection across Scandinavia.
+                AI tools have democratized hacking. Inexperienced attackers now wield sophisticated exploits, turning script kiddies into serious threats overnight.
               </p>
             </motion.article>
 
