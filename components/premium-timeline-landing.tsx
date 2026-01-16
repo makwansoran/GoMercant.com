@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils"
 import Image from "next/image"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown, Globe, Send } from "lucide-react"
+import { ChevronDown, Globe } from "lucide-react"
 
 const translations = {
   en: {
@@ -20,14 +20,6 @@ const translations = {
       { value: "10K+", label: "Engineers" },
       { value: "98%", label: "Success Rate" },
     ],
-    contactTitle: "Get In Touch",
-    contactDesc: "Have a project in mind? Let us know and we will get back to you within 24 hours.",
-    formName: "Full Name",
-    formEmail: "Email Address",
-    formCompany: "Company",
-    formMessage: "Your Message",
-    formSubmit: "Send Message",
-    formSuccess: "Message sent successfully!",
   },
   no: {
     clientLogin: "Kundeinnlogging",
@@ -42,14 +34,6 @@ const translations = {
       { value: "10K+", label: "Ingeniører" },
       { value: "98%", label: "Suksessrate" },
     ],
-    contactTitle: "Ta Kontakt",
-    contactDesc: "Har du et prosjekt i tankene? Gi oss beskjed, så svarer vi innen 24 timer.",
-    formName: "Fullt Navn",
-    formEmail: "E-postadresse",
-    formCompany: "Bedrift",
-    formMessage: "Din Melding",
-    formSubmit: "Send Melding",
-    formSuccess: "Meldingen ble sendt!",
   },
   sv: {
     clientLogin: "Kundlogin",
@@ -64,14 +48,6 @@ const translations = {
       { value: "10K+", label: "Ingenjörer" },
       { value: "98%", label: "Framgångsgrad" },
     ],
-    contactTitle: "Kontakta Oss",
-    contactDesc: "Har du ett projekt i åtanke? Hör av dig så återkommer vi inom 24 timmar.",
-    formName: "Fullständigt Namn",
-    formEmail: "E-postadress",
-    formCompany: "Företag",
-    formMessage: "Ditt Meddelande",
-    formSubmit: "Skicka Meddelande",
-    formSuccess: "Meddelandet har skickats!",
   },
   da: {
     clientLogin: "Kundelogin",
@@ -86,14 +62,6 @@ const translations = {
       { value: "10K+", label: "Ingeniører" },
       { value: "98%", label: "Succesrate" },
     ],
-    contactTitle: "Kontakt Os",
-    contactDesc: "Har du et projekt i tankerne? Fortæl os det, så vender vi tilbage inden for 24 timer.",
-    formName: "Fulde Navn",
-    formEmail: "E-mailadresse",
-    formCompany: "Virksomhed",
-    formMessage: "Din Besked",
-    formSubmit: "Send Besked",
-    formSuccess: "Beskeden blev sendt!",
   },
 }
 
@@ -112,7 +80,6 @@ export function PremiumTimelineLanding({
 }: React.ComponentProps<"div">) {
   const [isLangOpen, setIsLangOpen] = useState(false)
   const [selectedLang, setSelectedLang] = useState(languages[0])
-  const [formSubmitted, setFormSubmitted] = useState(false)
   
   const t = translations[selectedLang.code as LangCode]
 
@@ -186,7 +153,7 @@ export function PremiumTimelineLanding({
               {t.clientLogin}
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center justify-center rounded-full bg-orange-500 px-6 py-2 text-sm font-semibold text-white transition-all hover:bg-orange-600 hover:scale-105"
             >
               {t.contactUs}
@@ -237,109 +204,8 @@ export function PremiumTimelineLanding({
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-24 px-6 bg-neutral-900">
-        <div className="mx-auto max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              {t.contactTitle}
-            </h2>
-            <p className="text-neutral-400 text-lg max-w-xl mx-auto">
-              {t.contactDesc}
-            </p>
-          </motion.div>
-
-          <motion.form
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            onSubmit={(e) => {
-              e.preventDefault()
-              setFormSubmitted(true)
-              setTimeout(() => setFormSubmitted(false), 3000)
-            }}
-            className="bg-white rounded-2xl p-8 md:p-10 shadow-2xl"
-          >
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-neutral-700 mb-2">
-                  {t.formName}
-                </label>
-                <input
-                  type="text"
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all"
-                  placeholder="John Doe"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-neutral-700 mb-2">
-                  {t.formEmail}
-                </label>
-                <input
-                  type="email"
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all"
-                  placeholder="john@company.com"
-                />
-              </div>
-            </div>
-            <div className="mt-6">
-              <label className="block text-sm font-medium text-neutral-700 mb-2">
-                {t.formCompany}
-              </label>
-              <input
-                type="text"
-                className="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all"
-                placeholder="Acme Inc."
-              />
-            </div>
-            <div className="mt-6">
-              <label className="block text-sm font-medium text-neutral-700 mb-2">
-                {t.formMessage}
-              </label>
-              <textarea
-                required
-                rows={5}
-                className="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all resize-none"
-                placeholder="Tell us about your project..."
-              />
-            </div>
-            <div className="mt-8">
-              <button
-                type="submit"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-orange-500 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-orange-600 hover:scale-[1.02] shadow-lg shadow-orange-500/30"
-              >
-                <Send className="w-5 h-5" />
-                {t.formSubmit}
-              </button>
-            </div>
-            
-            <AnimatePresence>
-              {formSubmitted && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0 }}
-                  className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg text-green-700 text-center font-medium"
-                >
-                  ✓ {t.formSuccess}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.form>
-        </div>
-      </section>
-
       {/* Footer */}
-      <footer className="py-8 px-6 bg-black text-white">
+      <footer className="py-8 px-6 border-t border-neutral-100">
         <div className="mx-auto max-w-6xl text-center">
           <div className="text-sm text-neutral-500">
             © {new Date().getFullYear()} SPECTR. All rights reserved.
