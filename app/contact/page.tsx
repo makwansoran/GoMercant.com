@@ -93,8 +93,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="text-sm text-neutral-500 mb-1">Phone</div>
-                      <a href="tel:+4712345678" className="text-black font-medium hover:text-orange-600 transition-colors">
-                        +47 123 45 678
+                      <a href="tel:+4746503934" className="text-black font-medium hover:text-orange-600 transition-colors">
+                        +47 465 03 934
                       </a>
                     </div>
                   </div>
@@ -167,10 +167,10 @@ export default function ContactPage() {
                     <label className="block text-sm font-medium text-neutral-700 mb-2">
                       Phone Number
                     </label>
-                    <input
+                      <input
                       type="tel"
                       className="w-full px-4 py-3 rounded-lg border border-neutral-200 bg-white focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 outline-none transition-all"
-                      placeholder="+47 123 45 678"
+                      placeholder="+47 465 03 934"
                     />
                   </div>
                 </div>
