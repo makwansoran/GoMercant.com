@@ -246,7 +246,7 @@ export function PremiumTimelineLanding({
                 </div>
                 <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500 ease-out opacity-0 group-hover:opacity-100">
                   <p className="text-neutral-500 text-base md:text-lg max-w-2xl pt-2 pl-12">
-                    Our data systems give your company the newest datasets available so your decision making is at its best. Real-time analytics and AI-powered insights keep you ahead of the competition.
+                    Our intelligence platform provides powerful analytical software that transforms your data into actionable insights. Real-time analytics and AI-powered tools keep you ahead of the competition.
                   </p>
                 </div>
               </div>
