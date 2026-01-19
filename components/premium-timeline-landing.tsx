@@ -175,11 +175,11 @@ export function PremiumTimelineLanding({
             >
               <div className="flex flex-col gap-4">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black group-hover:text-neutral-500 transition-colors duration-300">
-                  {t('services.title')}
+                  Our Services
                 </h2>
                 <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500 ease-out opacity-0 group-hover:opacity-100">
                   <p className="text-neutral-500 text-base md:text-lg max-w-2xl pt-2">
-                    {t('services.description')}
+                    Comprehensive cybersecurity and AI solutions for modern enterprises. We deliver end-to-end security, automation, intelligence, and development services tailored to your organization's needs.
                   </p>
                 </div>
               </div>

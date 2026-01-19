@@ -189,10 +189,10 @@ export function CookieConsent() {
                   <div className="flex items-start justify-between p-4 bg-neutral-50 rounded-lg border border-neutral-200">
                     <div className="flex-1">
                       <h4 className="font-semibold text-black mb-1">
-                        {t("cookies.marketing.title")}
+                        Marketing Cookies
                       </h4>
                       <p className="text-sm text-neutral-600">
-                        {t("cookies.marketing.description")}
+                        These cookies are used to deliver advertisements that are relevant to you and your interests.
                       </p>
                     </div>
                     <input
