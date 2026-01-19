@@ -186,7 +186,7 @@ export default function ResearchPage() {
         <div className="text-center">
           <h1 className="text-4xl font-bold text-black mb-4">Report Not Found</h1>
           <Link href="/" className="text-orange-500 hover:underline">
-            Return to Home
+            {t('research.returnToHome')}
           </Link>
         </div>
       </div>
@@ -229,7 +229,7 @@ export default function ResearchPage() {
             className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back
+            {t('common.backToHome')}
           </Link>
         </motion.div>
 

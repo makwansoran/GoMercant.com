@@ -288,7 +288,7 @@ export default function JobPage() {
           <Link href="/" className="flex items-center gap-2">
             <Image 
               src="/favicon.png" 
-              alt="SPECTR Logo" 
+              alt={t('common.logoAlt')} 
               width={32} 
               height={32}
               className="object-contain brightness-0 invert"
@@ -302,7 +302,7 @@ export default function JobPage() {
               href="/careers"
               className="text-neutral-400 hover:text-white transition-colors text-sm"
             >
-              All Positions
+              {t('common.allPositions')}
             </Link>
             <Link
               href="/contact"
@@ -328,7 +328,7 @@ export default function JobPage() {
               className="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
-              Back to All Positions
+              {t('common.backToHome')}
             </Link>
           </motion.div>
 
@@ -377,7 +377,7 @@ export default function JobPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
               >
-                <h2 className="text-2xl font-bold mb-6">Responsibilities</h2>
+                <h2 className="text-2xl font-bold mb-6">{t('careers.responsibilities')}</h2>
                 <ul className="space-y-4">
                   {job.responsibilities.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
@@ -413,7 +413,7 @@ export default function JobPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <h2 className="text-2xl font-bold mb-6">Nice to Have</h2>
+                <h2 className="text-2xl font-bold mb-6">{t('careers.niceToHave')}</h2>
                 <ul className="space-y-4">
                   {job.niceToHave.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
@@ -454,7 +454,7 @@ export default function JobPage() {
 
                 {/* Benefits Card */}
                 <div className="p-6 border border-neutral-800 rounded-xl">
-                  <h3 className="text-xl font-bold mb-4">Benefits</h3>
+                  <h3 className="text-xl font-bold mb-4">{t('careers.benefits')}</h3>
                   <ul className="space-y-3">
                     {job.benefits.map((item, index) => (
                       <li key={index} className="flex items-start gap-2 text-sm">
@@ -481,17 +481,17 @@ export default function JobPage() {
             className="bg-neutral-900 rounded-2xl p-8 md:p-12 text-center"
           >
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Ready to Apply?
+              {t('careers.readyToApply')}
             </h2>
             <p className="text-neutral-400 mb-8 max-w-xl mx-auto">
-              Send your CV and cover letter to <span className="text-orange-500">msi@spectr.no</span> and tell us why you&apos;d be a great fit for the {job.title} role.
+              {t('careers.readyToApplyDescription', { email: 'msi@spectr.no', jobTitle: job.title })}
             </p>
             <a
               href={`mailto:msi@spectr.no?subject=Application: ${job.title}`}
               className="inline-flex items-center justify-center gap-2 rounded-full bg-orange-500 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-orange-600 hover:scale-105"
             >
               <Mail className="w-5 h-5" />
-              Send Application
+              {t('common.sendApplication')}
             </a>
           </motion.div>
         </div>
@@ -503,7 +503,7 @@ export default function JobPage() {
           <div className="flex items-center gap-2">
             <Image 
               src="/favicon.png" 
-              alt="SPECTR Logo" 
+              alt={t('common.logoAlt')} 
               width={32} 
               height={32}
               className="object-contain brightness-0 invert"
@@ -522,7 +522,7 @@ export default function JobPage() {
             </Link>
           </div>
           <div className="text-sm text-neutral-500">
-            © {new Date().getFullYear()} spectr.no By SPECTR AS · Org nr 936961967
+            © {new Date().getFullYear()} {t('common.copyright')}
           </div>
         </div>
       </footer>

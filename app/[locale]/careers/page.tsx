@@ -173,7 +173,7 @@ export default function CareersPage() {
               className="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
-              Back to Home
+              {t('common.backToHome')}
             </Link>
           </motion.div>
 
@@ -183,15 +183,15 @@ export default function CareersPage() {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block text-sm font-semibold uppercase tracking-wider text-orange-500 mb-4">
-              Join Our Team
+              {t('careers.subtitle')}
             </span>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-              Careers at
+              {t('careers.title')}
               <br />
-              <span className="text-orange-500">SPECTR</span>
+              <span className="text-orange-500">{t('common.brand')}</span>
             </h1>
             <p className="text-xl text-neutral-400 max-w-2xl leading-relaxed">
-              We&apos;re building the future of cybersecurity and AI. Join a team of exceptional individuals who believe that nothing is impossible.
+              {t('careers.description')}
             </p>
           </motion.div>
         </div>
@@ -207,9 +207,9 @@ export default function CareersPage() {
             transition={{ duration: 0.6 }}
             className="mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Join SPECTR?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('careers.whyJoin')}</h2>
             <p className="text-neutral-400 text-lg max-w-2xl">
-              We offer more than just a job—we offer a mission to protect the digital world.
+              {t('careers.whyJoinDescription')}
             </p>
           </motion.div>
 
@@ -242,9 +242,9 @@ export default function CareersPage() {
             transition={{ duration: 0.6 }}
             className="mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Open Positions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('careers.openPositions')}</h2>
             <p className="text-neutral-400 text-lg">
-              Find your next role and help us secure the future.
+              {t('careers.openPositionsDescription')}
             </p>
           </motion.div>
 
@@ -299,7 +299,7 @@ export default function CareersPage() {
                     </div>
                     <div className="lg:ml-8 flex-shrink-0">
                       <span className="inline-flex items-center justify-center rounded-full bg-white text-black px-6 py-3 text-sm font-semibold group-hover:bg-orange-500 group-hover:text-white transition-all">
-                        View Details
+                        {t('common.viewDetails')}
                       </span>
                     </div>
                   </div>
@@ -320,16 +320,16 @@ export default function CareersPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Don&apos;t see a perfect fit?
+              {t('careers.noPerfectFit')}
             </h2>
             <p className="text-neutral-400 text-lg mb-8 max-w-2xl mx-auto">
-              We&apos;re always looking for exceptional talent. Send your CV and cover letter to <span className="text-orange-500">msi@spectr.no</span> and let us know how you can contribute to our mission.
+              {t('careers.noPerfectFitDescription', { email: 'msi@spectr.no' })}
             </p>
             <a
               href="mailto:msi@spectr.no?subject=General Application - SPECTR"
               className="inline-flex items-center justify-center rounded-full bg-orange-500 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-orange-600 hover:scale-105"
             >
-              Send Application
+              {t('common.sendApplication')}
             </a>
           </motion.div>
         </div>
@@ -341,26 +341,26 @@ export default function CareersPage() {
           <div className="flex items-center gap-2">
             <Image 
               src="/favicon.png" 
-              alt="SPECTR Logo" 
+              alt={t('common.logoAlt')} 
               width={32} 
               height={32}
               className="object-contain brightness-0 invert"
             />
-            <span className="text-xl font-bold">SPECTR</span>
+            <span className="text-xl font-bold">{t('common.brand')}</span>
           </div>
           <div className="flex items-center gap-8">
             <Link href="/" className="text-neutral-400 hover:text-white transition-colors text-sm">
-              Home
+              {t('common.home')}
             </Link>
             <Link href="/contact" className="text-neutral-400 hover:text-white transition-colors text-sm">
-              Contact
+              {t('common.contact')}
             </Link>
             <Link href="/login" className="text-neutral-400 hover:text-white transition-colors text-sm">
-              Client Login
+              {t('common.clientLogin')}
             </Link>
           </div>
           <div className="text-sm text-neutral-500">
-            © {new Date().getFullYear()} spectr.no By SPECTR AS · Org nr 936961967
+            © {new Date().getFullYear()} {t('common.copyright')}
           </div>
         </div>
       </footer>
