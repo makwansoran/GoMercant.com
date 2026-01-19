@@ -2,11 +2,9 @@
 
 import { cn } from "@/lib/utils"
 import Image from "next/image"
-import { useTranslations } from "next-intl"
-import { Link, usePathname } from "@/i18n/routing"
 import { motion } from "framer-motion"
 import { ChevronRight } from "lucide-react"
-import { LanguageSwitcher } from "./language-switcher"
+import Link from "next/link"
 
 const insightCards = [
   {
@@ -21,7 +19,6 @@ const insightCards = [
     title: "The Autonomous Shield: Security Automation for Modern Enterprises",
     image: "/images/card2.jpg",
     slug: "autonomous-shield",
-    translationKey: "autonomousShield",
   },
   {
     category: "Research Report",
@@ -35,7 +32,6 @@ const insightCards = [
     title: "Shadow AI: Securing the Automated Intelligence Loop",
     image: "/images/card4.jpg",
     slug: "shadow-ai",
-    translationKey: "shadowAI",
   },
 ]
 
@@ -43,9 +39,6 @@ export function PremiumTimelineLanding({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  const t = useTranslations()
-  const pathname = usePathname()
-  
   return (
     <div className={cn("bg-white text-black min-h-screen", className)} {...props}>
       {/* Fixed Nav */}
@@ -54,28 +47,27 @@ export function PremiumTimelineLanding({
           <Link href="/" className="flex items-center gap-2">
             <Image 
               src="/favicon.png" 
-              alt={t('common.logoAlt')} 
+              alt="SPECTR Logo" 
               width={32} 
               height={32}
               className="object-contain"
             />
             <span className="text-2xl font-bold tracking-tight text-black">
-              {t('common.brand')}
+              SPECTR
             </span>
           </Link>
           <div className="hidden md:flex items-center gap-4">
-            <LanguageSwitcher />
             <Link
               href="/login"
               className="inline-flex items-center justify-center rounded-full bg-black px-6 py-2 text-sm font-semibold text-white transition-all hover:bg-neutral-800 hover:scale-105"
             >
-              {t('common.clientLogin')}
+              Client Login
             </Link>
             <Link
               href="/contact"
               className="inline-flex items-center justify-center rounded-full bg-orange-500 px-6 py-2 text-sm font-semibold text-white transition-all hover:bg-orange-600 hover:scale-105"
             >
-              {t('common.contactUs')}
+              Contact Us
             </Link>
           </div>
         </div>
@@ -90,10 +82,12 @@ export function PremiumTimelineLanding({
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl bg-gradient-to-r from-black via-neutral-800 to-neutral-600 bg-clip-text text-transparent whitespace-pre-line">
-              {t('hero.title')}
+              Security. Control.
+              <br />
+              <span className="text-black">Intelligence.</span>
             </h1>
             <p className="mt-6 text-lg text-neutral-600 md:text-xl max-w-2xl mx-auto">
-              {t('hero.subtitle')}
+              Cybersecurity and AI consulting for critical systems.
             </p>
           </motion.div>
         </div>
@@ -104,7 +98,7 @@ export function PremiumTimelineLanding({
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {insightCards.map((card, index) => (
-              <Link key={index} href={`/research/${card.slug}`} locale={undefined}>
+              <Link key={index} href={`/research/${card.slug}`}>
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -132,19 +126,19 @@ export function PremiumTimelineLanding({
                   <div className="relative z-10">
                     {/* Category Label */}
                       <span className="inline-block text-xs font-semibold text-white/80 uppercase tracking-wider mb-4">
-                      {t(`insights.${card.translationKey}.category`)}
+                      {card.category}
                     </span>
                     
                     {/* Title */}
                     <h3 className="text-xl font-bold text-white leading-tight">
-                      {t(`insights.${card.translationKey}.title`)}
+                      {card.title}
                     </h3>
                   </div>
                   
                   {/* Expand Button */}
                   <div className="relative z-10 mt-4">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-white group-hover:gap-2 transition-all duration-300">
-                      {t('common.expand')}
+                      Expand
                       <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </span>
                   </div>
@@ -166,7 +160,7 @@ export function PremiumTimelineLanding({
             transition={{ duration: 0.6 }}
             className="text-xl md:text-2xl lg:text-3xl text-neutral-600 leading-relaxed max-w-5xl mb-24 md:mb-32"
           >
-            {t('services.header')}
+            Our analytical platform enables real-time, AI-driven cybersecurity decisions for critical government and commercial enterprises across the West, from factory floors to enterprise networks.
           </motion.p>
 
           {/* Services List */}
@@ -203,12 +197,12 @@ export function PremiumTimelineLanding({
                 <div className="flex items-baseline gap-4">
                   <span className="text-sm text-neutral-400 font-mono">/0.1</span>
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black group-hover:text-neutral-500 transition-colors duration-300">
-                    {t('services.cyberSurveillance.title')}
+                    Cyber Surveillance
                   </h3>
                 </div>
                 <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500 ease-out opacity-0 group-hover:opacity-100">
                   <p className="text-neutral-500 text-base md:text-lg max-w-2xl pt-2 pl-12">
-                    {t('services.cyberSurveillance.description')}
+                    We secure your platform with 24/7 surveillance and constant auditing. Our advanced threat detection systems monitor your infrastructure around the clock, identifying vulnerabilities before they become breaches.
                   </p>
                 </div>
               </div>
@@ -249,12 +243,12 @@ export function PremiumTimelineLanding({
                 <div className="flex items-baseline gap-4">
                   <span className="text-sm text-neutral-400 font-mono">/0.3</span>
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black group-hover:text-neutral-500 transition-colors duration-300">
-                    {t('services.intelligence.title')}
+                    Intelligence
                   </h3>
                 </div>
                 <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500 ease-out opacity-0 group-hover:opacity-100">
                   <p className="text-neutral-500 text-base md:text-lg max-w-2xl pt-2 pl-12">
-                    {t('services.intelligence.description')}
+                    Our intelligence platform provides powerful analytical software that transforms your data into actionable insights. Real-time analytics and AI-powered tools keep you ahead of the competition.
                   </p>
                 </div>
               </div>
@@ -272,12 +266,12 @@ export function PremiumTimelineLanding({
                 <div className="flex items-baseline gap-4">
                   <span className="text-sm text-neutral-400 font-mono">/0.4</span>
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black group-hover:text-neutral-500 transition-colors duration-300">
-                    {t('services.development.title')}
+                    Development
                   </h3>
                 </div>
                 <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500 ease-out opacity-0 group-hover:opacity-100">
                   <p className="text-neutral-500 text-base md:text-lg max-w-2xl pt-2 pl-12">
-                    {t('services.development.description')}
+                    We will create anything your company needs. From custom software solutions to enterprise platforms, our development team brings your vision to life with cutting-edge technology.
                   </p>
                 </div>
               </div>
@@ -298,15 +292,17 @@ export function PremiumTimelineLanding({
           >
             <div className="mb-8">
               <span className="inline-block text-sm font-semibold uppercase tracking-wider text-orange-500 mb-4">
-                {t('ceo.message')}
+                Message from our CEO
               </span>
             </div>
-            <blockquote className="text-4xl md:text-5xl lg:text-6xl font-medium text-black leading-tight mb-12 whitespace-pre-line">
-              &ldquo;{t('ceo.quote')}&rdquo;
+            <blockquote className="text-4xl md:text-5xl lg:text-6xl font-medium text-black leading-tight mb-12">
+              &ldquo;Forbidding is forbidden to us.
+              <br />
+              <span className="text-neutral-500">We can do anything.&rdquo;</span>
             </blockquote>
             <div className="flex flex-col items-center gap-2">
-              <p className="text-lg font-semibold text-black">{t('ceo.name')}</p>
-              <p className="text-neutral-500">{t('ceo.title')}</p>
+              <p className="text-lg font-semibold text-black">Makwan Ismail</p>
+              <p className="text-neutral-500">Founder & CEO, SPECTR</p>
             </div>
           </motion.div>
         </div>
@@ -395,10 +391,10 @@ export function PremiumTimelineLanding({
             className="mb-16"
           >
             <span className="inline-block text-sm font-semibold uppercase tracking-wider text-orange-500 mb-4">
-              {t('news.subtitle')}
+              Latest Updates
             </span>
             <h2 className="text-4xl md:text-5xl font-medium text-black">
-              {t('news.title')}
+              News & Insights
             </h2>
           </motion.div>
 
@@ -422,7 +418,7 @@ export function PremiumTimelineLanding({
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4">
                     <span className="px-3 py-1 bg-orange-500 text-white text-xs font-semibold rounded-full">
-                      {t('news.researchReport')}
+                      Research Report
                     </span>
                   </div>
                 </div>
@@ -454,7 +450,7 @@ export function PremiumTimelineLanding({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-4 left-4">
                   <span className="px-3 py-1 bg-red-500 text-white text-xs font-semibold rounded-full">
-                      {t('news.threatAlert')}
+                      Threat Alert
                     </span>
                 </div>
               </div>
@@ -514,21 +510,21 @@ export function PremiumTimelineLanding({
               transition={{ duration: 0.6 }}
             >
               <span className="inline-block text-sm font-semibold uppercase tracking-wider text-orange-500 mb-4">
-                {t('careers.subtitle')}
+                Join Our Team
               </span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6">
-                {t('careers.title')}
+                Careers at
                 <br />
-                <span className="text-orange-500">{t('common.brand')}</span>
+                <span className="text-orange-500">SPECTR</span>
               </h2>
               <p className="text-neutral-400 text-lg leading-relaxed mb-8 max-w-lg">
-                {t('careers.description')}
+                We're building the future of cybersecurity and AI. Join a team of exceptional individuals who believe that nothing is impossible.
               </p>
               <Link
                 href="/careers"
                 className="inline-flex items-center justify-center rounded-full bg-orange-500 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-orange-600 hover:scale-105"
               >
-                {t('careers.openPositions')}
+                View Open Positions
                 <ChevronRight className="w-5 h-5 ml-2" />
               </Link>
             </motion.div>
@@ -612,33 +608,33 @@ export function PremiumTimelineLanding({
                   className="object-contain brightness-0 invert"
                 />
                 <span className="text-2xl font-bold tracking-tight">
-                  {t('common.brand')}
+                  SPECTR
                 </span>
               </div>
               <p className="text-neutral-400 text-base max-w-md leading-relaxed">
-                {t('hero.subtitleFooter')}
+                Cybersecurity and AI consulting for critical systems. We protect and empower enterprises with cutting-edge technology solutions.
               </p>
             </div>
 
             {/* Services */}
             <div>
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">{t('common.services')}</h4>
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">Services</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">{t('services.cyberSurveillance.title')}</a></li>
-                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">{t('services.automation.title')}</a></li>
-                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">{t('services.intelligence.title')}</a></li>
-                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">{t('services.development.title')}</a></li>
+                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Cyber Surveillance</a></li>
+                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Automation</a></li>
+                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Intelligence</a></li>
+                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Development</a></li>
               </ul>
             </div>
 
             {/* Company */}
             <div>
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">{t('common.company')}</h4>
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">Company</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">{t('common.aboutUs')}</a></li>
-                <li><Link href="/careers" className="text-neutral-300 hover:text-white transition-colors">{t('common.careers')}</Link></li>
-                <li><Link href="/contact" className="text-neutral-300 hover:text-white transition-colors">{t('common.contact')}</Link></li>
-                <li><Link href="/login" className="text-neutral-300 hover:text-white transition-colors">{t('common.clientLogin')}</Link></li>
+                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">About Us</a></li>
+                <li><Link href="/careers" className="text-neutral-300 hover:text-white transition-colors">Careers</Link></li>
+                <li><Link href="/contact" className="text-neutral-300 hover:text-white transition-colors">Contact</Link></li>
+                <li><Link href="/login" className="text-neutral-300 hover:text-white transition-colors">Client Login</Link></li>
               </ul>
             </div>
 
@@ -665,11 +661,11 @@ export function PremiumTimelineLanding({
           {/* Footer Bottom */}
           <div className="pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-neutral-500">
-              © {new Date().getFullYear()} {t('common.copyright')}
+              © {new Date().getFullYear()} spectr.no By SPECTR AS · Org nr 936961967
             </div>
             <div className="flex items-center gap-6">
-              <Link href="/privacy" className="text-sm text-neutral-500 hover:text-white transition-colors">{t('common.privacyPolicy')}</Link>
-              <Link href="/terms" className="text-sm text-neutral-500 hover:text-white transition-colors">{t('common.termsOfService')}</Link>
+              <Link href="/privacy" className="text-sm text-neutral-500 hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="text-sm text-neutral-500 hover:text-white transition-colors">Terms of Service</Link>
             </div>
           </div>
         </div>

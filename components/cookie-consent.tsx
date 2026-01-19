@@ -2,13 +2,11 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { useTranslations } from "next-intl"
-import { Link } from "@/i18n/routing"
+import Link from "next/link"
 import { X, Cookie, Settings } from "lucide-react"
 import { setCookieConsent, type CookiePreferences } from "@/lib/cookies"
 
 export function CookieConsent() {
-  const t = useTranslations()
   const [showBanner, setShowBanner] = useState(false)
   const [showSettings, setShowSettings] = useState(false)
   const [preferences, setPreferences] = useState({
@@ -84,23 +82,23 @@ export function CookieConsent() {
                   <div className="flex items-center gap-3 mb-2">
                     <Cookie className="w-5 h-5 text-orange-500" />
                     <h3 className="text-lg font-semibold text-black">
-                      {t("cookies.title")}
+                      We use cookies
                     </h3>
                   </div>
                   <p className="text-sm text-neutral-600 leading-relaxed">
-                    {t("cookies.description")}{" "}
+                    We use cookies to enhance your browsing experience, analyze site traffic, and personalize content. By clicking 'Accept All', you consent to our use of cookies. You can customize your preferences or learn more in our{" "}
                     <Link
                       href="/privacy"
                       className="text-orange-500 hover:text-orange-600 underline"
                     >
-                      {t("cookies.privacyPolicy")}
+                      Privacy Policy
                     </Link>
-                    {" "}{t("cookies.and")}{" "}
+                    {" "}and{" "}
                     <Link
                       href="/terms"
                       className="text-orange-500 hover:text-orange-600 underline"
                     >
-                      {t("cookies.termsOfService")}
+                      Terms of Service
                     </Link>
                     .
                   </p>
@@ -111,19 +109,19 @@ export function CookieConsent() {
                     className="px-4 py-2 text-sm font-medium text-neutral-700 hover:text-black transition-colors border border-neutral-300 rounded-lg hover:border-neutral-400"
                   >
                     <Settings className="w-4 h-4 inline mr-2" />
-                    {t("cookies.customize")}
+                    Customize
                   </button>
                   <button
                     onClick={handleRejectAll}
                     className="px-4 py-2 text-sm font-medium text-neutral-700 hover:text-black transition-colors border border-neutral-300 rounded-lg hover:border-neutral-400"
                   >
-                    {t("cookies.rejectAll")}
+                    Reject All
                   </button>
                   <button
                     onClick={handleAcceptAll}
                     className="px-6 py-2 text-sm font-semibold text-white bg-orange-500 hover:bg-orange-600 rounded-lg transition-colors"
                   >
-                    {t("cookies.acceptAll")}
+                    Accept All
                   </button>
                 </div>
               </div>
@@ -149,14 +147,14 @@ export function CookieConsent() {
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
                         <h4 className="font-semibold text-black">
-                          {t("cookies.necessary.title")}
+                          Necessary Cookies
                         </h4>
                         <span className="text-xs px-2 py-0.5 bg-orange-100 text-orange-700 rounded">
-                          {t("cookies.required")}
+                          Required
                         </span>
                       </div>
                       <p className="text-sm text-neutral-600">
-                        {t("cookies.necessary.description")}
+                        These cookies are essential for the website to function properly. They cannot be disabled.
                       </p>
                     </div>
                     <input
@@ -171,10 +169,10 @@ export function CookieConsent() {
                   <div className="flex items-start justify-between p-4 bg-neutral-50 rounded-lg border border-neutral-200">
                     <div className="flex-1">
                       <h4 className="font-semibold text-black mb-1">
-                        {t("cookies.analytics.title")}
+                        Analytics Cookies
                       </h4>
                       <p className="text-sm text-neutral-600">
-                        {t("cookies.analytics.description")}
+                        These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.
                       </p>
                     </div>
                     <input
@@ -211,10 +209,10 @@ export function CookieConsent() {
                   <div className="flex items-start justify-between p-4 bg-neutral-50 rounded-lg border border-neutral-200">
                     <div className="flex-1">
                       <h4 className="font-semibold text-black mb-1">
-                        {t("cookies.functional.title")}
+                        Functional Cookies
                       </h4>
                       <p className="text-sm text-neutral-600">
-                        {t("cookies.functional.description")}
+                        These cookies enable enhanced functionality and personalization, such as remembering your preferences.
                       </p>
                     </div>
                     <input
@@ -232,13 +230,13 @@ export function CookieConsent() {
                     onClick={() => setShowSettings(false)}
                     className="px-4 py-2 text-sm font-medium text-neutral-700 hover:text-black transition-colors"
                   >
-                    {t("cookies.cancel")}
+                    Cancel
                   </button>
                   <button
                     onClick={handleSavePreferences}
                     className="px-6 py-2 text-sm font-semibold text-white bg-orange-500 hover:bg-orange-600 rounded-lg transition-colors"
                   >
-                    {t("cookies.savePreferences")}
+                    Save Preferences
                   </button>
                 </div>
               </div>
