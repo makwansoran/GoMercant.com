@@ -136,7 +136,7 @@ export default function ContactPage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-neutral-700 mb-2">
-                      {t('contact.fullName')} {t('contact.required')}
+                      Full Name *
                     </label>
                     <input
                       type="text"
@@ -160,7 +160,7 @@ export default function ContactPage() {
                 <div className="grid md:grid-cols-2 gap-6 mt-6">
                   <div>
                     <label className="block text-sm font-medium text-neutral-700 mb-2">
-                      {t('contact.company')}
+                      Company
                     </label>
                     <input
                       type="text"

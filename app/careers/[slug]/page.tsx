@@ -286,7 +286,7 @@ export default function JobPage() {
           <Link href="/" className="flex items-center gap-2">
             <Image 
               src="/favicon.png" 
-              alt={t('common.logoAlt')} 
+              alt="SPECTR Logo" 
               width={32} 
               height={32}
               className="object-contain brightness-0 invert"
@@ -300,7 +300,7 @@ export default function JobPage() {
               href="/careers"
               className="text-neutral-400 hover:text-white transition-colors text-sm"
             >
-              {t('common.allPositions')}
+              All Positions
             </Link>
             <Link
               href="/contact"
@@ -326,7 +326,7 @@ export default function JobPage() {
               className="inline-flex items-center gap-2 text-neutral-400 hover:text-white transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
-              {t('common.backToHome')}
+              Back to All Positions
             </Link>
           </motion.div>
 
@@ -452,7 +452,7 @@ export default function JobPage() {
 
                 {/* Benefits Card */}
                 <div className="p-6 border border-neutral-800 rounded-xl">
-                  <h3 className="text-xl font-bold mb-4">{t('careers.benefits')}</h3>
+                  <h3 className="text-xl font-bold mb-4">Benefits</h3>
                   <ul className="space-y-3">
                     {job.benefits.map((item, index) => (
                       <li key={index} className="flex items-start gap-2 text-sm">

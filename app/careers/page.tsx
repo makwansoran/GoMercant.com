@@ -204,9 +204,9 @@ export default function CareersPage() {
             transition={{ duration: 0.6 }}
             className="mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('careers.whyJoin')}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Join SPECTR?</h2>
             <p className="text-neutral-400 text-lg max-w-2xl">
-              {t('careers.whyJoinDescription')}
+              We offer more than just a job—we offer a mission to protect the digital world.
             </p>
           </motion.div>
 
@@ -296,7 +296,7 @@ export default function CareersPage() {
                     </div>
                     <div className="lg:ml-8 flex-shrink-0">
                       <span className="inline-flex items-center justify-center rounded-full bg-white text-black px-6 py-3 text-sm font-semibold group-hover:bg-orange-500 group-hover:text-white transition-all">
-                        {t('common.viewDetails')}
+                        View Details
                       </span>
                     </div>
                   </div>
