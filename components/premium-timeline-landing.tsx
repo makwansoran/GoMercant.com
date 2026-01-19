@@ -158,7 +158,7 @@ export function PremiumTimelineLanding({
             transition={{ duration: 0.6 }}
             className="text-xl md:text-2xl lg:text-3xl text-neutral-600 leading-relaxed max-w-5xl mb-24 md:mb-32"
           >
-            Our services power real-time, AI-driven decisions in critical government and commercial enterprises in the West, from the factory floors to the front lines.
+            Our analytical platform enables real-time, AI-driven cybersecurity decisions for critical government and commercial enterprises across the West, from factory floors to enterprise networks.
           </motion.p>
 
           {/* Services List */}
