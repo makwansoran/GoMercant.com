@@ -45,13 +45,13 @@ export function PremiumTimelineLanding({
           <div className="flex items-center gap-2">
             <Image 
               src="/favicon.png" 
-              alt="GoMercant Logo" 
+              alt="SPECTR Logo" 
               width={32} 
               height={32}
               className="object-contain"
             />
             <span className="text-2xl font-bold tracking-tight text-black">
-              GoMercant
+              SPECTR
             </span>
           </div>
           <div className="hidden md:flex items-center gap-4">
@@ -300,7 +300,7 @@ export function PremiumTimelineLanding({
             </blockquote>
             <div className="flex flex-col items-center gap-2">
               <p className="text-lg font-semibold text-black">Makwan Ismail</p>
-              <p className="text-neutral-500">Founder & CEO, GoMercant</p>
+              <p className="text-neutral-500">Founder & CEO, SPECTR</p>
             </div>
           </motion.div>
         </div>
@@ -513,7 +513,7 @@ export function PremiumTimelineLanding({
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6">
                 Careers at
                 <br />
-                <span className="text-orange-500">GoMercant</span>
+                <span className="text-orange-500">SPECTR</span>
               </h2>
               <p className="text-neutral-400 text-lg leading-relaxed mb-8 max-w-lg">
                 We&apos;re building the future of cybersecurity and AI. Join a team of exceptional individuals who believe that nothing is impossible.
@@ -600,13 +600,13 @@ export function PremiumTimelineLanding({
               <div className="flex items-center gap-2 mb-6">
                 <Image 
                   src="/favicon.png" 
-                  alt="GoMercant Logo" 
+                  alt="SPECTR Logo" 
                   width={40} 
                   height={40}
                   className="object-contain brightness-0 invert"
                 />
                 <span className="text-2xl font-bold tracking-tight">
-                  GoMercant
+                  SPECTR
                 </span>
               </div>
               <p className="text-neutral-400 text-base max-w-md leading-relaxed">
@@ -646,7 +646,7 @@ export function PremiumTimelineLanding({
                 </li>
                 <li className="text-neutral-300">
                   <span className="block text-white font-medium">Email</span>
-                  <a href="mailto:Contact@gomercant.com" className="hover:text-white transition-colors">Contact@gomercant.com</a>
+                  <a href="mailto:Contact@spectr.no" className="hover:text-white transition-colors">Contact@spectr.no</a>
                 </li>
                 <li className="text-neutral-300">
                   <span className="block text-white font-medium">Phone</span>
@@ -659,7 +659,7 @@ export function PremiumTimelineLanding({
           {/* Footer Bottom */}
           <div className="pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-neutral-500">
-              © {new Date().getFullYear()} GoMercant.com By SPECTR AS · Org nr 936961967
+              © {new Date().getFullYear()} SPECTR.com By SPECTR AS · Org nr 936961967
             </div>
             <div className="flex items-center gap-6">
               <a href="#" className="text-sm text-neutral-500 hover:text-white transition-colors">Privacy Policy</a>

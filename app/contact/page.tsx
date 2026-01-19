@@ -18,13 +18,13 @@ export default function ContactPage() {
           <Link href="/" className="flex items-center gap-2">
             <Image 
               src="/favicon.png" 
-              alt="GoMercant Logo" 
+              alt="SPECTR Logo" 
               width={32} 
               height={32}
               className="object-contain"
             />
             <span className="text-2xl font-bold tracking-tight text-black">
-              GoMercant
+              SPECTR
             </span>
           </Link>
           <div className="hidden md:flex items-center gap-4">
@@ -81,8 +81,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="text-sm text-neutral-500 mb-1">Email</div>
-                      <a href="mailto:contact@spectr.com" className="text-black font-medium hover:text-orange-600 transition-colors">
-                        contact@spectr.com
+                      <a href="mailto:contact@spectr.no" className="text-black font-medium hover:text-orange-600 transition-colors">
+                        contact@spectr.no
                       </a>
                     </div>
                   </div>
@@ -217,7 +217,7 @@ export default function ContactPage() {
       <footer className="py-8 px-6 border-t border-neutral-100">
         <div className="mx-auto max-w-6xl text-center">
           <div className="text-sm text-neutral-500">
-            © {new Date().getFullYear()} GoMercant.com By SPECTR AS · Org nr 936961967
+            © {new Date().getFullYear()} SPECTR.com By SPECTR AS · Org nr 936961967
           </div>
         </div>
       </footer>

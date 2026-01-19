@@ -286,13 +286,13 @@ export default function JobPage() {
           <Link href="/" className="flex items-center gap-2">
             <Image 
               src="/favicon.png" 
-              alt="GoMercant Logo" 
+              alt="SPECTR Logo" 
               width={32} 
               height={32}
               className="object-contain brightness-0 invert"
             />
             <span className="text-2xl font-bold tracking-tight">
-              GoMercant
+              SPECTR
             </span>
           </Link>
           <div className="hidden md:flex items-center gap-4">
@@ -439,14 +439,14 @@ export default function JobPage() {
                     Send your CV and cover letter to join our team. We review all applications carefully.
                   </p>
                   <a
-                    href="mailto:msi@gomercant.com?subject=Application: {job.title}"
+                    href="mailto:msi@spectr.no?subject=Application: {job.title}"
                     className="flex items-center justify-center gap-2 w-full rounded-full bg-orange-500 px-6 py-4 text-base font-semibold text-white transition-all hover:bg-orange-600 hover:scale-105 mb-4"
                   >
                     <Mail className="w-5 h-5" />
                     Apply Now
                   </a>
                   <p className="text-center text-neutral-500 text-sm">
-                    Email: <a href="mailto:msi@gomercant.com" className="text-orange-500 hover:underline">msi@gomercant.com</a>
+                    Email: <a href="mailto:msi@spectr.no" className="text-orange-500 hover:underline">msi@spectr.no</a>
                   </p>
                 </div>
 
@@ -482,10 +482,10 @@ export default function JobPage() {
               Ready to Apply?
             </h2>
             <p className="text-neutral-400 mb-8 max-w-xl mx-auto">
-              Send your CV and cover letter to <span className="text-orange-500">msi@gomercant.com</span> and tell us why you&apos;d be a great fit for the {job.title} role.
+              Send your CV and cover letter to <span className="text-orange-500">msi@spectr.no</span> and tell us why you&apos;d be a great fit for the {job.title} role.
             </p>
             <a
-              href={`mailto:msi@gomercant.com?subject=Application: ${job.title}`}
+              href={`mailto:msi@spectr.no?subject=Application: ${job.title}`}
               className="inline-flex items-center justify-center gap-2 rounded-full bg-orange-500 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-orange-600 hover:scale-105"
             >
               <Mail className="w-5 h-5" />
@@ -501,12 +501,12 @@ export default function JobPage() {
           <div className="flex items-center gap-2">
             <Image 
               src="/favicon.png" 
-              alt="GoMercant Logo" 
+              alt="SPECTR Logo" 
               width={32} 
               height={32}
               className="object-contain brightness-0 invert"
             />
-            <span className="text-xl font-bold">GoMercant</span>
+            <span className="text-xl font-bold">SPECTR</span>
           </div>
           <div className="flex items-center gap-8">
             <Link href="/" className="text-neutral-400 hover:text-white transition-colors text-sm">
@@ -520,7 +520,7 @@ export default function JobPage() {
             </Link>
           </div>
           <div className="text-sm text-neutral-500">
-            © {new Date().getFullYear()} GoMercant.com By SPECTR AS · Org nr 936961967
+            © {new Date().getFullYear()} SPECTR.com By SPECTR AS · Org nr 936961967
           </div>
         </div>
       </footer>

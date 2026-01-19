@@ -136,13 +136,13 @@ export default function CareersPage() {
           <Link href="/" className="flex items-center gap-2">
             <Image 
               src="/favicon.png" 
-              alt="GoMercant Logo" 
+              alt="SPECTR Logo" 
               width={32} 
               height={32}
               className="object-contain brightness-0 invert"
             />
             <span className="text-2xl font-bold tracking-tight">
-              GoMercant
+              SPECTR
             </span>
           </Link>
           <div className="hidden md:flex items-center gap-4">
@@ -185,7 +185,7 @@ export default function CareersPage() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
               Careers at
               <br />
-              <span className="text-orange-500">GoMercant</span>
+              <span className="text-orange-500">SPECTR</span>
             </h1>
             <p className="text-xl text-neutral-400 max-w-2xl leading-relaxed">
               We&apos;re building the future of cybersecurity and AI. Join a team of exceptional individuals who believe that nothing is impossible.
@@ -204,7 +204,7 @@ export default function CareersPage() {
             transition={{ duration: 0.6 }}
             className="mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Join GoMercant?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Join SPECTR?</h2>
             <p className="text-neutral-400 text-lg max-w-2xl">
               We offer more than just a job—we offer a mission to protect the digital world.
             </p>
@@ -320,10 +320,10 @@ export default function CareersPage() {
               Don&apos;t see a perfect fit?
             </h2>
             <p className="text-neutral-400 text-lg mb-8 max-w-2xl mx-auto">
-              We&apos;re always looking for exceptional talent. Send your CV and cover letter to <span className="text-orange-500">msi@gomercant.com</span> and let us know how you can contribute to our mission.
+              We&apos;re always looking for exceptional talent. Send your CV and cover letter to <span className="text-orange-500">msi@spectr.no</span> and let us know how you can contribute to our mission.
             </p>
             <a
-              href="mailto:msi@gomercant.com?subject=General Application - GoMercant"
+              href="mailto:msi@spectr.no?subject=General Application - SPECTR"
               className="inline-flex items-center justify-center rounded-full bg-orange-500 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-orange-600 hover:scale-105"
             >
               Send Application
@@ -338,12 +338,12 @@ export default function CareersPage() {
           <div className="flex items-center gap-2">
             <Image 
               src="/favicon.png" 
-              alt="GoMercant Logo" 
+              alt="SPECTR Logo" 
               width={32} 
               height={32}
               className="object-contain brightness-0 invert"
             />
-            <span className="text-xl font-bold">GoMercant</span>
+            <span className="text-xl font-bold">SPECTR</span>
           </div>
           <div className="flex items-center gap-8">
             <Link href="/" className="text-neutral-400 hover:text-white transition-colors text-sm">
@@ -357,7 +357,7 @@ export default function CareersPage() {
             </Link>
           </div>
           <div className="text-sm text-neutral-500">
-            © {new Date().getFullYear()} GoMercant.com By SPECTR AS · Org nr 936961967
+            © {new Date().getFullYear()} SPECTR.com By SPECTR AS · Org nr 936961967
           </div>
         </div>
       </footer>

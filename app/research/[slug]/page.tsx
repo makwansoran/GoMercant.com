@@ -304,7 +304,7 @@ export default function ResearchPage() {
                   Want to learn more?
                 </h3>
                 <p className="text-neutral-500 text-lg mb-8 max-w-2xl mx-auto">
-                  Contact our team to discuss how GoMercant can help protect your organization against these evolving threats.
+                  Contact our team to discuss how SPECTR can help protect your organization against these evolving threats.
                 </p>
                 <Link
                   href="/contact"
@@ -336,15 +336,15 @@ export default function ResearchPage() {
           <div className="flex items-center gap-2">
             <Image 
               src="/favicon.png" 
-              alt="GoMercant Logo" 
+              alt="SPECTR Logo" 
               width={32} 
               height={32}
               className="object-contain brightness-0 invert"
             />
-            <span className="text-xl font-bold">GoMercant</span>
+            <span className="text-xl font-bold">SPECTR</span>
           </div>
           <div className="text-sm text-neutral-500">
-            © {new Date().getFullYear()} GoMercant.com By SPECTR AS · Org nr 936961967
+            © {new Date().getFullYear()} SPECTR.com By SPECTR AS · Org nr 936961967
           </div>
         </div>
       </footer>
