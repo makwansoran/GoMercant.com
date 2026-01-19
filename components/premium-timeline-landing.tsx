@@ -14,24 +14,28 @@ const insightCards = [
     title: "Automated Adversaries: The 2026 AI-Powered Threat Landscape",
     image: "/images/card1.jpg",
     slug: "automated-adversaries",
+    translationKey: "automatedAdversaries",
   },
   {
     category: "Research Report",
     title: "The Autonomous Shield: Security Automation for Modern Enterprises",
     image: "/images/card2.jpg",
     slug: "autonomous-shield",
+    translationKey: "autonomousShield",
   },
   {
     category: "Research Report",
     title: "Predictive Intelligence: AI-Driven OSINT and Proactive Defense",
     image: "/images/card3.jpg",
     slug: "predictive-intelligence",
+    translationKey: "predictiveIntelligence",
   },
   {
     category: "Research Report",
     title: "Shadow AI: Securing the Automated Intelligence Loop",
     image: "/images/card4.jpg",
     slug: "shadow-ai",
+    translationKey: "shadowAI",
   },
 ]
 
@@ -128,12 +132,12 @@ export function PremiumTimelineLanding({
                   <div className="relative z-10">
                     {/* Category Label */}
                       <span className="inline-block text-xs font-semibold text-white/80 uppercase tracking-wider mb-4">
-                      {t(`insights.${card.slug.replace(/-/g, '')}.category`)}
+                      {t(`insights.${card.translationKey}.category`)}
                     </span>
                     
                     {/* Title */}
                     <h3 className="text-xl font-bold text-white leading-tight">
-                      {t(`insights.${card.slug.replace(/-/g, '')}.title`)}
+                      {t(`insights.${card.translationKey}.title`)}
                     </h3>
                   </div>
                   
