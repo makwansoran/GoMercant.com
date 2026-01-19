@@ -4,6 +4,7 @@ import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import type {Metadata, Viewport} from 'next';
 import {Inter} from 'next/font/google';
+import {CookieConsent} from '@/components/cookie-consent';
 import '../globals.css';
 
 const inter = Inter({
@@ -50,6 +51,7 @@ export default async function LocaleLayout({
       <body className={inter.className}>
         <NextIntlClientProvider messages={messages}>
           {children}
+          <CookieConsent />
         </NextIntlClientProvider>
       </body>
     </html>

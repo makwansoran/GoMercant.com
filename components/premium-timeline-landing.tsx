@@ -668,8 +668,8 @@ export function PremiumTimelineLanding({
               © {new Date().getFullYear()} {t('common.copyright')}
             </div>
             <div className="flex items-center gap-6">
-              <a href="#" className="text-sm text-neutral-500 hover:text-white transition-colors">{t('common.privacyPolicy')}</a>
-              <a href="#" className="text-sm text-neutral-500 hover:text-white transition-colors">{t('common.termsOfService')}</a>
+              <Link href="/privacy" className="text-sm text-neutral-500 hover:text-white transition-colors">{t('common.privacyPolicy')}</Link>
+              <Link href="/terms" className="text-sm text-neutral-500 hover:text-white transition-colors">{t('common.termsOfService')}</Link>
             </div>
           </div>
         </div>
