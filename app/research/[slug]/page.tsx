@@ -344,7 +344,7 @@ export default function ResearchPage() {
             <span className="text-xl font-bold">SPECTR</span>
           </div>
           <div className="text-sm text-neutral-500">
-            © {new Date().getFullYear()} SPECTR.com By SPECTR AS · Org nr 936961967
+            © {new Date().getFullYear()} spectr.no By SPECTR AS · Org nr 936961967
           </div>
         </div>
       </footer>

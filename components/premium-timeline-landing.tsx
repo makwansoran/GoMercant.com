@@ -2,9 +2,12 @@
 
 import { cn } from "@/lib/utils"
 import Image from "next/image"
-import Link from "next/link"
+import { useTranslations } from "next-intl"
+import { Link, usePathname } from "@/i18n/routing"
 import { motion } from "framer-motion"
 import { ChevronRight } from "lucide-react"
+import { LanguageSwitcher } from "./language-switcher"
+import { GlitchyCode } from "./glitchy-code"
 
 const insightCards = [
   {
@@ -37,57 +40,68 @@ export function PremiumTimelineLanding({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+  const t = useTranslations()
+  const pathname = usePathname()
+  
   return (
     <div className={cn("bg-white text-black min-h-screen", className)} {...props}>
       {/* Fixed Nav */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-          <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <Image 
               src="/favicon.png" 
-              alt="SPECTR Logo" 
+              alt={t('common.logoAlt')} 
               width={32} 
               height={32}
               className="object-contain"
             />
             <span className="text-2xl font-bold tracking-tight text-black">
-              SPECTR
+              {t('common.brand')}
             </span>
-          </div>
+          </Link>
           <div className="hidden md:flex items-center gap-4">
-            <a
+            <LanguageSwitcher />
+            <Link
               href="/login"
               className="inline-flex items-center justify-center rounded-full bg-black px-6 py-2 text-sm font-semibold text-white transition-all hover:bg-neutral-800 hover:scale-105"
             >
-              Client Login
-            </a>
-            <a
+              {t('common.clientLogin')}
+            </Link>
+            <Link
               href="/contact"
               className="inline-flex items-center justify-center rounded-full bg-orange-500 px-6 py-2 text-sm font-semibold text-white transition-all hover:bg-orange-600 hover:scale-105"
             >
-              Contact Us
-            </a>
+              {t('common.contactUs')}
+            </Link>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-gradient-to-b from-white to-neutral-50 px-6 pt-16">
-        <div className="relative z-10 mx-auto max-w-5xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl bg-gradient-to-r from-black via-neutral-800 to-neutral-600 bg-clip-text text-transparent">
-              Security. Control.
-              <br />
-              <span className="text-black">Intelligence.</span>
-            </h1>
-            <p className="mt-6 text-lg text-neutral-600 md:text-xl max-w-2xl mx-auto">
-              Cybersecurity and AI consulting for critical systems.
-            </p>
-          </motion.div>
+      <section className="relative flex min-h-[70vh] items-center overflow-hidden bg-gradient-to-b from-white to-neutral-50 px-6 pt-24 pb-16">
+        <div className="relative z-10 mx-auto max-w-7xl w-full">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left Side - Text Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-left order-2 lg:order-1"
+            >
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-gradient-to-r from-black via-neutral-800 to-neutral-600 bg-clip-text text-transparent whitespace-pre-line leading-tight">
+                {t('hero.title')}
+              </h1>
+              <p className="mt-6 text-base sm:text-lg md:text-xl text-neutral-600 max-w-xl">
+                {t('hero.subtitle')}
+              </p>
+            </motion.div>
+
+            {/* Right Side - Glitchy Code */}
+            <div className="order-1 lg:order-2">
+              <GlitchyCode />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -96,7 +110,7 @@ export function PremiumTimelineLanding({
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {insightCards.map((card, index) => (
-              <Link key={index} href={`/research/${card.slug}`}>
+              <Link key={index} href={`/research/${card.slug}`} locale={undefined}>
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -123,20 +137,20 @@ export function PremiumTimelineLanding({
                   
                   <div className="relative z-10">
                     {/* Category Label */}
-                    <span className="inline-block text-xs font-semibold text-white/80 uppercase tracking-wider mb-4">
-                      {card.category}
+                      <span className="inline-block text-xs font-semibold text-white/80 uppercase tracking-wider mb-4">
+                      {t(`insights.${card.slug.replace(/-/g, '')}.category`)}
                     </span>
                     
                     {/* Title */}
                     <h3 className="text-xl font-bold text-white leading-tight">
-                      {card.title}
+                      {t(`insights.${card.slug.replace(/-/g, '')}.title`)}
                     </h3>
                   </div>
                   
                   {/* Expand Button */}
                   <div className="relative z-10 mt-4">
                     <span className="inline-flex items-center gap-1 text-sm font-semibold text-white group-hover:gap-2 transition-all duration-300">
-                      Expand
+                      {t('common.expand')}
                       <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </span>
                   </div>
@@ -158,7 +172,7 @@ export function PremiumTimelineLanding({
             transition={{ duration: 0.6 }}
             className="text-xl md:text-2xl lg:text-3xl text-neutral-600 leading-relaxed max-w-5xl mb-24 md:mb-32"
           >
-            Our analytical platform enables real-time, AI-driven cybersecurity decisions for critical government and commercial enterprises across the West, from factory floors to enterprise networks.
+            {t('services.header')}
           </motion.p>
 
           {/* Services List */}
@@ -173,11 +187,11 @@ export function PremiumTimelineLanding({
             >
               <div className="flex flex-col gap-4">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black group-hover:text-neutral-500 transition-colors duration-300">
-                  Our Services
+                  {t('services.title')}
                 </h2>
                 <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500 ease-out opacity-0 group-hover:opacity-100">
                   <p className="text-neutral-500 text-base md:text-lg max-w-2xl pt-2">
-                    Comprehensive cybersecurity and AI solutions for modern enterprises. We deliver end-to-end security, automation, intelligence, and development services tailored to your organization&apos;s needs.
+                    {t('services.description')}
                   </p>
                 </div>
               </div>
@@ -195,12 +209,12 @@ export function PremiumTimelineLanding({
                 <div className="flex items-baseline gap-4">
                   <span className="text-sm text-neutral-400 font-mono">/0.1</span>
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black group-hover:text-neutral-500 transition-colors duration-300">
-                    Cyber Surveillance
+                    {t('services.cyberSurveillance.title')}
                   </h3>
                 </div>
                 <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500 ease-out opacity-0 group-hover:opacity-100">
                   <p className="text-neutral-500 text-base md:text-lg max-w-2xl pt-2 pl-12">
-                    We secure your platform with 24/7 surveillance and constant auditing. Our advanced threat detection systems monitor your infrastructure around the clock, identifying vulnerabilities before they become breaches.
+                    {t('services.cyberSurveillance.description')}
                   </p>
                 </div>
               </div>
@@ -241,12 +255,12 @@ export function PremiumTimelineLanding({
                 <div className="flex items-baseline gap-4">
                   <span className="text-sm text-neutral-400 font-mono">/0.3</span>
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black group-hover:text-neutral-500 transition-colors duration-300">
-                    Intelligence
+                    {t('services.intelligence.title')}
                   </h3>
                 </div>
                 <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500 ease-out opacity-0 group-hover:opacity-100">
                   <p className="text-neutral-500 text-base md:text-lg max-w-2xl pt-2 pl-12">
-                    Our intelligence platform provides powerful analytical software that transforms your data into actionable insights. Real-time analytics and AI-powered tools keep you ahead of the competition.
+                    {t('services.intelligence.description')}
                   </p>
                 </div>
               </div>
@@ -264,12 +278,12 @@ export function PremiumTimelineLanding({
                 <div className="flex items-baseline gap-4">
                   <span className="text-sm text-neutral-400 font-mono">/0.4</span>
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-medium text-black group-hover:text-neutral-500 transition-colors duration-300">
-                    Development
+                    {t('services.development.title')}
                   </h3>
                 </div>
                 <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500 ease-out opacity-0 group-hover:opacity-100">
                   <p className="text-neutral-500 text-base md:text-lg max-w-2xl pt-2 pl-12">
-                    We will create anything your company needs. From custom software solutions to enterprise platforms, our development team brings your vision to life with cutting-edge technology.
+                    {t('services.development.description')}
                   </p>
                 </div>
               </div>
@@ -290,17 +304,15 @@ export function PremiumTimelineLanding({
           >
             <div className="mb-8">
               <span className="inline-block text-sm font-semibold uppercase tracking-wider text-orange-500 mb-4">
-                Message from our CEO
+                {t('ceo.message')}
               </span>
             </div>
-            <blockquote className="text-4xl md:text-5xl lg:text-6xl font-medium text-black leading-tight mb-12">
-              &ldquo;Forbidding is forbidden to us.
-              <br />
-              <span className="text-neutral-500">We can do anything.&rdquo;</span>
+            <blockquote className="text-4xl md:text-5xl lg:text-6xl font-medium text-black leading-tight mb-12 whitespace-pre-line">
+              &ldquo;{t('ceo.quote')}&rdquo;
             </blockquote>
             <div className="flex flex-col items-center gap-2">
-              <p className="text-lg font-semibold text-black">Makwan Ismail</p>
-              <p className="text-neutral-500">Founder & CEO, SPECTR</p>
+              <p className="text-lg font-semibold text-black">{t('ceo.name')}</p>
+              <p className="text-neutral-500">{t('ceo.title')}</p>
             </div>
           </motion.div>
         </div>
@@ -389,10 +401,10 @@ export function PremiumTimelineLanding({
             className="mb-16"
           >
             <span className="inline-block text-sm font-semibold uppercase tracking-wider text-orange-500 mb-4">
-              Latest Updates
+              {t('news.subtitle')}
             </span>
             <h2 className="text-4xl md:text-5xl font-medium text-black">
-              News & Insights
+              {t('news.title')}
             </h2>
           </motion.div>
 
@@ -416,7 +428,7 @@ export function PremiumTimelineLanding({
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4">
                     <span className="px-3 py-1 bg-orange-500 text-white text-xs font-semibold rounded-full">
-                      Research Report
+                      {t('news.researchReport')}
                     </span>
                   </div>
                 </div>
@@ -448,8 +460,8 @@ export function PremiumTimelineLanding({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-4 left-4">
                   <span className="px-3 py-1 bg-red-500 text-white text-xs font-semibold rounded-full">
-                    Threat Alert
-                  </span>
+                      {t('news.threatAlert')}
+                    </span>
                 </div>
               </div>
               <span className="text-sm text-orange-500 font-medium">January 2026</span>
@@ -508,21 +520,21 @@ export function PremiumTimelineLanding({
               transition={{ duration: 0.6 }}
             >
               <span className="inline-block text-sm font-semibold uppercase tracking-wider text-orange-500 mb-4">
-                Join Our Team
+                {t('careers.subtitle')}
               </span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6">
-                Careers at
+                {t('careers.title')}
                 <br />
-                <span className="text-orange-500">SPECTR</span>
+                <span className="text-orange-500">{t('common.brand')}</span>
               </h2>
               <p className="text-neutral-400 text-lg leading-relaxed mb-8 max-w-lg">
-                We&apos;re building the future of cybersecurity and AI. Join a team of exceptional individuals who believe that nothing is impossible.
+                {t('careers.description')}
               </p>
               <Link
                 href="/careers"
                 className="inline-flex items-center justify-center rounded-full bg-orange-500 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-orange-600 hover:scale-105"
               >
-                View Open Positions
+                {t('careers.openPositions')}
                 <ChevronRight className="w-5 h-5 ml-2" />
               </Link>
             </motion.div>
@@ -606,33 +618,33 @@ export function PremiumTimelineLanding({
                   className="object-contain brightness-0 invert"
                 />
                 <span className="text-2xl font-bold tracking-tight">
-                  SPECTR
+                  {t('common.brand')}
                 </span>
               </div>
               <p className="text-neutral-400 text-base max-w-md leading-relaxed">
-                Cybersecurity and AI consulting for critical systems. We protect and empower enterprises with cutting-edge technology solutions.
+                {t('hero.subtitleFooter')}
               </p>
             </div>
 
             {/* Services */}
             <div>
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">Services</h4>
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">{t('common.services')}</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Cyber Surveillance</a></li>
-                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Automation</a></li>
-                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Intelligence</a></li>
-                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Development</a></li>
+                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">{t('services.cyberSurveillance.title')}</a></li>
+                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">{t('services.automation.title')}</a></li>
+                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">{t('services.intelligence.title')}</a></li>
+                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">{t('services.development.title')}</a></li>
               </ul>
             </div>
 
             {/* Company */}
             <div>
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">Company</h4>
+              <h4 className="text-sm font-semibold uppercase tracking-wider text-neutral-400 mb-6">{t('common.company')}</h4>
               <ul className="space-y-3">
-                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">Careers</a></li>
-                <li><a href="/contact" className="text-neutral-300 hover:text-white transition-colors">Contact</a></li>
-                <li><a href="/login" className="text-neutral-300 hover:text-white transition-colors">Client Login</a></li>
+                <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">{t('common.aboutUs')}</a></li>
+                <li><Link href="/careers" className="text-neutral-300 hover:text-white transition-colors">{t('common.careers')}</Link></li>
+                <li><Link href="/contact" className="text-neutral-300 hover:text-white transition-colors">{t('common.contact')}</Link></li>
+                <li><Link href="/login" className="text-neutral-300 hover:text-white transition-colors">{t('common.clientLogin')}</Link></li>
               </ul>
             </div>
 
@@ -659,11 +671,11 @@ export function PremiumTimelineLanding({
           {/* Footer Bottom */}
           <div className="pt-8 border-t border-neutral-800 flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-neutral-500">
-              © {new Date().getFullYear()} SPECTR.com By SPECTR AS · Org nr 936961967
+              © {new Date().getFullYear()} {t('common.copyright')}
             </div>
             <div className="flex items-center gap-6">
-              <a href="#" className="text-sm text-neutral-500 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="text-sm text-neutral-500 hover:text-white transition-colors">Terms of Service</a>
+              <a href="#" className="text-sm text-neutral-500 hover:text-white transition-colors">{t('common.privacyPolicy')}</a>
+              <a href="#" className="text-sm text-neutral-500 hover:text-white transition-colors">{t('common.termsOfService')}</a>
             </div>
           </div>
         </div>

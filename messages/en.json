@@ -1,0 +1,139 @@
+{
+  "common": {
+    "brand": "SPECTR",
+    "logoAlt": "SPECTR Logo",
+    "clientLogin": "Client Login",
+    "contactUs": "Contact Us",
+    "backToHome": "Back to Home",
+    "sendMessage": "Send Message",
+    "viewDetails": "View Details",
+    "expand": "Expand",
+    "applyNow": "Apply Now",
+    "sendApplication": "Send Application",
+    "allPositions": "All Positions",
+    "home": "Home",
+    "contact": "Contact",
+    "careers": "Careers",
+    "services": "Services",
+    "company": "Company",
+    "aboutUs": "About Us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "copyright": "spectr.no By SPECTR AS · Org nr 936961967"
+  },
+  "hero": {
+    "title": "Security. Control.\nIntelligence.",
+    "subtitle": "Cybersecurity and AI consulting for critical systems.",
+    "subtitleFooter": "Cybersecurity and AI consulting for critical systems. We protect and empower enterprises with cutting-edge technology solutions."
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "Comprehensive cybersecurity and AI solutions for modern enterprises. We deliver end-to-end security, automation, intelligence, and development services tailored to your organization's needs.",
+    "header": "Our analytical platform enables real-time, AI-driven cybersecurity decisions for critical government and commercial enterprises across the West, from factory floors to enterprise networks.",
+    "cyberSurveillance": {
+      "title": "Cyber Surveillance",
+      "description": "We secure your platform with 24/7 surveillance and constant auditing. Our advanced threat detection systems monitor your infrastructure around the clock, identifying vulnerabilities before they become breaches."
+    },
+    "automation": {
+      "title": "Automation",
+      "description": "Anything a human can do can be automated. We build intelligent workflows that eliminate repetitive tasks, reduce human error, and dramatically increase operational efficiency across your organization."
+    },
+    "intelligence": {
+      "title": "Intelligence",
+      "description": "Our intelligence platform provides powerful analytical software that transforms your data into actionable insights. Real-time analytics and AI-powered tools keep you ahead of the competition."
+    },
+    "development": {
+      "title": "Development",
+      "description": "We will create anything your company needs. From custom software solutions to enterprise platforms, our development team brings your vision to life with cutting-edge technology."
+    }
+  },
+  "ceo": {
+    "message": "Message from our CEO",
+    "quote": "Forbidding is forbidden to us.\nWe can do anything.",
+    "name": "Makwan Ismail",
+    "title": "Founder & CEO, SPECTR"
+  },
+  "partners": {
+    "title": "Partner Resources",
+    "subtitle": "Trusted Technology Stack"
+  },
+  "news": {
+    "title": "News & Insights",
+    "subtitle": "Latest Updates",
+    "researchReport": "Research Report",
+    "threatAlert": "Threat Alert",
+    "defence": "Defence"
+  },
+  "careers": {
+    "title": "Careers at",
+    "subtitle": "Join Our Team",
+    "description": "We're building the future of cybersecurity and AI. Join a team of exceptional individuals who believe that nothing is impossible.",
+    "whyJoin": "Why Join SPECTR?",
+    "whyJoinDescription": "We offer more than just a job—we offer a mission to protect the digital world.",
+    "openPositions": "Open Positions",
+    "openPositionsDescription": "Find your next role and help us secure the future.",
+    "noPerfectFit": "Don't see a perfect fit?",
+    "noPerfectFitDescription": "We're always looking for exceptional talent. Send your CV and cover letter to {email} and let us know how you can contribute to our mission.",
+    "readyToApply": "Ready to Apply?",
+    "readyToApplyDescription": "Send your CV and cover letter to {email} and tell us why you'd be a great fit for the {jobTitle} role.",
+    "applyForPosition": "Apply for this Position",
+    "applyDescription": "Send your CV and cover letter to join our team. We review all applications carefully.",
+    "email": "Email",
+    "responsibilities": "Responsibilities",
+    "requirements": "Requirements",
+    "niceToHave": "Nice to Have",
+    "benefits": "Benefits"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Have a project in mind? Let us know and we will get back to you within 24 hours.",
+    "contactInformation": "Contact Information",
+    "contactChannels": "Reach out to us through any of these channels",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "addressValue": "Oslo, Norway",
+    "fullName": "Full Name",
+    "emailAddress": "Email Address",
+    "company": "Company",
+    "phoneNumber": "Phone Number",
+    "yourMessage": "Your Message",
+    "messageSent": "Message sent successfully! We will contact you soon.",
+    "required": "*"
+  },
+  "login": {
+    "title": "Client Login",
+    "subtitle": "Sign in to access your account",
+    "emailAddress": "Email Address",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "signIn": "Sign In",
+    "signingIn": "Signing in..."
+  },
+  "research": {
+    "category": "Research Report",
+    "wantToLearnMore": "Want to learn more?",
+    "description": "Contact our team to discuss how SPECTR can help protect your organization against these evolving threats.",
+    "getInTouch": "Get in Touch",
+    "returnToHome": "Return to Home",
+    "contentComingSoon": "Research report content coming soon."
+  },
+  "insights": {
+    "automatedAdversaries": {
+      "title": "Automated Adversaries: The 2026 AI-Powered Threat Landscape",
+      "category": "Research Report"
+    },
+    "autonomousShield": {
+      "title": "The Autonomous Shield: Security Automation for Modern Enterprises",
+      "category": "Research Report"
+    },
+    "predictiveIntelligence": {
+      "title": "Predictive Intelligence: AI-Driven OSINT and Proactive Defense",
+      "category": "Research Report"
+    },
+    "shadowAI": {
+      "title": "Shadow AI: Securing the Automated Intelligence Loop",
+      "category": "Research Report"
+    }
+  }
+}

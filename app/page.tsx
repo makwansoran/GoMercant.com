@@ -1,5 +1,8 @@
-import { PremiumTimelineLanding } from "@/components/premium-timeline-landing"
+import {redirect} from 'next/navigation';
+import {routing} from '@/i18n/routing';
 
-export default function LandingPage() {
-  return <PremiumTimelineLanding />
+// This page only renders when the user visits `/`
+// The middleware will redirect to the appropriate locale
+export default function RootPage() {
+  redirect(`/${routing.defaultLocale}`);
 }

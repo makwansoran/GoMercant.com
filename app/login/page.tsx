@@ -116,7 +116,7 @@ export default function LoginPage() {
       <footer className="py-6 px-6 border-t border-neutral-100">
         <div className="mx-auto max-w-6xl text-center">
           <div className="text-sm text-neutral-500">
-            © {new Date().getFullYear()} SPECTR.com By SPECTR AS · Org nr 936961967
+            © {new Date().getFullYear()} spectr.no By SPECTR AS · Org nr 936961967
           </div>
         </div>
       </footer>
