@@ -7,7 +7,6 @@ import { Link, usePathname } from "@/i18n/routing"
 import { motion } from "framer-motion"
 import { ChevronRight } from "lucide-react"
 import { LanguageSwitcher } from "./language-switcher"
-import { GlitchyCode } from "./glitchy-code"
 
 const insightCards = [
   {
@@ -79,29 +78,20 @@ export function PremiumTimelineLanding({
       </nav>
 
       {/* Hero Section */}
-      <section className="relative flex min-h-[70vh] items-center overflow-hidden bg-gradient-to-b from-white to-neutral-50 px-6 pt-24 pb-16">
-        <div className="relative z-10 mx-auto max-w-7xl w-full">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left Side - Text Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-left order-2 lg:order-1"
-            >
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight bg-gradient-to-r from-black via-neutral-800 to-neutral-600 bg-clip-text text-transparent whitespace-pre-line leading-tight">
-                {t('hero.title')}
-              </h1>
-              <p className="mt-6 text-base sm:text-lg md:text-xl text-neutral-600 max-w-xl">
-                {t('hero.subtitle')}
-              </p>
-            </motion.div>
-
-            {/* Right Side - Glitchy Code */}
-            <div className="order-1 lg:order-2">
-              <GlitchyCode />
-            </div>
-          </div>
+      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-gradient-to-b from-white to-neutral-50 px-6 pt-16">
+        <div className="relative z-10 mx-auto max-w-5xl text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl bg-gradient-to-r from-black via-neutral-800 to-neutral-600 bg-clip-text text-transparent whitespace-pre-line">
+              {t('hero.title')}
+            </h1>
+            <p className="mt-6 text-lg text-neutral-600 md:text-xl max-w-2xl mx-auto">
+              {t('hero.subtitle')}
+            </p>
+          </motion.div>
         </div>
       </section>
 
