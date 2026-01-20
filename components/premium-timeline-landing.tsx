@@ -75,7 +75,7 @@ export function PremiumTimelineLanding({
       </nav>
 
       {/* Hero Section */}
-      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-neutral-50 px-6 pt-16">
+      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-white px-6 pt-16">
         <WaveAnimation />
         <div className="relative z-10 mx-auto max-w-5xl text-center">
           <motion.div
@@ -97,7 +97,7 @@ export function PremiumTimelineLanding({
       </section>
 
       {/* Insight Cards Section */}
-      <section className="py-16 px-6 bg-neutral-50">
+      <section className="py-16 px-6 bg-white">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {insightCards.map((card, index) => (
@@ -284,7 +284,7 @@ export function PremiumTimelineLanding({
       </section>
 
       {/* CEO Message Section */}
-      <section className="py-24 md:py-32 px-6 bg-neutral-50">
+      <section className="py-24 md:py-32 px-6 bg-white">
         <div className="mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -384,7 +384,7 @@ export function PremiumTimelineLanding({
       </section>
 
       {/* News Section */}
-      <section className="py-24 md:py-32 px-6 bg-neutral-50">
+      <section className="py-24 md:py-32 px-6 bg-white">
         <div className="mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
