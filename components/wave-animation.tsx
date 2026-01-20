@@ -25,7 +25,7 @@ export function WaveAnimation() {
     camera.position.set(0, 355, 122)
 
     scene = new THREE.Scene()
-    scene.fog = new THREE.Fog(0xffffff, 2000, 10000) // White fog
+    scene.fog = new THREE.Fog(0xfafafa, 2000, 10000) // neutral-50 fog (#fafafa)
 
     // Create canvas for sprite texture
     const canvas = document.createElement('canvas')
@@ -112,7 +112,7 @@ export function WaveAnimation() {
     <div
       id="home_wave"
       ref={containerRef}
-      className="absolute inset-0 w-full h-full pointer-events-none bg-white"
+      className="absolute inset-0 w-full h-full pointer-events-none bg-neutral-50"
       style={{
         zIndex: 0,
       }}
