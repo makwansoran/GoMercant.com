@@ -501,7 +501,7 @@ export default function JobPage() {
           <div className="flex items-center gap-2">
             <Image 
               src="/favicon.png" 
-              alt={t('common.logoAlt')} 
+              alt="SPECTR Logo" 
               width={32} 
               height={32}
               className="object-contain brightness-0 invert"
