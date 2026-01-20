@@ -129,7 +129,7 @@ export function CookieConsent() {
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-semibold text-black">
-                    {t("cookies.customizeTitle")}
+                    Customize Cookie Preferences
                   </h3>
                   <button
                     onClick={() => setShowSettings(false)}
@@ -139,7 +139,7 @@ export function CookieConsent() {
                   </button>
                 </div>
                 <p className="text-sm text-neutral-600">
-                  {t("cookies.customizeDescription")}
+                  Choose which cookies you want to accept. You can change these settings at any time.
                 </p>
                 <div className="space-y-4">
                   {/* Necessary Cookies */}
