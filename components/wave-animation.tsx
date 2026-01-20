@@ -25,7 +25,7 @@ export function WaveAnimation() {
     camera.position.set(0, 355, 122)
 
     scene = new THREE.Scene()
-    scene.fog = new THREE.Fog(0xff6600, 2000, 10000) // Orange fog
+    scene.fog = new THREE.Fog(0xffffff, 2000, 10000) // White fog
 
     // Create canvas for sprite texture
     const canvas = document.createElement('canvas')
@@ -56,10 +56,10 @@ export function WaveAnimation() {
       }
     }
 
-    renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true })
+    renderer = new THREE.WebGLRenderer({ alpha: false, antialias: true })
     renderer.setPixelRatio(window.devicePixelRatio)
     renderer.setSize(window.innerWidth, window.innerHeight)
-    renderer.setClearColor(0x000000, 0) // Transparent background
+    renderer.setClearColor(0xffffff, 1) // White background
     containerRef.current.appendChild(renderer.domElement)
 
     // Animation
@@ -112,9 +112,8 @@ export function WaveAnimation() {
     <div
       id="home_wave"
       ref={containerRef}
-      className="absolute inset-0 w-full h-full pointer-events-none"
+      className="absolute inset-0 w-full h-full pointer-events-none bg-white"
       style={{
-        background: 'linear-gradient(to right, #ff6600, #f06d06)',
         zIndex: 0,
       }}
     />
