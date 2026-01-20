@@ -5,6 +5,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { ChevronRight } from "lucide-react"
 import Link from "next/link"
+import { WaveAnimation } from "@/components/wave-animation"
 
 const insightCards = [
   {
@@ -75,6 +76,7 @@ export function PremiumTimelineLanding({
 
       {/* Hero Section */}
       <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-gradient-to-b from-white to-neutral-50 px-6 pt-16">
+        <WaveAnimation />
         <div className="relative z-10 mx-auto max-w-5xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
