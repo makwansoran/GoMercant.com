@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { Menu } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
@@ -35,7 +35,7 @@ export function PremiumTimelineLanding({
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-2">
             <span className="text-2xl font-bold tracking-tight text-black">
-              Resource Merchants
+              SPECTR
             </span>
           </Link>
 
@@ -51,30 +51,36 @@ export function PremiumTimelineLanding({
               <Menu className="h-5 w-5" />
             </button>
 
-            {menuOpen && (
-              <div
-                role="menu"
-                aria-label="Navigation menu"
-                className="absolute right-0 mt-2 w-48 overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-lg"
-              >
-                <Link
-                  role="menuitem"
-                  href="/login"
-                  onClick={() => setMenuOpen(false)}
-                  className="block px-4 py-3 text-sm font-semibold text-black hover:bg-neutral-50"
+            <AnimatePresence>
+              {menuOpen && (
+                <motion.div
+                  role="menu"
+                  aria-label="Navigation menu"
+                  initial={{ opacity: 0, y: -8, scale: 0.98 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -8, scale: 0.98 }}
+                  transition={{ duration: 0.16, ease: "easeOut" }}
+                  className="absolute right-0 mt-2 w-56 rounded-2xl border border-neutral-200 bg-white p-2 shadow-lg"
                 >
-                  Client Login
-                </Link>
-                <Link
-                  role="menuitem"
-                  href="/contact"
-                  onClick={() => setMenuOpen(false)}
-                  className="block px-4 py-3 text-sm font-semibold text-black hover:bg-neutral-50"
-                >
-                  Contact Us
-                </Link>
-              </div>
-            )}
+                  <Link
+                    role="menuitem"
+                    href="/login"
+                    onClick={() => setMenuOpen(false)}
+                    className="flex w-full items-center justify-center rounded-xl bg-black px-4 py-3 text-sm font-semibold text-white transition-all hover:bg-neutral-800"
+                  >
+                    Client Login
+                  </Link>
+                  <Link
+                    role="menuitem"
+                    href="/contact"
+                    onClick={() => setMenuOpen(false)}
+                    className="mt-2 flex w-full items-center justify-center rounded-xl bg-orange-500 px-4 py-3 text-sm font-semibold text-white transition-all hover:bg-orange-600"
+                  >
+                    Contact Us
+                  </Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </nav>
@@ -90,13 +96,10 @@ export function PremiumTimelineLanding({
             className="pb-4"
           >
             <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl bg-gradient-to-r from-black via-neutral-800 to-neutral-600 bg-clip-text text-transparent whitespace-pre-line leading-[1.1] pb-3">
-              Resource
+              Global Resource
               <br />
               <span className="text-black">Merchants</span>
             </h1>
-            <p className="mt-6 text-lg text-neutral-600 md:text-xl max-w-2xl mx-auto">
-              Consulting and intelligence for critical systems.
-            </p>
           </motion.div>
         </div>
       </section>
