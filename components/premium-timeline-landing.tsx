@@ -86,7 +86,7 @@ export function PremiumTimelineLanding({
       </nav>
 
       {/* Hero Section */}
-      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-white px-6 pt-16">
+      <section className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center overflow-hidden bg-white px-6 pt-16">
         <WaveAnimation />
         <div className="relative z-10 mx-auto max-w-5xl text-center">
           <motion.div

@@ -8,7 +8,8 @@ export function WaveAnimation() {
   const animationFrameRef = useRef<number>()
 
   useEffect(() => {
-    if (!containerRef.current) return
+    const container = containerRef.current
+    if (!container) return
 
     const SEPARATION = 200
     const AMOUNTX = 40
@@ -21,7 +22,16 @@ export function WaveAnimation() {
     let count = 0
 
     // Initialize
-    camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 1, 10000)
+    const getSize = () => {
+      const rect = container.getBoundingClientRect()
+      return {
+        width: Math.max(1, Math.floor(rect.width)),
+        height: Math.max(1, Math.floor(rect.height)),
+      }
+    }
+
+    const initialSize = getSize()
+    camera = new THREE.PerspectiveCamera(65, initialSize.width / initialSize.height, 1, 10000)
     camera.position.set(0, 355, 122)
 
     scene = new THREE.Scene()
@@ -34,13 +44,13 @@ export function WaveAnimation() {
     const context = canvas.getContext('2d')!
     context.beginPath()
     context.arc(16, 16, 16, 0, Math.PI * 2, true)
-    context.fillStyle = '#ff6600' // Orange color
+    context.fillStyle = '#2563eb' // Blue color
     context.fill()
 
     const texture = new THREE.CanvasTexture(canvas)
     const material = new THREE.SpriteMaterial({
       map: texture,
-      color: 0xff6600, // Orange color
+      color: 0x2563eb, // Blue color
       transparent: true,
       opacity: 0.6,
     })
@@ -58,9 +68,9 @@ export function WaveAnimation() {
 
     renderer = new THREE.WebGLRenderer({ alpha: false, antialias: true })
     renderer.setPixelRatio(window.devicePixelRatio)
-    renderer.setSize(window.innerWidth, window.innerHeight)
+    renderer.setSize(initialSize.width, initialSize.height)
     renderer.setClearColor(0xffffff, 1) // White background
-    containerRef.current.appendChild(renderer.domElement)
+    container.appendChild(renderer.domElement)
 
     // Animation
     function animate() {
@@ -82,9 +92,10 @@ export function WaveAnimation() {
 
     // Handle resize
     function onWindowResize() {
-      camera.aspect = window.innerWidth / window.innerHeight
+      const { width, height } = getSize()
+      camera.aspect = width / height
       camera.updateProjectionMatrix()
-      renderer.setSize(window.innerWidth, window.innerHeight)
+      renderer.setSize(width, height)
     }
 
     window.addEventListener('resize', onWindowResize)
@@ -96,8 +107,8 @@ export function WaveAnimation() {
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current)
       }
-      if (containerRef.current && renderer.domElement.parentNode) {
-        containerRef.current.removeChild(renderer.domElement)
+      if (renderer.domElement.parentNode === container) {
+        container.removeChild(renderer.domElement)
       }
       renderer.dispose()
       texture.dispose()
