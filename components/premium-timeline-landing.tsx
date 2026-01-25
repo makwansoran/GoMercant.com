@@ -95,10 +95,8 @@ export function PremiumTimelineLanding({
             transition={{ duration: 0.6 }}
             className="pb-4"
           >
-            <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl bg-gradient-to-r from-black via-neutral-800 to-neutral-600 bg-clip-text text-transparent whitespace-pre-line leading-[1.1] pb-3">
-              Global Resource
-              <br />
-              <span className="text-black">Merchants</span>
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl bg-gradient-to-r from-black via-neutral-800 to-neutral-600 bg-clip-text text-transparent leading-tight pb-3">
+              Global Resource Merchants
             </h1>
           </motion.div>
         </div>
