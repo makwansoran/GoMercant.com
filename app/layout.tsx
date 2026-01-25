@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
-import { CookieConsent } from '@/components/cookie-consent';
 import './globals.css';
 
 const inter = Inter({ 
@@ -17,8 +16,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'SPECTR',
-  description: 'Global expertise on your computer.',
+  title: 'Resource Merchants',
+  description: 'Consulting and intelligence for critical systems.',
   icons: {
     icon: '/favicon.png',
   },
@@ -33,7 +32,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {children}
-        <CookieConsent />
       </body>
     </html>
   );

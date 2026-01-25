@@ -2,13 +2,32 @@
 
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
+import { Menu } from "lucide-react"
 import Link from "next/link"
+import { useEffect, useRef, useState } from "react"
 import { WaveAnimation } from "@/components/wave-animation"
 
 export function PremiumTimelineLanding({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    if (!menuOpen) return
+
+    const onPointerDown = (e: PointerEvent) => {
+      if (!menuRef.current) return
+      if (!menuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false)
+      }
+    }
+
+    window.addEventListener("pointerdown", onPointerDown)
+    return () => window.removeEventListener("pointerdown", onPointerDown)
+  }, [menuOpen])
+
   return (
     <div className={cn("bg-white text-black min-h-screen", className)} {...props}>
       {/* Fixed Nav */}
@@ -16,22 +35,46 @@ export function PremiumTimelineLanding({
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-2">
             <span className="text-2xl font-bold tracking-tight text-black">
-              SPECTR
+              Resource Merchants
             </span>
           </Link>
-          <div className="hidden md:flex items-center gap-4">
-            <Link
-              href="/login"
-              className="inline-flex items-center justify-center rounded-full bg-black px-6 py-2 text-sm font-semibold text-white transition-all hover:bg-neutral-800 hover:scale-105"
+
+          <div className="relative" ref={menuRef}>
+            <button
+              type="button"
+              aria-label="Open menu"
+              aria-haspopup="menu"
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((v) => !v)}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-neutral-200 bg-white/70 text-black backdrop-blur transition-colors hover:bg-white"
             >
-              Client Login
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-orange-500 px-6 py-2 text-sm font-semibold text-white transition-all hover:bg-orange-600 hover:scale-105"
-            >
-              Contact Us
-            </Link>
+              <Menu className="h-5 w-5" />
+            </button>
+
+            {menuOpen && (
+              <div
+                role="menu"
+                aria-label="Navigation menu"
+                className="absolute right-0 mt-2 w-48 overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-lg"
+              >
+                <Link
+                  role="menuitem"
+                  href="/login"
+                  onClick={() => setMenuOpen(false)}
+                  className="block px-4 py-3 text-sm font-semibold text-black hover:bg-neutral-50"
+                >
+                  Client Login
+                </Link>
+                <Link
+                  role="menuitem"
+                  href="/contact"
+                  onClick={() => setMenuOpen(false)}
+                  className="block px-4 py-3 text-sm font-semibold text-black hover:bg-neutral-50"
+                >
+                  Contact Us
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </nav>
@@ -47,12 +90,12 @@ export function PremiumTimelineLanding({
             className="pb-4"
           >
             <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl bg-gradient-to-r from-black via-neutral-800 to-neutral-600 bg-clip-text text-transparent whitespace-pre-line leading-[1.1] pb-3">
-              Security. Control.
+              Resource
               <br />
-              <span className="text-black">Intelligence.</span>
+              <span className="text-black">Merchants</span>
             </h1>
             <p className="mt-6 text-lg text-neutral-600 md:text-xl max-w-2xl mx-auto">
-              Cybersecurity and AI consulting for critical systems.
+              Consulting and intelligence for critical systems.
             </p>
           </motion.div>
         </div>
