@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { ArrowLeft, Shield, Eye, Lock, Database, Users, FileText } from "lucide-react"
-import Image from "next/image"
 
 export default function PrivacyPage() {
   return (
@@ -12,13 +11,6 @@ export default function PrivacyPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-neutral-100">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/favicon.png"
-              alt="SPECTR Logo"
-              width={32}
-              height={32}
-              className="object-contain"
-            />
             <span className="text-2xl font-bold tracking-tight text-black">
               SPECTR
             </span>

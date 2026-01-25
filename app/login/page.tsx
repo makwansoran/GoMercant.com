@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 import { motion } from "framer-motion"
@@ -23,13 +22,6 @@ export default function LoginPage() {
       <nav className="bg-white border-b border-neutral-100">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/favicon.png"
-              alt="SPECTR Logo"
-              width={32}
-              height={32}
-              className="object-contain"
-            />
             <span className="text-2xl font-bold tracking-tight text-black">
               SPECTR
             </span>
