@@ -36,17 +36,17 @@ export default function ContactPage() {
       </nav>
 
       <main className="px-6 pt-24 pb-16">
-        <div className="mx-auto max-w-2xl">
-          <h1 className="text-4xl font-bold tracking-tight">Contact Us</h1>
+        <div className="mx-auto max-w-lg">
+          <h1 className="text-3xl font-bold tracking-tight">Contact Us</h1>
 
-          <div className="mt-8 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+          <div className="mt-6 rounded-2xl border border-neutral-200 bg-white p-5 shadow-sm">
             <form
               onSubmit={(e) => {
                 e.preventDefault()
                 setSubmitted(true)
                 window.location.href = mailtoHref
               }}
-              className="space-y-5"
+              className="space-y-4"
             >
               <div>
                 <label className="block text-sm font-semibold text-neutral-700">
@@ -55,7 +55,7 @@ export default function ContactPage() {
                 <input
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="mt-2 w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20"
+                  className="mt-2 w-full rounded-xl border border-neutral-200 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20"
                   placeholder="Your name"
                 />
               </div>
@@ -69,7 +69,7 @@ export default function ContactPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="mt-2 w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20"
+                  className="mt-2 w-full rounded-xl border border-neutral-200 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20"
                   placeholder="you@company.com"
                 />
               </div>
@@ -83,7 +83,7 @@ export default function ContactPage() {
                   required
                   value={companyPhone}
                   onChange={(e) => setCompanyPhone(e.target.value)}
-                  className="mt-2 w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20"
+                  className="mt-2 w-full rounded-xl border border-neutral-200 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20"
                   placeholder="+47 000 00 000"
                 />
               </div>
@@ -94,17 +94,17 @@ export default function ContactPage() {
                 </label>
                 <textarea
                   required
-                  rows={6}
+                  rows={5}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="mt-2 w-full resize-none rounded-xl border border-neutral-200 bg-white px-4 py-3 outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20"
+                  className="mt-2 w-full resize-none rounded-xl border border-neutral-200 bg-white px-4 py-2.5 text-sm outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20"
                   placeholder="How can we help?"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full rounded-xl bg-orange-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-orange-600"
+                className="w-full rounded-xl bg-orange-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-orange-600"
               >
                 Send message
               </button>
