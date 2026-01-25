@@ -74,7 +74,7 @@ export function PremiumTimelineLanding({
                     role="menuitem"
                     href="/contact"
                     onClick={() => setMenuOpen(false)}
-                    className="mt-2 flex w-full items-center justify-center rounded-xl bg-orange-500 px-4 py-3 text-sm font-semibold text-white transition-all hover:bg-orange-600"
+                    className="mt-2 flex w-full items-center justify-center rounded-xl bg-black px-4 py-3 text-sm font-semibold text-white transition-all hover:bg-neutral-800"
                   >
                     Contact Us
                   </Link>
