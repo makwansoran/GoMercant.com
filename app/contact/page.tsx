@@ -6,6 +6,7 @@ import { useMemo, useState } from "react"
 export default function ContactPage() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
+  const [companyPhone, setCompanyPhone] = useState("")
   const [message, setMessage] = useState("")
   const [submitted, setSubmitted] = useState(false)
 
@@ -16,12 +17,13 @@ export default function ContactPage() {
       [
         `Name: ${name || "-"}`,
         `Email: ${email || "-"}`,
+        `Company phone: ${companyPhone || "-"}`,
         "",
         message || "",
       ].join("\n")
     )
     return `mailto:${to}?subject=${subject}&body=${body}`
-  }, [email, message, name])
+  }, [companyPhone, email, message, name])
 
   return (
     <div className="min-h-screen bg-white text-black">
@@ -34,32 +36,10 @@ export default function ContactPage() {
       </nav>
 
       <main className="px-6 pt-24 pb-16">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 lg:grid-cols-2">
-          <div>
-            <h1 className="text-4xl font-bold tracking-tight">Contact Us</h1>
-            <p className="mt-4 text-neutral-600">
-              Send a message and your email client will open addressed to{" "}
-              <a className="text-black underline" href="mailto:makwan@spectr.no">
-                makwan@spectr.no
-              </a>
-              .
-            </p>
+        <div className="mx-auto max-w-2xl">
+          <h1 className="text-4xl font-bold tracking-tight">Contact Us</h1>
 
-            <div className="mt-8 rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
-              <div className="text-sm font-semibold text-neutral-700">Direct email</div>
-              <a
-                className="mt-2 block text-lg font-semibold text-black underline"
-                href="mailto:makwan@spectr.no"
-              >
-                makwan@spectr.no
-              </a>
-              <p className="mt-2 text-sm text-neutral-600">
-                Prefer a form? Use the message box and we’ll prefill the email for you.
-              </p>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
+          <div className="mt-8 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm">
             <form
               onSubmit={(e) => {
                 e.preventDefault()
@@ -91,6 +71,20 @@ export default function ContactPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   className="mt-2 w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20"
                   placeholder="you@company.com"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-neutral-700">
+                  Company phone number
+                </label>
+                <input
+                  type="tel"
+                  required
+                  value={companyPhone}
+                  onChange={(e) => setCompanyPhone(e.target.value)}
+                  className="mt-2 w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20"
+                  placeholder="+47 000 00 000"
                 />
               </div>
 
