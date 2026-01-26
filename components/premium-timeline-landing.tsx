@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from "framer-motion"
 import { Menu } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
-import { WaveAnimation } from "@/components/wave-animation"
 
 export function PremiumTimelineLanding({
   className,
@@ -87,7 +86,6 @@ export function PremiumTimelineLanding({
 
       {/* Hero Section */}
       <section className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center overflow-hidden bg-white px-6 pt-16">
-        <WaveAnimation />
         <div className="relative z-10 mx-auto max-w-5xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
