@@ -19,7 +19,9 @@ export const metadata: Metadata = {
   title: 'Resource Merchants',
   description: 'Consulting and intelligence for critical systems.',
   icons: {
-    icon: '/favicon.png',
+    icon: [{ url: '/favicon.png?v=2', type: 'image/png' }],
+    shortcut: ['/favicon.png?v=2'],
+    apple: ['/favicon.png?v=2'],
   },
 };
 
